@@ -1,0 +1,495 @@
+
+                    Nyquest Technology Co., Ltd.
+
+NYASM 2.50
+
+    ADDR  OPCODE/VALUE              LINE   TAG  SOURCE                   STATEMENT    
+
+                                    1-    1     ;--------------------------------------------------------
+                                    1-    2     ; File Created by SDCC : free open source ISO C Compiler 
+                                    1-    3     ; Version 4.2.2 #0 (MSVC)
+                                    1-    4     ;--------------------------------------------------------
+                                    1-    5     ; NY8A port
+                                    1-    6     ;--------------------------------------------------------
+                                    1-    7     	.file	"main.c"
+                                    1-    8     	list	p=NY8A051F,c=on
+                                    1-    9     	#include "ny8a051f.inc"
+                                    2-    1     #include "common.inc"
+                                    3-    1     ;; header file for 8 bit series assembly -*- mode:asm; coding:utf-8; -*-
+                                    3-    2     ;; author    Ting
+                                    3-    3     ;; date      2020-12-24
+                                    3-    4     ;;
+                                    3-    5     ;; # constant definition
+                                    3-    6     ;;
+                                    3-    7     ;; ## instruction result store destination
+                                    3-    8     ;;  - W: the result is stored in the ACC.
+                                    3-    9     ;;  - F: the result is stored back in register.
+                                    3-   10     ;; ## flag name in STATUS register
+                                    3-   11     ;;  - C, DC, Z
+                                    3-   12     ;;
+                                    3-   13     ;; # macro define
+                                    3-   14     ;;
+                                    3-   15     ;; ## RETURN, used by C compiler, end of function
+                                    3-   16     ;; ## PAGESEL, empty macro, maybe used by C compiler (bug?)
+                                    3-   17     ;; ## BANKSEL, replace by .banksel pseudo command, empty if disable bank.
+                                    3-   18     ;; ## MGOTO, replace by LGOTO (ic<=2K word) or FGOTO (ic>2K word)
+                                    3-   19     ;; ## MCALL, same as above
+                                    3-   20     ;;
+                                    3-   21     W       EQU 0
+                                    3-   21     ;W = 0
+                                    3-   22     F       EQU 1
+                                    3-   22     ;F = 1
+                                    3-   23     C		EQU	0
+                                    3-   23     ;C = 0
+                                    3-   24     DC		EQU	1
+                                    3-   24     ;DC = 1
+                                    3-   25     Z		EQU	2
+                                    3-   25     ;Z = 2
+                                    3-   28     ;; common register for all series
+                                    3-   29     INDF    EQU 0x00
+                                    3-   29     ;INDF = 0
+                                    3-   30     PCL     EQU 0x02
+                                    3-   30     ;PCL = 2
+                                    3-   31     STATUS  EQU 0x03
+                                    3-   31     ;STATUS = 3
+                                    3-   32     FSR     EQU 0x04
+                                    3-   32     ;FSR = 4
+                                    3-   33     PCHBUF  EQU 0x0A
+                                    3-   33     ;PCHBUF = 10
+                                    1-   11     ;--------------------------------------------------------
+                                    1-   12     ; external declarations
+                                    1-   13     ;--------------------------------------------------------
+                                    1-   14     	extern	_Charge_Process
+                                    1-   15     	extern	_Charge_Dectect
+                                    1-   16     	extern	_M1_Work
+                                    1-   17     	extern	_Motor_Counter_Reset
+                                    1-   18     	extern	_Motor_Counter
+                                    1-   19     	extern	_Motor_PWM_Loop3
+                                    1-   20     	extern	_Motor_PWM_Loop2
+                                    1-   21     	extern	_Motor_PWM_Loop1
+                                    1-   22     	extern	_M1_Work_Process
+                                    1-   23     	extern	_Motor_Init
+                                    1-   24     	extern	_LED
+                                    1-   25     	extern	_Change_LED_State
+                                    1-   26     	extern	_Key_Scan
+                                    1-   27     	extern	_Key_Init
+                                    1-   28     	extern	_Reset_Clock
+                                    1-   29     	extern	_Clock
+                                    1-   30     	extern	_Delay_us
+                                    1-   31     	extern	_Power_Off
+                                    1-   32     	extern	_Switch_Power_Mode
+                                    1-   33     	extern	_Init
+                                    1-   34     	extern	_clear_ram
+                                    1-   35     	extern	_multi_16b
+                                    1-   36     	extern	_multi_8b
+                                    1-   37     	extern	_T0MD
+                                    1-   38     	extern	_PCON1
+                                    1-   39     	extern	_BODCON
+                                    1-   40     	extern	_PS0CV
+                                    1-   41     	extern	_IOSTB
+                                    1-   42     	extern	_OSCCR
+                                    1-   43     	extern	_TBHD
+                                    1-   44     	extern	_TBHP
+                                    1-   45     	extern	_IRCR
+                                    1-   46     	extern	_BZ1CR
+                                    1-   47     	extern	_PS1CV
+                                    1-   48     	extern	_PWM1DUTY
+                                    1-   49     	extern	_T1CR2
+                                    1-   50     	extern	_T1CR1
+                                    1-   51     	extern	_TMR1
+                                    1-   52     	extern	_PCHBUF
+                                    1-   53     	extern	_STATUS
+                                    1-   54     	extern	_PCL
+                                    1-   55     	extern	_TMR0
+                                    1-   56     	extern	_Full_Cnt
+                                    1-   57     	extern	_Charge_Cnt
+                                    1-   58     	extern	_LED_Charge_Time
+                                    1-   59     	extern	_Timer_1min
+                                    1-   60     	extern	_Timer_1s
+                                    1-   61     	extern	_Timer_100ms
+                                    1-   62     	extern	_Timer_10ms
+                                    1-   63     	extern	_Timer_1ms
+                                    1-   64     	extern	_Unit_Time
+                                    1-   65     	extern	_LED_FLAG
+                                    1-   66     	extern	_Time_Temp
+                                    1-   67     	extern	_Sleep_Cnt
+                                    1-   68     	extern	_Key_Short_LED_Cnt
+                                    1-   69     	extern	_Key_Long_Cnt
+                                    1-   70     	extern	_Key_Press_Cnt
+                                    1-   71     	extern	_Motor_Counter_FLAG
+                                    1-   72     	extern	_Motor_Peri_1000
+                                    1-   73     	extern	_Motor_Peri_100
+                                    1-   74     	extern	_Motor_Peri_10
+                                    1-   75     	extern	_Motor_Peri_1
+                                    1-   76     	extern	_M1_Cnt
+                                    1-   77     	extern	_M1_Freq_Change_Set
+                                    1-   78     	extern	_M1_Freq_Change
+                                    1-   79     	extern	_Motor_Freq_Cnt2
+                                    1-   80     	extern	_Motor_Freq_Cnt1
+                                    1-   81     	extern	_Motor_Freq_Cnt0
+                                    1-   82     	extern	_Motor_Freq_Change
+                                    1-   83     	extern	_M1_Duty_1_Set
+                                    1-   84     	extern	_M1_Duty_Set
+                                    1-   85     	extern	_M1_Duty
+                                    1-   86     	extern	_M1_Cycle_1_Set
+                                    1-   87     	extern	_M1_Cycle_Set
+                                    1-   88     	extern	_M1_Cycle
+                                    1-   89     	extern	_my_flag4
+                                    1-   90     	extern	_my_flag3
+                                    1-   91     	extern	_my_flag2
+                                    1-   92     	extern	_My_Flag
+                                    1-   93     	extern	_INTFbits
+                                    1-   94     	extern	_INTEbits
+                                    1-   95     	extern	_BPHCONbits
+                                    1-   96     	extern	_BPLCONbits
+                                    1-   97     	extern	_BWUCONbits
+                                    1-   98     	extern	_PCONbits
+                                    1-   99     	extern	_PORTBbits
+                                    1-  100     	extern	__nyc_ny8_startup
+                                    1-  101     ;--------------------------------------------------------
+                                    1-  102     ; global declarations
+                                    1-  103     ;--------------------------------------------------------
+                                    1-  104     	extern	_main
+                                    1-  105     	extern	_isr
+                                    1-  106     	extern	_my_flag0
+                                    1-  107     	extern	_my_flag1
+                                    1-  108     	extern	_INTF
+                                    1-  109     	extern	_INTE
+                                    1-  110     	extern	_BPHCON
+                                    1-  111     	extern	_BPLCON
+                                    1-  112     	extern	_BWUCON
+                                    1-  113     	extern	_PCON
+                                    1-  114     	extern	_PORTB
+                                    1-  116     	extern PSAVE
+                                    1-  117     	extern SSAVE
+                                    1-  118     	extern WSAVE
+                                    1-  119     	extern STK12
+                                    1-  120     	extern ___STK12
+                                    1-  121     	extern STK11
+                                    1-  122     	extern ___STK11
+                                    1-  123     	extern STK10
+                                    1-  124     	extern ___STK10
+                                    1-  125     	extern STK09
+                                    1-  126     	extern ___STK09
+                                    1-  127     	extern STK08
+                                    1-  128     	extern ___STK08
+                                    1-  129     	extern STK07
+                                    1-  130     	extern ___STK07
+                                    1-  131     	extern STK06
+                                    1-  132     	extern ___STK06
+                                    1-  133     	extern STK05
+                                    1-  134     	extern ___STK05
+                                    1-  135     	extern STK04
+                                    1-  136     	extern ___STK04
+                                    1-  137     	extern STK03
+                                    1-  138     	extern ___STK03
+                                    1-  139     	extern STK02
+                                    1-  140     	extern ___STK02
+                                    1-  141     	extern STK01
+                                    1-  142     	extern ___STK01
+                                    1-  143     	extern STK00
+                                    1-  144     	extern ___STK00
+                                    1-  146     .segment "share_bank"
+     0000                           1-  147     PSAVE:
+                                    1-  148     	.res 1
+                                    1-  149     .segment "share_bank"
+     0000                           1-  150     SSAVE:
+                                    1-  151     	.res 1
+                                    1-  152     .segment "share_bank"
+     0000                           1-  153     WSAVE:
+                                    1-  154     	.res 1
+                                    1-  155     .segment "share_bank"
+     0000                           1-  156     ___STK12:
+     0000                           1-  157     STK12:
+                                    1-  158     	.res 1
+                                    1-  159     .segment "share_bank"
+     0000                           1-  160     ___STK11:
+     0000                           1-  161     STK11:
+                                    1-  162     	.res 1
+                                    1-  163     .segment "share_bank"
+     0000                           1-  164     ___STK10:
+     0000                           1-  165     STK10:
+                                    1-  166     	.res 1
+                                    1-  167     .segment "share_bank"
+     0000                           1-  168     ___STK09:
+     0000                           1-  169     STK09:
+                                    1-  170     	.res 1
+                                    1-  171     .segment "share_bank"
+     0000                           1-  172     ___STK08:
+     0000                           1-  173     STK08:
+                                    1-  174     	.res 1
+                                    1-  175     .segment "share_bank"
+     0000                           1-  176     ___STK07:
+     0000                           1-  177     STK07:
+                                    1-  178     	.res 1
+                                    1-  179     .segment "share_bank"
+     0000                           1-  180     ___STK06:
+     0000                           1-  181     STK06:
+                                    1-  182     	.res 1
+                                    1-  183     .segment "share_bank"
+     0000                           1-  184     ___STK05:
+     0000                           1-  185     STK05:
+                                    1-  186     	.res 1
+                                    1-  187     .segment "share_bank"
+     0000                           1-  188     ___STK04:
+     0000                           1-  189     STK04:
+                                    1-  190     	.res 1
+                                    1-  191     .segment "share_bank"
+     0000                           1-  192     ___STK03:
+     0000                           1-  193     STK03:
+                                    1-  194     	.res 1
+                                    1-  195     .segment "share_bank"
+     0000                           1-  196     ___STK02:
+     0000                           1-  197     STK02:
+                                    1-  198     	.res 1
+                                    1-  199     .segment "share_bank"
+     0000                           1-  200     ___STK01:
+     0000                           1-  201     STK01:
+                                    1-  202     	.res 1
+                                    1-  203     .segment "share_bank"
+     0000                           1-  204     ___STK00:
+     0000                           1-  205     STK00:
+                                    1-  206     	.res 1
+                                    1-  208     ;--------------------------------------------------------
+                                    1-  209     ; global definitions
+                                    1-  210     ;--------------------------------------------------------
+                                    1-  211     ;--------------------------------------------------------
+                                    1-  212     ; absolute symbol definitions
+                                    1-  213     ;--------------------------------------------------------
+                                    1-  214     ;--------------------------------------------------------
+                                    1-  215     ; compiler-defined variables
+                                    1-  216     ;--------------------------------------------------------
+                                    1-  217     .segment "uninit"
+     0000                           1-  218     ___sdcc_saved_fsr:
+                                    1-  219     	.res	1
+                                    1-  221     .segment "uninit"
+     0000                           1-  222     ___sdcc_saved_stk00:
+                                    1-  223     	.res	1
+                                    1-  225     .segment "uninit"
+     0000                           1-  226     ___sdcc_saved_stk01:
+                                    1-  227     	.res	1
+                                    1-  229     ;--------------------------------------------------------
+                                    1-  230     ; initialized data
+                                    1-  231     ;--------------------------------------------------------
+                                    1-  232     ;--------------------------------------------------------
+                                    1-  233     ; initialized absolute data
+                                    1-  234     ;--------------------------------------------------------
+                                    1-  235     ;--------------------------------------------------------
+                                    1-  236     ; overlayable items in internal ram 
+                                    1-  237     ;--------------------------------------------------------
+                                    1-  238     ;	udata_ovr
+                                    1-  239     ;--------------------------------------------------------
+                                    1-  240     ; reset vector 
+                                    1-  241     ;--------------------------------------------------------
+                                    1-  242     ORG	0x0000
+     0000 3rrr                      1-  243     	LGOTO	__nyc_ny8_startup
+                                    1-  244     ;--------------------------------------------------------
+                                    1-  245     ; interrupt and initialization code
+                                    1-  246     ;--------------------------------------------------------
+                                    1-  247     ORG 0x0008
+                                    1-  248     	MGOTO	__sdcc_interrupt
+     0008 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  250     .segment "code"
+     0000                           1-  251     __sdcc_interrupt:
+                                    1-  252     ;***
+                                    1-  253     ;  pBlock Stats: dbName = I
+                                    1-  254     ;***
+                                    1-  255     ;functions called:
+                                    1-  256     ;   _Clock
+                                    1-  257     ;   _M1_Work_Process
+                                    1-  258     ;   _Clock
+                                    1-  259     ;   _M1_Work_Process
+                                    1-  260     ;2 compiler assigned registers:
+                                    1-  261     ;   STK00
+                                    1-  262     ;   STK01
+                                    1-  263     ;; Starting pCode block
+     0000                           1-  264     _isr:
+                                    1-  265     ; 0 exit points
+                                    1-  266     	.line	4, "main.c"; 	void isr(void) __interrupt(0)
+     0000 00rr                      1-  267     	MOVAR	WSAVE
+     0001 1503                      1-  268     	SWAPR	STATUS,W
+     0002 0283                      1-  269     	CLRR	STATUS
+     0003 00rr                      1-  270     	MOVAR	SSAVE
+     0004 010A                      1-  271     	MOVR	PCHBUF,W
+     0005 028A                      1-  272     	CLRR	PCHBUF
+     0006 00rr                      1-  273     	MOVAR	PSAVE
+     0007 0104                      1-  274     	MOVR	FSR,W
+     0008 00rr                      1-  275     	MOVAR	___sdcc_saved_fsr
+     0009 01rr                      1-  276     	MOVR	STK00,W
+     000A 00rr                      1-  277     	MOVAR	___sdcc_saved_stk00
+     000B 01rr                      1-  278     	MOVR	STK01,W
+     000C 00rr                      1-  279     	MOVAR	___sdcc_saved_stk01
+                                    1-  280     	.line	6, "main.c"; 	if (T0IF)
+     000D 08rr                      1-  281     	BTRSS	_INTF,0
+                                    1-  282     	MGOTO	_02007_DS_
+     000E 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  283     	.line	8, "main.c"; 	T0IF=0;
+     000F 21FE                      1-  284     	MOVIA	0xfe
+     0010 00rr                      1-  285     	MOVAR	_INTF
+                                    1-  286     	.line	9, "main.c"; 	TMR0=0x38;
+     0011 2138                      1-  287     	MOVIA	0x38
+     0012 00rr                      1-  288     	MOVAR	_TMR0
+                                    1-  289     	.line	10, "main.c"; 	Unit_Time++;
+     0013 05rr                      1-  290     	INCR	_Unit_Time,F
+                                    1-  291     	.line	11, "main.c"; 	Clock();
+                                    1-  292     	MCALL	_Clock
+     0014 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  293     	.line	12, "main.c"; 	M1_Work_Process();
+                                    1-  294     	MCALL	_M1_Work_Process
+     0015 2rrr                      3-   65 m1      LCALL rom_address
+     0016                           1-  295     _02007_DS_:
+                                    1-  296     	.line	16, "main.c"; 	}
+     0016 01rr                      1-  297     	MOVR	___sdcc_saved_stk01,W
+     0017 00rr                      1-  298     	MOVAR	STK01
+     0018 01rr                      1-  299     	MOVR	___sdcc_saved_stk00,W
+     0019 00rr                      1-  300     	MOVAR	STK00
+     001A 01rr                      1-  301     	MOVR	___sdcc_saved_fsr,W
+     001B 0084                      1-  302     	MOVAR	FSR
+     001C 01rr                      1-  303     	MOVR	PSAVE,W
+     001D 008A                      1-  304     	MOVAR	PCHBUF
+     001E 0283                      1-  305     	CLRR	STATUS
+     001F 15rr                      1-  306     	SWAPR	SSAVE,W
+     0020 0083                      1-  307     	MOVAR	STATUS
+     0021 15rr                      1-  308     	SWAPR	WSAVE,F
+     0022 15rr                      1-  309     	SWAPR	WSAVE,W
+     0023                           1-  310     END_OF_INTERRUPT:
+     0023 0011                      1-  311     	RETIE	
+                                    1-  313     ;--------------------------------------------------------
+                                    1-  314     ; code
+                                    1-  315     ;--------------------------------------------------------
+                                    1-  316     ; code_main	code
+                                    1-  317     ;***
+                                    1-  318     ;  pBlock Stats: dbName = M
+                                    1-  319     ;***
+                                    1-  320     ;has an exit
+                                    1-  321     ;functions called:
+                                    1-  322     ;   _Init
+                                    1-  323     ;   _Charge_Dectect
+                                    1-  324     ;   _Charge_Process
+                                    1-  325     ;   _Key_Scan
+                                    1-  326     ;   _M1_Work
+                                    1-  327     ;   _LED
+                                    1-  328     ;   _Init
+                                    1-  329     ;   _Charge_Dectect
+                                    1-  330     ;   _Charge_Process
+                                    1-  331     ;   _Key_Scan
+                                    1-  332     ;   _M1_Work
+                                    1-  333     ;   _LED
+                                    1-  334     ;; Starting pCode block
+                                    1-  335     .segment "code"; module=main, function=_main
+     0000                           1-  337     _main:
+                                    1-  338     ; 2 exit points
+                                    1-  339     	.line	24, "main.c"; 	Init();
+                                    1-  340     	MCALL	_Init
+     0000 2rrr                      3-   65 m1      LCALL rom_address
+     0001                           1-  341     _02021_DS_:
+                                    1-  342     	.line	28, "main.c"; 	CLRWDT();
+     0001 0002                      1-  343     	clrwdt
+                                    1-  344     	.line	29, "main.c"; 	Charge_Dectect();
+                                    1-  345     	MCALL	_Charge_Dectect
+     0002 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  346     	.line	30, "main.c"; 	if (Charging_FLAG)
+     0003 0Arr                      1-  347     	BTRSS	_my_flag1,5
+                                    1-  348     	MGOTO	_02018_DS_
+     0004 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  349     	.line	32, "main.c"; 	Charge_Process();
+                                    1-  350     	MCALL	_Charge_Process
+     0005 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  351     	MGOTO	_02019_DS_
+     0006 3rrr                      3-   62 m1      LGOTO rom_address
+     0007                           1-  352     _02018_DS_:
+                                    1-  353     	.line	36, "main.c"; 	Key_Scan();
+                                    1-  354     	MCALL	_Key_Scan
+     0007 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  355     	.line	37, "main.c"; 	M1_Work();
+                                    1-  356     	MCALL	_M1_Work
+     0008 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  357     ;;signed compare: left < lit(0xDC=220), size=2, mask=ffff
+                                    1-  358     	.line	38, "main.c"; 	if (Sleep_Cnt >= 220)
+     0009 01rr                      1-  359     	MOVR	(_Sleep_Cnt + 1),W
+     000A 2580                      1-  360     	ADDIA	0x80
+     000B 2580                      1-  361     	ADDIA	0x80
+     000C 0903                      1-  362     	BTRSS	STATUS,2
+                                    1-  363     	MGOTO	_02045_DS_
+     000D 3rrr                      3-   62 m1      LGOTO rom_address
+     000E 21DC                      1-  364     	MOVIA	0xdc
+     000F 04rr                      1-  365     	SUBAR	_Sleep_Cnt,W
+     0010                           1-  366     _02045_DS_:
+     0010 0803                      1-  367     	BTRSS	STATUS,0
+                                    1-  368     	MGOTO	_02019_DS_
+     0011 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  369     	.line	40, "main.c"; 	Sleep_Cnt = 0;
+     0012 02rr                      1-  370     	CLRR	_Sleep_Cnt
+     0013 02rr                      1-  371     	CLRR	(_Sleep_Cnt + 1)
+                                    1-  372     	.line	41, "main.c"; 	PCON = 0;
+     0014 02rr                      1-  373     	CLRR	_PCON
+                                    1-  374     	.line	42, "main.c"; 	DISI();
+     0015 0013                      1-  375     	DISI
+                                    1-  376     	.line	43, "main.c"; 	INTFbits.PBIF = 0; //清除中断标志
+     0016 21FD                      1-  377     	MOVIA	0xfd
+     0017 00rr                      1-  378     	MOVAR	(_INTFbits + 0)
+                                    1-  379     	.line	44, "main.c"; 	INTE = C_INT_PBKey; //使能中断
+     0018 2102                      1-  380     	MOVIA	0x02
+     0019 00rr                      1-  381     	MOVAR	_INTE
+                                    1-  382     	.line	46, "main.c"; 	if (KEY && !CHARGE_DET)
+     001A 09rr                      1-  383     	BTRSS	_PORTB,3
+                                    1-  384     	MGOTO	_02013_DS_
+     001B 3rrr                      3-   62 m1      LGOTO rom_address
+     001C 0Crr                      1-  385     	BTRSC	_PORTB,0
+                                    1-  386     	MGOTO	_02013_DS_
+     001D 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  387     	.line	48, "main.c"; 	LED_OFF;
+     001E 18rr                      1-  388     	BSR	_PORTB,1
+                                    1-  389     	.line	49, "main.c"; 	SLEEP();
+     001F 0001                      1-  390     	sleep
+     0020                           1-  391     _02013_DS_:
+                                    1-  392     	.line	52, "main.c"; 	NOP();
+     0020 0000                      1-  393     	nop
+                                    1-  394     	.line	53, "main.c"; 	NOP();
+     0021 0000                      1-  395     	nop
+                                    1-  396     	.line	56, "main.c"; 	INTE = C_INT_TMR0;
+     0022 2101                      1-  397     	MOVIA	0x01
+     0023 00rr                      1-  398     	MOVAR	_INTE
+                                    1-  399     	.line	57, "main.c"; 	ENI();
+     0024 0004                      1-  400     	ENI
+     0025                           1-  401     _02019_DS_:
+                                    1-  402     	.line	61, "main.c"; 	LED();
+                                    1-  403     	MCALL	_LED
+     0025 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  404     	MGOTO	_02021_DS_
+     0026 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  405     	.line	63, "main.c"; 	}
+                                    1-  406     	RETURN	
+     0027 0010                      3-   39 m1      ret
+                                    1-  407     ; exit point of _main
+                                    1-  410     ;	code size estimation:
+                                    1-  411     ;	   70+    0 =    70 instructions (  140 byte)
+                                    1-  413     	end
+
+SYMBOL TABLE            TYPE     VALUE
+__pin_count__           Constant 00000006
+__processor__           Constant 00800515
+C                       Constant 00000000
+DC                      Constant 00000001
+ENABLE_RAM_BANK         Constant 00000000
+F                       Constant 00000001
+FSR                     Constant 00000004
+INDF                    Constant 00000000
+PCHBUF                  Constant 0000000A
+PCL                     Constant 00000002
+STATUS                  Constant 00000003
+USEFGOTO                Constant 00000000
+W                       Constant 00000000
+Z                       Constant 00000002
+
+
+SOURCE FILE TABLE
+001 OBJ/main.s
+002 ny8a051f.inc
+003 common.inc
+004 main.c
+
+PROCESSOR    = NY8A051F (8 bits)
+PROGRAM ROM  = 0x00000000 - 0x000003FF
+DATA ROM     = 0x00000000 - 0x000003FF
+SRAM / SFR   = 0x00000000 - 0x00000000

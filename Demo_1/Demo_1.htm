@@ -1,0 +1,337 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+IMG#logo { width: 8.938em; height: 2.188em; }
+* { font-family:Arial; }
+.TextTitle{ top:-0.75em; font-size:1.188em; font-weight:bold; }
+.TextCellLabel{ font-size:0.813em; font-weight:bold; }
+.TextCellItem,.TextCellItem{ font-size:0.813em; }
+.cross_cell { height:1.375em;}
+.TableCell1,.TableCell2 {width:23.75em; height:1.375em;}
+.option_table .padding {width:0.4em; height:1.375em;}
+.TextTableHead,.TextTableHead2{ font-size:0.813em; font-weight:bold;}
+.TableOKY1Header{width:40em; left:0em; text-align:left; font-size:0.813em; font-weight:bold;}
+.TextTableInfo{ padding-left:0.625em; font-size:0.75em; font-weight:bold; font-style: italic}
+.section_table{width:41.25em;table-layout:auto; border-collapse:separate;}
+.section_table tr{left:0cm; text-align:center; font-size:0.813em; }
+.section_table td { padding-left:0.313em; padding-right:0.313em }
+.section_table_header{left:0cm; text-align:center; text-decoration:underline; font-size:0.813em; font-weight:bold;}
+
+.TableIOPinSetting { margin-left:1.063em; max-width: 37.5em; table-layout:auto; border-collapse:collapse; border: 0.063em solid black; border-spacing: 2pt; }
+.TableIOPinSetting .pin_table_header {left:0cm; text-align:center; font-size:0.813em; font-weight:bold; background-color: #808080; color: white; }
+.TableIOPinSetting .row_odd { left: 0cm; text-align:center; font-size:0.813em; }
+.TableIOPinSetting .row_even { left: 0cm; text-align: center; font-size: 0.813em; background-color: #D3D3D3; }
+.TableIOPinSetting td {  padding-left:0.313em; padding-right:0.313em; border: 0.063em solid black; }
+
+.TextNote{ text-align:justify; vertical-align: text-top; font-size:1em; color: red; font-weight:bold; }
+.TextNoteContent{ text-align:justify; vertical-align: text-top; font-size:0.813em; color: red; }
+.hidden { display:none; }
+.raw_data { display:none; }
+
+.io_trigger { width:41.25em; table-layout:auto; }
+.matrix { border-width: 0.063em; border-style:double; border-color:#0F0F0F; font-size:0.813em; font-weight: bold; border-collapse:collapse; }
+.matrix td { text-align: center; padding-left:0.313em; padding-right:0.313em; border-width: 0.125em; border-style:solid; border-color:#808080; }
+.io_trigger_value { font-style: italic; }
+.ul_text { text-decoration: underline; }
+.b_text { font-weight: bold; }
+.option_table .TableCell2 span { display: inline-block; vertical-align: text-top; }
+.option_table td { vertical-align: top; }
+
+#ny9us-code-table3, #ny9us-code-table9 { page-break-after: always; }
+div.ir-protocol-table { padding-right:0.313em; width:23.75em; display:inline-block; }
+div.ir-protocol-table .row-header,
+div.ir-protocol-table .col-header { background-color: #D3D3D3; }
+div.ir-protocol-table table { border-collapse:collapse; }
+div.ir-protocol-table td { border: 0.063em solid black; text-align:center; }
+div.ir-protocol-table .row-header { width:2em; }
+.up-transform-15 {
+-ms-transform: translateY(-1.5em); /* IE 9 */
+transform: translateY(-1.5em);
+}
+div.ir-protocol-table div.key-data-code td { font-size: 0.813em; }
+div.ir-protocol-table div.key-data-code .col-header { width:2em; }
+div.ir-protocol-table div.custom-code table {
+-ms-transform: scale(0.6, 0.6); /* IE 9 */
+transform: scale(0.6, 0.6);
+transform-origin: 0 0;
+}
+div.ir-protocol-table .protocol-name { font-size:0.813em; font-weight:bold; }
+div.ir-protocol-table .table-name { font-size:0.813em; font-weight:bold; padding-left:1em; }
+div.ir-protocol-table .TextCellLabel { padding-left:1em; }
+div.ir-protocol-table td.modified { font-weight:bold; text-decoration:underline;  }
+#title_comment { padding-top: 1em; }
+#ic-warning { width:640px; color:red; font-size:0.813em; display:table }
+#ic-warning div { display:table-cell; }
+        </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>Nyquest Technology Co. Ltd</title>
+  </head>
+  <body>
+    <br />
+    <br />
+    <table>
+      <tr>
+        <td valign="top">
+          <img id="logo" src="data:image/bmp;base64,Qk1qTgAAAAAAADYAAAAoAAAAjwAAACMAAAABACAAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP38/AD9/PwA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A/fz8APr29gD59fUA/Pv7AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APbx8QCpdH8A8OfpAP///wD///8A////AP///wD///8A2sPIAItEUwCFOUkAiUFQAPr3+AD///8A2MHGAIM2RgCCNEUAiD5OAKRrdwDUub8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wCiaGUAcxsWAHAXEgB7KSQAomhlAOzg3wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AKhybwCiaGUAomhlAMOenAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wDhz9IAhTlJAG8WKQDt4eQA////AP///wD///8A////AP///wCvfokAbxYpAG8WKQCTUF4A////AP///wC3ipQAbxYpAG8WKQCLRFMAjUdWAHEZLACwgIoA+vj3AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AIxFQQBuEw4AbhMOAG4TDgBuEw4AfSwnAPHo5wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AdiAbAG4TDgBuEw4AoWZjAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AxaGpAHEZLABvFikAbxYpAOve4QD///8A////AP///wD///8A////AItEUwBvFikAbxYpALeKkwD///8A////AJNQXgBvFikAbxYpAK9+iQCOSFcAbxYpAG8WKQCLRFMA8ursAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AsYF+AK98egCPSUUAbhMOAG4TDgBuEw4Ap29sAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wB2IBsAbhMOAG4TDgChZmMA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AMSgpwBxGSwAbxYpAG8WKQBvFikA6tzfAP///wD///8A////AP///wDy6uwAcx0wAG8WKQBvFikA2sTJAP///wD38vIAdyM1AG8WKQBvFikA07e9AI9JWABvFikAbxYpAG8WKQCJQVAA8ursAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP38/ACVU1AAbhMOAG4TDgB0HBcA8+zsAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AHYgGwBuEw4AbhMOAKFmYwD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wDeyc0AdB4wAG8WKQBvFikAbxYpAG8WKQDq3N8A////AP///wD///8A////ANO3vQBvFikAbxYpAHUgMwD38vIA////ANrEyQBvFikAbxYpAHMcLwDz7OwAkEtaAG8WKQBvFikAbxYpAG8WKQCaXWoA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ANrCwQBuEw4AbhMOAG4TDgDFoZ8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APjz9AD07ewA////AP///wD///8AdiAbAG4TDgBuEw4AoWZjAP///wD///8A////AP///wD///8A////APv5+QDz7OsA/fz8AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9e/wAPPs6wD8+/sA////AP///wD///8A////AP///wD///8A////AP///wD///8A////APz7+wDz7OwA8+zsAPz7+wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9O3sAPXv7wD///8A////AP///wD///8A////AP///wD///8A9/P0AIU5SQBvFikAbxYpAG8WKQBvFikAbxYpAOja3QD///8A////AP///wD///8As4SOAG8WKQBvFikAjUdWAP///wD///8Au5GaAG8WKQBvFikAiUFQAP///wCRTVsAbxYpAG8WKQBvFikAbxYpAG8WKQDEn6cA////AP///wD///8A////AP///wD///8A////AP///wD///8A07i2AJxdWgCcXVoAnF1aAPDn5gD///8A////AP///wD///8A////AP///wC0hoMAnF1aAJxdWgCcXVoA38rJAP///wD///8A////AP///wD///8A7+XkAG8VEABuEw4AbhMOAJFNSQD///8A////AP///wD///8A////AP///wD///8A////AN3HxgCRS0cAchkVAHAXEgB+LSgAuY2LAPr49wB2IBsAbhMOAG4TDgChZmMA////AP///wD///8A////AO/l5AChZmMAdR4aAHAXEgB5JSAArHd1APXv7wDawsEAnF1aAJxdWgCcXVoA6t3cAP///wD///8A////AP///wDq3dwApm5rAHwqJgBxGBMAcBcSAHUeGgCWVVEA1769AP///wD///8A////AP///wD///8A+fX1AL6VkwCMRUEAdB0YAHAXEgBwFxIAdB0YAI1GQgDCm5kA+/n5AP///wD///8A////AP///wD///8AxaGfAIAxLQBwFxIAcBcSAHklIAC3iogA////AP///wD///8A////AP///wC5jpcAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA59jcAP///wD///8A////AP///wCRTVsAbxYpAG8WKQCwgIoA////AP///wCYWWYAbxYpAG8WKQCpdH8A////AJJOXQBvFikAbxYpAG8WKQBvFikAbxYpAHooOgD17/AA////AP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4A6dzbAP///wD///8A////AP///wD///8A1ry7AG4UDwBuEw4AbhMOAG4TDgDQs7IA////AP///wD///8A////AP///wDAmZcAbhMOAG4TDgBuEw4AcBcSAOrd3AD///8A////AP///wD///8A////AP///wDStrUAchkVAG4TDgBuEw4AbhMOAG4TDgBuEw4AlVNQAHQdGABuEw4AbhMOAKFmYwD///8A////AP///wD38vIAgzUwAG4TDgBuEw4AbhMOAG4TDgBuEw4AgzUwALiLiQBuEw4AbhMOAG4TDgDhzs0A////AP///wD///8A1bq5AHUeGgBuEw4AbhMOAG4TDgBuEw4AbhMOAG4TDgBuFA8At4mHAP///wD///8A////AO3h4QCFOTUAbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOAG4TDgCRS0cA9vHxAP///wD///8A////ANrCwQBuFA8AbhMOAG4TDgBuEw4AbhMOAKx3dQD///8A////AP///wD///8A+PP0AHooOgBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDm1toA////AP///wD///8A9vHxAHUgMwBvFikAbxYpANS5vwD///8A+/n5AHglNgBvFikAbxYpAM2ttAD///8Ak1BeAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpALqPmAD///8A////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgDp3NsA////AP///wD///8A////APn19QCDNTAAbhMOAG4TDgBuEw4AbhMOANCzsgD///8A////AP///wD///8A////AItCPgBuEw4AbhMOAG4TDgBuEw4AuY2LAP///wD///8A////AP///wD///8A8enpAHklIABuEw4AbhMOAHIZFQCka2cAr357AH4tKABuEw4AbhMOAG4TDgBuEw4AoWZjAP///wD///8A////AMOdmwBuEw4AbhMOAG4TDgB6JyIAr3x6AKp1cgB4Ix4AcxsWAG4TDgBuEw4AbhMOAOHOzQD///8A////AO3h4QB2IRwAbhMOAG4TDgB1HhoAp29sALGBfgCDNTAAbhMOAG4TDgBvFRAA0ra1AP///wD8+/sAjEM/AG4TDgBuEw4AcBcSAKlzcADOr64Az7GvALB+ewBzHBcAbhMOAG4TDgCncG0A////AP///wD///8AsH57AG4TDgBuEw4AbhMOAKFmYwCqdXIAy6qoAP///wD///8A////AP///wDJqK8AbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAOXV2AD///8A////AP///wDYwcYAbxYpAG8WKQBzHC8A9e/vAP///wDgzNEAbxYpAG8WKQBwGCsA7+boAP///wCVU2EAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAgzZGAPz7+wD///8A////AP///wD///8A////AP///wD///8Av5eVAG4TDgBuEw4AbhMOAOnc2wD///8A////AP///wD///8As4SBAG4TDgBuEw4AbhMOAG4TDgBuEw4A0LOyAP///wD///8A////AP///wDn19cAbhMOAG4TDgBuEw4AbhMOAG4TDgCHOzcA/fz8AP///wD///8A////AP///wC2iYYAbhMOAG4TDgBvFRAA0LOyAP///wD///8A8ejnAIAxLQBuEw4AbhMOAG4TDgChZmMA////AP///wD///8AoWZjAG4TDgBuEw4AbhMOAOHOzQD///8A////AOnc2wB4Ix4AbhMOAG4TDgBuEw4A4c7NAP///wD///8AqnVyAG4TDgBuEw4AcxwXAOHOzQD///8A////APPs6wB7KSQAbhMOAG8VEACRTUkA////ANrCwQBxGBMAbhMOAG4TDgC4i4kA////AP///wD///8A////ALGBfgBuEw4AbhMOAHQdGAD38vIA////AP///wCiZ2QAbhMOAG4TDgB4Ix4A+vj3AP///wD///8A////AP///wD///8A////AJ5jcABvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA5NPXAP///wD///8A////ALWIkQBvFikAbxYpAI1HVgD///8A////ALyTmwBvFikAbxYpAIY8TAD///8A////AJVTYQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA5dXYAP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4A6dzbAP///wD///8A////AOXV1AByGRUAbhMOAG4TDgBuEw4AbhMOAG4TDgDQs7IA////AP///wD///8A////ALGBfgBuEw4AbhMOAItCPgBwFxIAbhMOAG4TDgDhzs0A////AP///wD///8A////AIg+OQBuEw4AbhMOAI1GQgD///8A////AP///wD///8AyqmnAG4TDgBuEw4AbhMOAKFmYwD///8A////AP///wCTT0wAbhMOAG4TDgB6JyIA////AP///wD///8A////AKp1cgBuEw4AbhMOAG4TDgDhzs0A////AP38/AB7KSQAbhMOAG4TDgCmbmsA////AP///wD///8A////AOfX1wDn19cA9vDvAP///wD///8A////APz7+wDv5eQA4MzLAPfy8gD///8A////AP///wDt4uIAlVJOAG4TDgBuEw4AbhMOAO3h4QD///8A////AJ1gXQBuEw4AbhMOAHspJAD9/PwA////AP///wD///8A////AP///wD9/PwAfzBBAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDj0tYA////AP///wD///8AllVjAG8WKQBvFikArXqFAP///wD///8AmVtoAG8WKQBvFikApm56AP///wD///8AllVjAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDEoKcA////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgDp3NsA////AP///wD9/PwAkU1JAG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOANCzsgD///8A////AP///wD8+/sAfy8qAG4TDgBuEw4AyaelAI9JRQBuEw4AbhMOAK57eAD///8A////AP///wD69vYAchkVAG4TDgBuEw4Arnt4AP///wD///8A////AP///wDx6OcAcBcSAG4TDgBuEw4AoWZjAP///wD///8A////AJFLRwBuEw4AbhMOAIM1MAD///8A////AP///wD///8AvpWTAG4TDgBuEw4AbhMOAOHOzQD///8A7+XkAG4TDgBuEw4AbhMOALeKiADt4eEA7eHhAO3h4QDt4eEA7eHhAO3h4QDt4eEA7eHhAPz7+wD///8A////AP///wD///8A9e/vAM+xsACocm8AhTk1AHAXEgBuEw4AbhMOAG4TDgB1HhoA+PPzAP///wD///8AnWBdAG4TDgBuEw4AeykkAP38/AD///8A////AP///wD///8A////APbx8QB0HjAAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAOLQ1AD///8A////APv5+QB3IzUAbxYpAG8WKQDOsLYA////APz7+wB9LT4AbxYpAG8WKQDGpKsA////AP///wCXV2UAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpALGBjAD///8A////AP///wD///8A////AP///wD///8Av5eVAG4TDgBuEw4AbhMOAOnc2wD///8A////AMejoQBuEw4AbhMOAG4TDgBzGxYAbhMOAG4TDgBuEw4A0LOyAP///wD///8A////ANi/vgBuEw4AbhMOAHMbFgDz7OwAvpWTAG4TDgBuEw4AfComAP37/AD///8A////APDn5gBuEw4AbhMOAG4TDgC6j4wA////AP///wD///8A////AP38/AB0HRgAbhMOAG4TDgChZmMA////AP///wD///8AkUtHAG4TDgBuEw4AhTk1AP///wD///8A////AP///wDFoZ8AbhMOAG4TDgBuEw4A4c7NAP///wDk09IAbhMOAG4TDgBuEw4AbhMOAG4UDwBuFA8AbhQPAG4UDwBuFA8AbhQPAG4UDwBuFA8A59fXAP///wD///8A59jXAJ9kYAB0HRgAbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOAK15dgD///8A////AP///wCdYF0AbhMOAG4TDgB7KSQA/fz8AP///wD///8A////AP///wD///8A8ursAHEZLABvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA4c/SAP///wD///8A38vPAG8WKQBvFikAcRksAPHp6QD///8A5dXYAHAYKwBvFikAcBgrAOrc3wD///8A////AJhZZgBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAq3eCAP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4A6dzbAP///wDy6uoAeCQfAG4TDgBuEw4AcBcSALaJhgBuEw4AbhMOAG4TDgDQs7IA////AP///wD///8AomhlAG4TDgBuEw4Al1ZTAP///wDt4eEAbxUQAG4TDgBuEw4A1ry7AP///wD///8A7+XkAG4TDgBuEw4AbhMOALiLiQD///8A////AP///wD///8A////AHUeGgBuEw4AbhMOAKFmYwD///8A////AP///wCRS0cAbhMOAG4TDgCHOzcA////AP///wD///8A////AMelowBuEw4AbhMOAG4TDgDhzs0A////AOXV1ABuEw4AbhMOAG4TDgBwFxIAcRgTAHAXEgBwFxIAcRgTAHAXEgBuEw4AbhMOAG4TDgDt4uIA////AN3IxwB1HhoAbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOAHYhHAC2iYYA/Pv7AP///wD///8A////AJ1gXQBuEw4AbhMOAHspJAD9/PwA////AP///wD///8A////AP///wDw5+kAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDgzNEA////AP///wC6j5gAbxYpAG8WKQCIPk4A////AP///wDCnKQAbxYpAG8WKQCCNEUA/fv8AP///wD///8AmVtoAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQCncX0A////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgDp3NsA////AKJoZQBuEw4AbhMOAG4TDgCpc3AA2L++AG4TDgBuEw4AbhMOANCzsgD///8A////APbx8QB2IBsAbhMOAG4TDgDHpaMA////AP///wCNRkIAbhMOAG4TDgCiaGUA////AP///wD38/QAcBcSAG4TDgBuEw4AqXNwAP///wD///8A////AP///wD17+8AcRgTAG4TDgBuEw4AoWZjAP///wD///8A////AJFLRwBuEw4AbhMOAIc7NwD///8A////AP///wD///8Ax6WjAG4TDgBuEw4AbhMOAOHOzQD///8A8+zsAG4UDwBuEw4AbhMOALOEgQDz7OsA8+zrAPPs6wDz7OsAtomGAG4TDgBuEw4AdR4aAPjz9AD///8AjUZCAG4TDgBuEw4AbhMOAG4TDgBuEw4AfSwnAJ9kYADJp6UA9e/vAP///wD///8A////AP///wD///8AnWBdAG4TDgBuEw4AeykkAP38/AD///8A////AP///wD///8A////APPs7ABzHC8AbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAN/LzwD///8A////AJhZZgBvFikAbxYpAKp1gQD///8A////AJ5ibgBvFikAbxYpAKNqdgD///8A////AP///wCaXWoAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAK16hQD///8A////AP///wD///8A////AP///wD///8Av5eVAG4TDgBuEw4AbhMOAOnc2wDYv74AbxUQAG4TDgBuEw4AfComAPXv7wDYv74AbhMOAG4TDgBuEw4A0LOyAP///wD///8AyaelAG4TDgBuEw4AchkVAPLq6gD///8A////ALySkABuEw4AbhMOAHYhHAD38vIA////AP38/ACDNTAAbhMOAG4TDgCHOzcA/fz8AP///wD///8A////ANW6uQBuEw4AbhMOAG4TDgChZmMA////AP///wD///8AkUtHAG4TDgBuEw4Ahzs3AP///wD///8A////AP///wDHpaMAbhMOAG4TDgBuEw4A4c7NAP///wD///8AgjMvAG4TDgBuEw4AoGRhAP///wD///8A////AP///wCiaGUAbhMOAG4TDgCMRUEA////APv5+QBwFxIAbhMOAG4TDgB1HhoAtYaEAOTU0wD8+/sA////AP///wD///8A////AP///wD///8A////AP///wCdYF0AbhMOAG4TDgB7KSQA/fz8AP///wD///8A////AP///wD///8A9/LyAHQeMABvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA3snNAP///wD7+fkAfCs9AG8WKQBvFikAyqmwAP///wD9/PwAfzBBAG8WKQBvFikAxqSrAP///wD///8A////AJpdagBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAs4SOAP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4A49HRAIQ3MwBuEw4AbhMOAG4TDgDNrasA////ANi/vgBuEw4AbhMOAG4TDgDQs7IA////AP///wCVUk4AbhMOAG4TDgCVU1AA////AP///wD///8A6dzbAHAXEgBuEw4AbhMOAMuqqAD///8A////AK57eABuEw4AbhMOAG4TDgDAmZcA////AP///wD28fEAi0I+AG4TDgBuEw4AbhMOAKFmYwD///8A////AP///wCRS0cAbhMOAG4TDgCHOzcA////AP///wD///8A////AMelowBuEw4AbhMOAG4TDgDhzs0A////AP///wC1hoQAbhMOAG4TDgByGRUA38rJAP///wD///8A4c7NAHMcFwBuEw4AbhMOAL+XlQD///8A/fz8AHUeGgBuEw4AbhMOAKdwbQD///8A////AP///wDx6OcAgDEtAItCPgCaW1gAx6OhAP///wD9/PwA+/n5AJxdWgBuEw4AbhMOAHspJAD69vYA+/n5AP38/AD///8A////AP///wD///8AgzZGAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDdx8wA////AOTT1wBwFyoAbxYpAHEZLADr3uEA////AOve4QBxGSwAbxYpAHAYKwDl1dgA////AP///wD///8AnF9tAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDKqbAA////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgCfY2AAbhMOAG4TDgBuEw4Al1ZTAP38/AD///8A2L++AG4TDgBuEw4AbhMOANCzsgD///8A7eLiAHAXEgBuEw4AbhMOAMWhnwD///8A////AP///wD///8Ai0I+AG4TDgBuEw4AllVRAP///wD///8A7eHhAHYhHABuEw4AbhMOAG8VEACWVVEAqXNwAIAxLQByGRUAcBcSAG4TDgBuEw4AoWZjAP///wD///8A////AJFLRwBuEw4AbhMOAIc7NwD///8A////AP///wD///8Ax6WjAG4TDgBuEw4AbhMOAOHOzQD///8A////APXv7wB/LyoAbhMOAG4TDgB0HRgAomdkAKJoZQB1HhoAbhMOAG4TDgCDNTAA+PPzAP///wD///8AoGRhAG4TDgBuEw4AdR4aALGBfgDIpaMAv5eVAIU5NQBuEw4AbhMOAG4UDwDTuLYA////ANvEwwB4Ix4AcRgTAG4TDgBuEw4AbhQPAHgjHgB4Ix4Auo+MAP///wD///8A////AP///wCncX0AbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpANzGygD///8AwJqiAG8WKQBvFikAgzZGAP38/AD///8AyKatAG8WKQBvFikAfCs9APv5+QD///8A////AP///wCeYm4AbxYpAG8WKQBvFikAbxYpAG8WKQBvFikAcRksAO3h5AD///8A////AP///wD///8A////AP///wD///8Av5eVAG4TDgBuEw4AbhMOAG4UDwBuEw4AbhMOAHQdGADq3dwA////AP///wDYv74AbhMOAG4TDgBuEw4A0LOyAP///wC7kI4AbhMOAG4TDgBwFxIA8urqAP///wD///8A////AP///wC6j4wAbhMOAG4TDgByGRUA8OfmAP///wD///8A0bWzAHIZFQBuEw4AbhMOAG4TDgBuEw4AbhQPAMCZlwB2IBsAbhMOAG4TDgChZmMA////AP///wD///8AkUtHAG4TDgBuEw4Ahzs3AP///wD///8A////AP///wDHpaMAbhMOAG4TDgBuEw4A4c7NAP///wD///8A////AOTT0gB9LCcAbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4Afy8qAOfY1wD///8A////AP///wDw5+YAhTk1AG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4ArXl2AP///wD///8A2MC+AG4TDgBuEw4AbhMOAG4TDgBuEw4AbhMOAG4TDgC1hoQA////AP///wD///8A////ANjBxgBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQBvFikA2sTJAP///wCcX20AbxYpAG8WKQClbXkA////AP///wCka3cAbxYpAG8WKQCeYm4A////AP///wD///8A////AJ5jcABvFikAbxYpAG8WKQBvFikAbxYpAG8WKQCQS1oA////AP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4AbhMOAG4TDgBuEw4Auo+MAP///wD///8A////ANi/vgBuEw4AbhMOAG4TDgDQs7IA////ALqPjACmbmsApm5rALeJhwD///8A////AP///wD///8A////AOzg3wCmbmsApm5rAKZuawDdyMcA////AP///wD///8A49HRAJpaVwB2IRwAcxsWAIg+OQDOr64A////AKt2cwCmbmsApm5rAMWhnwD///8A////AP///wC7kI4Apm5rAKZuawC1hoQA////AP///wD///8A////AN3HxgCmbmsApm5rAKZuawDs4N8A////AP///wD///8A////APPs7ACwf3wAgjMvAHMbFgB0HBcAhTk1ALWGhAD17+8A////AP///wD///8A////AP///wD38vIAuY2LAIxDPwB2IBsAcxsWAHMcFwB9LCcAmltYANK2tQD///8A////AP///wDn2NcApm5rAIAxLQBuEw4AbhMOAHMcFwCmbmsApm5rANG1swD///8A////AP///wD///8A/fz8AIU5SQBvFikAbxYpAG8WKQBvFikAbxYpAG8WKQDaw8gA/fv8AH4vQABvFikAbxYpAMimrQD///8A/fz8AII0RQBvFikAbxYpAMKcpAD///8A////AP///wD///8An2RxAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpAMmorwD///8A////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgBuEw4AbhMOAIc8OAD7+fkA////AP///wD///8A2L++AG4TDgBuEw4AbhMOANCzsgD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP38/AD6+PcA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A+vj3APz7+wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP38/AD59fUA+/n5AP///wD///8A////AP///wD///8A////AP///wD///8AnWBdAG4TDgBuEw4AeykkAP38/AD///8A////AP///wD///8A////AP///wD///8Ax6SsAG8WKQBvFikAbxYpAG8WKQBvFikAbxYpANjBxgDq3N8AcBgrAG8WKQBwGCsA5tbaAP///wDw5+kAcBcqAG8WKQBvFikA49LWAP///wD///8A////AP///wCgZnMAbxYpAG8WKQBvFikAbxYpAG8WKQCDNkYA+vf4AP///wD///8A////AP///wD///8A////AP///wD///8Av5eVAG4TDgBuEw4AbhMOAG4TDgBwFxIA3cfGAP///wD///8A////AP///wDYv74AbhMOAG4TDgBuEw4A0LOyAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wCdYF0AbhMOAG4TDgB7KSQA/fz8AP///wD///8A////AP///wD///8A////AP///wD8+/sAk1BeAG8WKQBvFikAbxYpAG8WKQBvFikA17/EAMajqwBvFikAbxYpAH0tPgD8+/sA////AM6wtgBvFikAbxYpAHcjNQD7+fkA////AP///wD///8A////AKJpdQBvFikAbxYpAG8WKQBvFikAcBgrANW8wQD///8A////AP///wD///8A////AP///wD///8A////AP///wC/l5UAbhMOAG4TDgBuEw4AbhMOAKdwbQD///8A////AP///wD///8A////ANi/vgBuEw4AbhMOAG4TDgDQs7IA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ANrCwQCHPDgAbhMOAHspJAD9/PwA////AP///wD///8A////AP///wD///8A////AP///wDr3uEAfi9AAG8WKQBvFikAbxYpAG8WKQDWvsMAoml1AG8WKQBvFikAn2RxAP///wD///8AqnWBAG8WKQBvFikAl1dlAP///wD///8A////AP///wD///8Aoml1AG8WKQBvFikAbxYpAG8WKQCxgYwA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AL+XlQBuEw4AbhMOAG4TDgB8KiYA9O3sAP///wD///8A////AP///wD///8A2L++AG4TDgBuEw4AbhMOANCzsgD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APz7+wDFoZ8Ai0I+AP38/AD///8A////AP///wD///8A////AP///wD///8A////AP///wDaw8gAdyM1AG8WKQBvFikAbxYpANS5vwCAMkMAbxYpAG8WKQDDnqYA////AP///wCGPEwAbxYpAG8WKQC7kZoA////AP///wD///8A////AP///wCka3cAbxYpAG8WKQBvFikAnmJuAPv5+QD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A2sLBAKt2cwCrdnMAq3ZzANW6uQD///8A////AP///wD///8A////AP///wDo2tkAq3ZzAKt2cwCrdnMA5NPSAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD69vYA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wDaxMkAfCs9AG8WKQBvFikAwJqiAHAXKgBvFikAbxYpAOTT1wD///8A7+boAHEZLABvFikAbxYpAN/M0AD///8A////AP///wD///8A////AKVteQBwFyoAcBcqAKNqdgD69/gA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wDr3uEAllVjAG8WKQCiaXUAbxYpAG8WKQB4JTYA+/n5AP///wDQs7kAbxYpAG8WKQB1IDMA+fX1AP///wD///8A////AP///wD///8Apm56AHglNgDAmqIA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD8+/sAyKatAKVteQCZW2gAo2p2AL6WngD///8A////AM6wtgCeYm4Aoml1ALqPmAD///8A////AP///wD///8A////AP///wDRtbsA59jcAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA==" alt="Nyquest" />
+        </td>
+        <td align="center" style="padding:8">
+          <span class="TextTitle">NY8A051F Check List</span>
+          <br />
+          <span class="TextCellLabel"></span>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <font class="TextTableHead">*Project Information:</font>
+    <table id="project" class="option_table">
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(1). Client:</span>
+          <span class="TextCellItem">XXXXX</span>
+        </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(2). File Name:</span>
+          <span class="TextCellItem">Demo_1.bin</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(3). Asm Version:</span>
+          <span class="TextCellItem">NYASM 2.50</span>
+        </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(4). File Size:</span>
+          <span class="TextCellItem">2,504 bytes</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(5). Tool Version:</span>
+          <span class="TextCellItem">NYIDE 5.50</span>
+        </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(6). File Checksum:</span>
+          <span class="TextCellItem">04AFCD</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(7). ROM Usage:</span>
+          <span class="TextCellItem">689 / 1,024 words</span>
+        </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(8). Code Checksum:</span>
+          <span class="TextCellItem">DC54E3</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel">(9). Date:</span>
+          <span class="TextCellItem">2025/06/11</span>
+        </td>
+        <td class="TableCell1">
+          <span class="TextCellLabel"></span>
+          <span class="TextCellItem" />
+        </td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <font class="TextTableHead">*Function:</font>
+    <br />
+    <font class="TextTableHead">**Options:</font>
+    <br />
+    <table class="option_table" name="option">
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(1). High Oscillation Frequency:</span>
+          <span class="TextCellItem" style="">I_HRC</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(2). Low Oscillation Frequency:</span>
+          <span class="TextCellItem">I_LRC</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(3). High IRC Frequency:</span>
+          <span class="TextCellItem" style="">8 MHz</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(4). Instruction Clock:</span>
+          <span class="TextCellItem">2T</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(5). LVR Setting:</span>
+          <span class="TextCellItem" style="">Always On</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(6). LVR Voltage:</span>
+          <span class="TextCellItem">1.8V</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(7). VDD Voltage:</span>
+          <span class="TextCellItem" style="">5.0V</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(8). WDT:</span>
+          <span class="TextCellItem">Enable</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(9). WDT Event:</span>
+          <span class="TextCellItem" style="">Reset</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(10). WDT Time Base:</span>
+          <span class="TextCellItem">15ms</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(11). Startup Time:</span>
+          <span class="TextCellItem" style="">18ms</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(12). Timer0 Source:</span>
+          <span class="TextCellItem">EX_CKI</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(13). Read Output Data:</span>
+          <span class="TextCellItem" style="">Register</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(14). EX_CKI to Inst. Clock:</span>
+          <span class="TextCellItem">Sync</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(15). Startup Clock:</span>
+          <span class="TextCellItem" style="">I_HRC</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(16). Input Voltage Schmitt Trigger:</span>
+          <span class="TextCellItem">Enable</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(17). Input High Voltage (V<font size=1>IH</font>):</span>
+          <span class="TextCellItem" style="">0.7VDD</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(18). Input Low Voltage (V<font size=1>IL</font>):</span>
+          <span class="TextCellItem">0.3VDD</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="padding"> </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel">(19). Trim OSC:</span>
+          <span class="TextCellItem" style="">+ 0%</span>
+        </td>
+        <td class="TableCell2">
+          <span class="TextCellLabel" />
+          <span class="TextCellItem" />
+        </td>
+      </tr>
+    </table>
+    <br />
+    <div id="micron_pin">
+      <font class="TextTableHead">*I/O Pin Setting</font>
+      <br />
+      <table class="TableIOPinSetting">
+        <tr class="pin_table_header">
+          <td class="header_text">Pin</td>
+          <td class="header_text">Type</td>
+          <td class="header_text">Small Sink</td>
+          <td class="header_text">Small Drive / Sink</td>
+        </tr>
+        <tr class="row_odd">
+          <td>PB0</td>
+          <td>IO/INT</td>
+          <td>-</td>
+          <td>Disable</td>
+          <td class="hidden" />
+        </tr>
+        <tr class="row_even">
+          <td>PB1</td>
+          <td>IO/IR</td>
+          <td>-</td>
+          <td>Disable</td>
+          <td class="hidden" />
+        </tr>
+        <tr class="row_odd">
+          <td>PB2</td>
+          <td>IO/EX_CKI</td>
+          <td>-</td>
+          <td>Disable</td>
+          <td class="hidden" />
+        </tr>
+        <tr class="row_even">
+          <td>PB3</td>
+          <td>IO</td>
+          <td>Disable</td>
+          <td>-</td>
+          <td class="hidden" />
+        </tr>
+        <tr class="row_odd">
+          <td>PB4</td>
+          <td>IO</td>
+          <td>-</td>
+          <td>Disable</td>
+          <td class="hidden" />
+        </tr>
+        <tr class="row_even">
+          <td>PB5</td>
+          <td>IO</td>
+          <td>-</td>
+          <td>Disable</td>
+          <td class="hidden" />
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div id="title_comment">
+      <font class="TextTableHead">*Comments:</font>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <table width="640px">
+      <tr>
+        <td class="TextNote">*Note:</td>
+        <td class="TextNoteContent">If there is a copyright infringement of sound content or program algorithm while manufacturing this device by Nyquest Technology Co. Ltd, the customer/client shall assume all responsibilities and liabilities.</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+  </body>
+</html>

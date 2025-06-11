@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup Condition="">
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Demo_1</AssemblyName>
+    <BackupACC>True</BackupACC>
+    <BackupFSR>True</BackupFSR>
+    <BackupPCHBUF>True</BackupPCHBUF>
+    <BackupSTATUS>True</BackupSTATUS>
+    <BackupTBHP>False</BackupTBHP>
+    <Bank0Only>False</Bank0Only>
+    <BankselOptLevel>2</BankselOptLevel>
+    <BuildCCompilerVersion>NYC_NY8 1.90 [Build: 250527.00]</BuildCCompilerVersion>
+    <BuildNYASMVersion>NYASM 2.50 [Build: 250227.00]</BuildNYASMVersion>
+    <BuildNYIDEVersion>NYIDE 5.50 [Build: 250227.00]</BuildNYIDEVersion>
+    <CCompilerInstallDir>C:\Nyquest\NYC_NY8</CCompilerInstallDir>
+    <ChipId>NY8A051F</ChipId>
+    <ClientName>XXXXX</ClientName>
+    <CodeOptimization>Enable</CodeOptimization>
+    <Configuration>Debug</Configuration>
+    <EnterDebugMode>True</EnterDebugMode>
+    <FreezeMode>True</FreezeMode>
+    <GenAsmListFile>True</GenAsmListFile>
+    <GenListFile>True</GenListFile>
+    <GenMapFile>True</GenMapFile>
+    <IncludePath></IncludePath>
+    <InitEEPROM>True</InitEEPROM>
+    <InitializeBss>True</InitializeBss>
+    <LibraryFiles></LibraryFiles>
+    <NYASMInstallDir>D:\Nyquest\NYASM\</NYASMInstallDir>
+    <NYIDEInstallDir>D:\Nyquest\NYIDE\</NYIDEInstallDir>
+    <OutputType>bin</OutputType>
+    <Platform>CNy8</Platform>
+    <ProjectGuid>{03A26890-1FC5-43AD-A5E4-B7B1812AE58E}</ProjectGuid>
+    <ProjectOptionChanged>False</ProjectOptionChanged>
+    <ReservedInterruptRam>2</ReservedInterruptRam>
+    <RootNamespace>Demo_1</RootNamespace>
+    <TrimSetting>+ 0%</TrimSetting>
+    <WarningMsgCode0>112</WarningMsgCode0>
+    <WarningMsgCode1>84</WarningMsgCode1>
+    <WarningMsgCode10>11008</WarningMsgCode10>
+    <WarningMsgCode11>11008</WarningMsgCode11>
+    <WarningMsgCode12>11008</WarningMsgCode12>
+    <WarningMsgCode13>11008</WarningMsgCode13>
+    <WarningMsgCode14>11008</WarningMsgCode14>
+    <WarningMsgCode15>11008</WarningMsgCode15>
+    <WarningMsgCode2>11008</WarningMsgCode2>
+    <WarningMsgCode3>11008</WarningMsgCode3>
+    <WarningMsgCode4>11008</WarningMsgCode4>
+    <WarningMsgCode5>11008</WarningMsgCode5>
+    <WarningMsgCode6>11008</WarningMsgCode6>
+    <WarningMsgCode7>11008</WarningMsgCode7>
+    <WarningMsgCode8>11008</WarningMsgCode8>
+    <WarningMsgCode9>11008</WarningMsgCode9>
+    <WarningMsgCount>0</WarningMsgCount>
+    <WarningMsgFileName0>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\Delay.c</WarningMsgFileName0>
+    <WarningMsgFileName1>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\Delay.c</WarningMsgFileName1>
+    <WarningMsgFileName10>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName10>
+    <WarningMsgFileName11>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName11>
+    <WarningMsgFileName12>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName12>
+    <WarningMsgFileName13>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName13>
+    <WarningMsgFileName14>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName14>
+    <WarningMsgFileName15>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName15>
+    <WarningMsgFileName2>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\Key.h</WarningMsgFileName2>
+    <WarningMsgFileName3>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName3>
+    <WarningMsgFileName4>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName4>
+    <WarningMsgFileName5>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName5>
+    <WarningMsgFileName6>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName6>
+    <WarningMsgFileName7>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName7>
+    <WarningMsgFileName8>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName8>
+    <WarningMsgFileName9>C:\Users\Administrator\Desktop\新建文件夹\Demo_1\Demo_1\IncluDoc.h</WarningMsgFileName9>
+    <WarningMsgLineNumber0>59</WarningMsgLineNumber0>
+    <WarningMsgLineNumber1>59</WarningMsgLineNumber1>
+    <WarningMsgLineNumber10>71</WarningMsgLineNumber10>
+    <WarningMsgLineNumber11>39</WarningMsgLineNumber11>
+    <WarningMsgLineNumber12>71</WarningMsgLineNumber12>
+    <WarningMsgLineNumber13>39</WarningMsgLineNumber13>
+    <WarningMsgLineNumber14>71</WarningMsgLineNumber14>
+    <WarningMsgLineNumber15>39</WarningMsgLineNumber15>
+    <WarningMsgLineNumber2>7</WarningMsgLineNumber2>
+    <WarningMsgLineNumber3>76</WarningMsgLineNumber3>
+    <WarningMsgLineNumber4>71</WarningMsgLineNumber4>
+    <WarningMsgLineNumber5>39</WarningMsgLineNumber5>
+    <WarningMsgLineNumber6>71</WarningMsgLineNumber6>
+    <WarningMsgLineNumber7>39</WarningMsgLineNumber7>
+    <WarningMsgLineNumber8>71</WarningMsgLineNumber8>
+    <WarningMsgLineNumber9>39</WarningMsgLineNumber9>
+    <WarningMsgMessage0>Delay.c:59: warning 112: function 'power_off' implicit declaration</WarningMsgMessage0>
+    <WarningMsgMessage1>Delay.c:59: warning 84: 'auto' variable 'power_off' may be used before initialization</WarningMsgMessage1>
+    <WarningMsgMessage10>"CHARGE_DET" redefined</WarningMsgMessage10>
+    <WarningMsgMessage11>this is the location of the previous definition</WarningMsgMessage11>
+    <WarningMsgMessage12>"CHARGE_DET" redefined</WarningMsgMessage12>
+    <WarningMsgMessage13>this is the location of the previous definition</WarningMsgMessage13>
+    <WarningMsgMessage14>"CHARGE_DET" redefined</WarningMsgMessage14>
+    <WarningMsgMessage15>this is the location of the previous definition</WarningMsgMessage15>
+    <WarningMsgMessage2>"KEY" redefined</WarningMsgMessage2>
+    <WarningMsgMessage3>this is the location of the previous definition</WarningMsgMessage3>
+    <WarningMsgMessage4>"CHARGE_DET" redefined</WarningMsgMessage4>
+    <WarningMsgMessage5>this is the location of the previous definition</WarningMsgMessage5>
+    <WarningMsgMessage6>"CHARGE_DET" redefined</WarningMsgMessage6>
+    <WarningMsgMessage7>this is the location of the previous definition</WarningMsgMessage7>
+    <WarningMsgMessage8>"CHARGE_DET" redefined</WarningMsgMessage8>
+    <WarningMsgMessage9>this is the location of the previous definition</WarningMsgMessage9>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Charge.c" EntryPoint="false" MetaData="" />
+    <Compile Include="Delay.c" EntryPoint="false" MetaData="" />
+    <None Include="Demo_1.cb" EntryPoint="false" MetaData="" />
+    <Compile Include="IncluDoc.c" EntryPoint="false" MetaData="" />
+    <Compile Include="Key.c" EntryPoint="false" MetaData="" />
+    <Compile Include="LED.c" EntryPoint="false" MetaData="" />
+    <Compile Include="main.c" EntryPoint="false" MetaData="" />
+    <Compile Include="Motor.c" EntryPoint="false" MetaData="" />
+    <Compile Include="Power_Mode.c" EntryPoint="false" MetaData="" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Client: XXXXX" EntryPoint="false" MetaData="" />
+    <Reference Include="Config Block: Demo_1.cb" EntryPoint="false" MetaData="" />
+    <Reference Include="IC Body: NY8A051F" EntryPoint="false" MetaData="" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="..\..\..\..\..\..\Nyquest\NYC_NY8\include\NY8.h" EntryPoint="false" MetaData="Dependency Files\NY8.h" />
+    <ApplicationDefinition Include="..\..\..\..\..\..\Nyquest\NYC_NY8\include\ny8a051f.h" EntryPoint="false" MetaData="Dependency Files\ny8a051f.h" />
+    <ApplicationDefinition Include="..\..\..\..\..\..\Nyquest\NYC_NY8\include\ny8common.h" EntryPoint="false" MetaData="Dependency Files\ny8common.h" />
+    <ApplicationDefinition Include="Charge.h" EntryPoint="false" MetaData="Dependency Files\Charge.h" />
+    <ApplicationDefinition Include="D:\Nyquest\NY8_Example_Code\include\NY8 C\NY8_constant.h" EntryPoint="false" MetaData="Dependency Files\NY8_constant.h" />
+    <ApplicationDefinition Include="D:\Nyquest\NY8_Example_Code\include\NY8 C\ny8a051f_constant.h" EntryPoint="false" MetaData="Dependency Files\ny8a051f_constant.h" />
+    <ApplicationDefinition Include="Delay.h" EntryPoint="false" MetaData="Dependency Files\Delay.h" />
+    <Folder Include="Dependency Files" EntryPoint="false" MetaData="" />
+    <ApplicationDefinition Include="IncluDoc.h" EntryPoint="false" MetaData="Dependency Files\IncluDoc.h" />
+    <ApplicationDefinition Include="Key.h" EntryPoint="false" MetaData="Dependency Files\Key.h" />
+    <ApplicationDefinition Include="LED.h" EntryPoint="false" MetaData="Dependency Files\LED.h" />
+    <ApplicationDefinition Include="Motor.h" EntryPoint="false" MetaData="Dependency Files\Motor.h" />
+    <ApplicationDefinition Include="Power_Mode.h" EntryPoint="false" MetaData="Dependency Files\Power_Mode.h" />
+    <ApplicationDefinition Include="SysHead.h" EntryPoint="false" MetaData="Dependency Files\SysHead.h" />
+  </ItemGroup>
+  <Properties>
+    <Array name="ActionFiles" />
+    <Array name="bookmarks" />
+    <Array name="EEPROMOverwriteData" />
+    <Array name="ExternalResource" />
+    <Array name="files">
+      <Element value="main.c|True" />
+      <Element value="Key.c|False" />
+      <Element value="Key.h|False" />
+      <Element value="Power_Mode.c|False" />
+      <Element value="IncluDoc.h|False" />
+      <Element value="Charge.c|False" />
+      <Element value="Delay.c|False" />
+      <Element value="IncluDoc.c|False" />
+      <Element value="LED.c|False" />
+      <Element value="Motor.c|False" />
+    </Array>
+    <Array name="MelodyDatabaseFiles" />
+    <Array name="RegisterWindowExpandInfo">
+      <Element value="R-Page|False" />
+      <Element value="INDF@R-Page|False" />
+      <Element value="TMR0@R-Page|False" />
+      <Element value="PCL@R-Page|False" />
+      <Element value="STATUS@R-Page|False" />
+      <Element value="FSR@R-Page|False" />
+      <Element value="PORTB@R-Page|False" />
+      <Element value="PCON@R-Page|False" />
+      <Element value="BWUCON@R-Page|False" />
+      <Element value="PCHBUF@R-Page|False" />
+      <Element value="BPLCON@R-Page|False" />
+      <Element value="BPHCON@R-Page|False" />
+      <Element value="INTE@R-Page|False" />
+      <Element value="INTF@R-Page|False" />
+      <Element value="F-Page|False" />
+      <Element value="IOSTB@F-Page|False" />
+      <Element value="PS0CV@F-Page|False" />
+      <Element value="BODCON@F-Page|False" />
+      <Element value="PCON1@F-Page|False" />
+      <Element value="S-Page|False" />
+      <Element value="TMR1@S-Page|False" />
+      <Element value="T1CR1@S-Page|False" />
+      <Element value="T1CR2@S-Page|False" />
+      <Element value="PWM1DUTY@S-Page|False" />
+      <Element value="PS1CV@S-Page|False" />
+      <Element value="BZ1CR@S-Page|False" />
+      <Element value="IRCR@S-Page|False" />
+      <Element value="TBHP@S-Page|False" />
+      <Element value="TBHD@S-Page|False" />
+      <Element value="OSCCR@S-Page|False" />
+    </Array>
+    <Array name="ResourceManager" />
+    <Array name="UpdateableResources" />
+    <Array name="VoiceFiles" />
+    <Array name="VRModule" />
+    <Array name="WatchItemInfo">
+      <Element value="Charging_FLAG|0" />
+      <Element value="Full_Cnt|0" />
+      <Element value="Full_Cn|0" />
+      <Element value="Sleep_Cnt|0" />
+      <Element value="NewItem|0" />
+    </Array>
+  </Properties>
+</Project>

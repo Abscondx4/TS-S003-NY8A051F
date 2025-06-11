@@ -1,0 +1,382 @@
+
+                    Nyquest Technology Co., Ltd.
+
+NYASM 2.50
+
+    ADDR  OPCODE/VALUE              LINE   TAG  SOURCE                   STATEMENT    
+
+                                    1-    1     ;--------------------------------------------------------
+                                    1-    2     ; File Created by SDCC : free open source ISO C Compiler 
+                                    1-    3     ; Version 4.2.2 #0 (MSVC)
+                                    1-    4     ;--------------------------------------------------------
+                                    1-    5     ; NY8A port
+                                    1-    6     ;--------------------------------------------------------
+                                    1-    7     	.file	"IncluDoc.c"
+                                    1-    8     	list	p=NY8A051F,c=on
+                                    1-    9     	#include "ny8a051f.inc"
+                                    2-    1     #include "common.inc"
+                                    3-    1     ;; header file for 8 bit series assembly -*- mode:asm; coding:utf-8; -*-
+                                    3-    2     ;; author    Ting
+                                    3-    3     ;; date      2020-12-24
+                                    3-    4     ;;
+                                    3-    5     ;; # constant definition
+                                    3-    6     ;;
+                                    3-    7     ;; ## instruction result store destination
+                                    3-    8     ;;  - W: the result is stored in the ACC.
+                                    3-    9     ;;  - F: the result is stored back in register.
+                                    3-   10     ;; ## flag name in STATUS register
+                                    3-   11     ;;  - C, DC, Z
+                                    3-   12     ;;
+                                    3-   13     ;; # macro define
+                                    3-   14     ;;
+                                    3-   15     ;; ## RETURN, used by C compiler, end of function
+                                    3-   16     ;; ## PAGESEL, empty macro, maybe used by C compiler (bug?)
+                                    3-   17     ;; ## BANKSEL, replace by .banksel pseudo command, empty if disable bank.
+                                    3-   18     ;; ## MGOTO, replace by LGOTO (ic<=2K word) or FGOTO (ic>2K word)
+                                    3-   19     ;; ## MCALL, same as above
+                                    3-   20     ;;
+                                    3-   21     W       EQU 0
+                                    3-   21     ;W = 0
+                                    3-   22     F       EQU 1
+                                    3-   22     ;F = 1
+                                    3-   23     C		EQU	0
+                                    3-   23     ;C = 0
+                                    3-   24     DC		EQU	1
+                                    3-   24     ;DC = 1
+                                    3-   25     Z		EQU	2
+                                    3-   25     ;Z = 2
+                                    3-   28     ;; common register for all series
+                                    3-   29     INDF    EQU 0x00
+                                    3-   29     ;INDF = 0
+                                    3-   30     PCL     EQU 0x02
+                                    3-   30     ;PCL = 2
+                                    3-   31     STATUS  EQU 0x03
+                                    3-   31     ;STATUS = 3
+                                    3-   32     FSR     EQU 0x04
+                                    3-   32     ;FSR = 4
+                                    3-   33     PCHBUF  EQU 0x0A
+                                    3-   33     ;PCHBUF = 10
+                                    1-   11     ;--------------------------------------------------------
+                                    1-   12     ; external declarations
+                                    1-   13     ;--------------------------------------------------------
+                                    1-   14     	extern	_clear_ram
+                                    1-   15     	extern	_multi_16b
+                                    1-   16     	extern	_multi_8b
+                                    1-   17     	extern	_T0MD
+                                    1-   18     	extern	_PCON1
+                                    1-   19     	extern	_BODCON
+                                    1-   20     	extern	_PS0CV
+                                    1-   21     	extern	_IOSTB
+                                    1-   22     	extern	_OSCCR
+                                    1-   23     	extern	_TBHD
+                                    1-   24     	extern	_TBHP
+                                    1-   25     	extern	_IRCR
+                                    1-   26     	extern	_BZ1CR
+                                    1-   27     	extern	_PS1CV
+                                    1-   28     	extern	_PWM1DUTY
+                                    1-   29     	extern	_T1CR2
+                                    1-   30     	extern	_T1CR1
+                                    1-   31     	extern	_TMR1
+                                    1-   32     	extern	_PCHBUF
+                                    1-   33     	extern	_STATUS
+                                    1-   34     	extern	_PCL
+                                    1-   35     	extern	_TMR0
+                                    1-   36     	extern	_INTFbits
+                                    1-   37     	extern	_INTEbits
+                                    1-   38     	extern	_BPHCONbits
+                                    1-   39     	extern	_BPLCONbits
+                                    1-   40     	extern	_BWUCONbits
+                                    1-   41     	extern	_PCONbits
+                                    1-   42     	extern	_PORTBbits
+                                    1-   44     	extern PSAVE
+                                    1-   45     	extern SSAVE
+                                    1-   46     	extern WSAVE
+                                    1-   47     	extern STK12
+                                    1-   48     	extern ___STK12
+                                    1-   49     	extern STK11
+                                    1-   50     	extern ___STK11
+                                    1-   51     	extern STK10
+                                    1-   52     	extern ___STK10
+                                    1-   53     	extern STK09
+                                    1-   54     	extern ___STK09
+                                    1-   55     	extern STK08
+                                    1-   56     	extern ___STK08
+                                    1-   57     	extern STK07
+                                    1-   58     	extern ___STK07
+                                    1-   59     	extern STK06
+                                    1-   60     	extern ___STK06
+                                    1-   61     	extern STK05
+                                    1-   62     	extern ___STK05
+                                    1-   63     	extern STK04
+                                    1-   64     	extern ___STK04
+                                    1-   65     	extern STK03
+                                    1-   66     	extern ___STK03
+                                    1-   67     	extern STK02
+                                    1-   68     	extern ___STK02
+                                    1-   69     	extern STK01
+                                    1-   70     	extern ___STK01
+                                    1-   71     	extern STK00
+                                    1-   72     	extern ___STK00
+                                    1-   73     ;--------------------------------------------------------
+                                    1-   74     ; global declarations
+                                    1-   75     ;--------------------------------------------------------
+                                    1-   76     	extern	_INTF
+                                    1-   77     	extern	_INTE
+                                    1-   78     	extern	_BPHCON
+                                    1-   79     	extern	_BPLCON
+                                    1-   80     	extern	_BWUCON
+                                    1-   81     	extern	_PCON
+                                    1-   82     	extern	_PORTB
+                                    1-   83     	extern	_Timer_1min
+                                    1-   84     	extern	_Timer_1s
+                                    1-   85     	extern	_Timer_100ms
+                                    1-   86     	extern	_Timer_10ms
+                                    1-   87     	extern	_Timer_1ms
+                                    1-   88     	extern	_Unit_Time
+                                    1-   89     	extern	_LED_FLAG
+                                    1-   90     	extern	_Time_Temp
+                                    1-   91     	extern	_Charge_Cnt
+                                    1-   92     	extern	_LED_Charge_Time
+                                    1-   93     	extern	_Full_Cnt
+                                    1-   94     	extern	_Sleep_Cnt
+                                    1-   95     	extern	_Key_Short_LED_Cnt
+                                    1-   96     	extern	_Key_Long_Cnt
+                                    1-   97     	extern	_Key_Press_Cnt
+                                    1-   98     	extern	_Motor_Counter_FLAG
+                                    1-   99     	extern	_Motor_Peri_1000
+                                    1-  100     	extern	_Motor_Peri_100
+                                    1-  101     	extern	_Motor_Peri_10
+                                    1-  102     	extern	_Motor_Peri_1
+                                    1-  103     	extern	_M1_Cnt
+                                    1-  104     	extern	_M1_Freq_Change_Set
+                                    1-  105     	extern	_M1_Freq_Change
+                                    1-  106     	extern	_Motor_Freq_Cnt2
+                                    1-  107     	extern	_Motor_Freq_Cnt1
+                                    1-  108     	extern	_Motor_Freq_Cnt0
+                                    1-  109     	extern	_Motor_Freq_Change
+                                    1-  110     	extern	_M1_Duty_1_Set
+                                    1-  111     	extern	_M1_Duty_Set
+                                    1-  112     	extern	_M1_Duty
+                                    1-  113     	extern	_M1_Cycle_1_Set
+                                    1-  114     	extern	_M1_Cycle_Set
+                                    1-  115     	extern	_M1_Cycle
+                                    1-  116     	extern	_my_flag4
+                                    1-  117     	extern	_my_flag3
+                                    1-  118     	extern	_my_flag2
+                                    1-  119     	extern	_my_flag1
+                                    1-  120     	extern	_my_flag0
+                                    1-  121     	extern	_My_Flag
+                                    1-  122     	extern	_Init
+                                    1-  124     ;--------------------------------------------------------
+                                    1-  125     ; global definitions
+                                    1-  126     ;--------------------------------------------------------
+                                    1-  127     .segment "uninit"
+     0000                           1-  128     _My_Flag:
+                                    1-  129     	.res 1
+                                    1-  132     .segment "uninit"
+     0000                           1-  133     _Key_Short_LED_Cnt:
+                                    1-  134     	.res 1
+                                    1-  137     .segment "uninit"
+     0000                           1-  138     _Unit_Time:
+                                    1-  139     	.res 1
+                                    1-  142     .segment "uninit"
+     0000                           1-  143     _Timer_1ms:
+                                    1-  144     	.res 1
+                                    1-  147     .segment "uninit"
+     0000                           1-  148     _Timer_10ms:
+                                    1-  149     	.res 1
+                                    1-  152     .segment "uninit"
+     0000                           1-  153     _Timer_100ms:
+                                    1-  154     	.res 1
+                                    1-  157     .segment "uninit"
+     0000                           1-  158     _Timer_1s:
+                                    1-  159     	.res 1
+                                    1-  162     .segment "uninit"
+     0000                           1-  163     _Timer_1min:
+                                    1-  164     	.res 1
+                                    1-  167     ;--------------------------------------------------------
+                                    1-  168     ; absolute symbol definitions
+                                    1-  169     ;--------------------------------------------------------
+                                    1-  170     ;--------------------------------------------------------
+                                    1-  171     ; compiler-defined variables
+                                    1-  172     ;--------------------------------------------------------
+                                    1-  173     ;--------------------------------------------------------
+                                    1-  174     ; initialized data
+                                    1-  175     ;--------------------------------------------------------
+                                    1-  177     .segment "idata"
+     0000                           1-  178     _my_flag0:
+     0000 0000                      1-  181     	dw	0x00	; 0
+                                    1-  184     .segment "idata"
+     0000                           1-  185     _my_flag1:
+     0000 0000                      1-  188     	dw	0x00	; 0
+                                    1-  191     .segment "idata"
+     0000                           1-  192     _my_flag2:
+     0000 0000                      1-  195     	dw	0x00	; 0
+                                    1-  198     .segment "idata"
+     0000                           1-  199     _my_flag3:
+     0000 0000                      1-  202     	dw	0x00	; 0
+                                    1-  205     .segment "idata"
+     0000                           1-  206     _my_flag4:
+     0000 0000                      1-  209     	dw	0x00	; 0
+                                    1-  212     .segment "idata"
+     0000                           1-  213     _M1_Cycle:
+     0000 0000 0000                 1-  216     	dw	0x00, 0x00	;  0
+                                    1-  219     .segment "idata"
+     0000                           1-  220     _M1_Cycle_Set:
+     0000 0000 0000                 1-  223     	dw	0x00, 0x00	;  0
+                                    1-  226     .segment "idata"
+     0000                           1-  227     _M1_Cycle_1_Set:
+     0000 0000 0000                 1-  230     	dw	0x00, 0x00	;  0
+                                    1-  233     .segment "idata"
+     0000                           1-  234     _M1_Duty:
+     0000 0000 0000                 1-  237     	dw	0x00, 0x00	;  0
+                                    1-  240     .segment "idata"
+     0000                           1-  241     _M1_Duty_Set:
+     0000 0000 0000                 1-  244     	dw	0x00, 0x00	;  0
+                                    1-  247     .segment "idata"
+     0000                           1-  248     _M1_Duty_1_Set:
+     0000 0000 0000                 1-  251     	dw	0x00, 0x00	;  0
+                                    1-  254     .segment "idata"
+     0000                           1-  255     _Motor_Freq_Change:
+     0000 0000                      1-  258     	dw	0x00	; 0
+                                    1-  261     .segment "idata"
+     0000                           1-  262     _Motor_Freq_Cnt0:
+     0000 0000                      1-  265     	dw	0x00	; 0
+                                    1-  268     .segment "idata"
+     0000                           1-  269     _Motor_Freq_Cnt1:
+     0000 0000 0000                 1-  272     	dw	0x00, 0x00	;  0
+                                    1-  275     .segment "idata"
+     0000                           1-  276     _Motor_Freq_Cnt2:
+     0000 0000                      1-  279     	dw	0x00	; 0
+                                    1-  282     .segment "idata"
+     0000                           1-  283     _M1_Freq_Change:
+     0000 0000                      1-  286     	dw	0x00	; 0
+                                    1-  289     .segment "idata"
+     0000                           1-  290     _M1_Freq_Change_Set:
+     0000 0000                      1-  293     	dw	0x00	; 0
+                                    1-  296     .segment "idata"
+     0000                           1-  297     _M1_Cnt:
+     0000 0000 0000                 1-  300     	dw	0x00, 0x00	;  0
+                                    1-  303     .segment "idata"
+     0000                           1-  304     _Motor_Peri_1:
+     0000 0000 0000                 1-  307     	dw	0x00, 0x00	;  0
+                                    1-  310     .segment "idata"
+     0000                           1-  311     _Motor_Peri_10:
+     0000 0000 0000                 1-  314     	dw	0x00, 0x00	;  0
+                                    1-  317     .segment "idata"
+     0000                           1-  318     _Motor_Peri_100:
+     0000 0000 0000                 1-  321     	dw	0x00, 0x00	;  0
+                                    1-  324     .segment "idata"
+     0000                           1-  325     _Motor_Peri_1000:
+     0000 0000 0000                 1-  328     	dw	0x00, 0x00	;  0
+                                    1-  331     .segment "idata"
+     0000                           1-  332     _Motor_Counter_FLAG:
+     0000 0000 0000                 1-  335     	dw	0x00, 0x00	;  0
+                                    1-  338     .segment "idata"
+     0000                           1-  339     _Key_Press_Cnt:
+     0000 0000                      1-  342     	dw	0x00	; 0
+                                    1-  345     .segment "idata"
+     0000                           1-  346     _Key_Long_Cnt:
+     0000 0000                      1-  349     	dw	0x00	; 0
+                                    1-  352     .segment "idata"
+     0000                           1-  353     _Sleep_Cnt:
+     0000 0000 0000                 1-  356     	dw	0x00, 0x00	;  0
+                                    1-  359     .segment "idata"
+     0000                           1-  360     _Full_Cnt:
+     0000 0000                      1-  363     	dw	0x00	; 0
+                                    1-  366     .segment "idata"
+     0000                           1-  367     _LED_Charge_Time:
+     0000 0000                      1-  370     	dw	0x00	; 0
+                                    1-  373     .segment "idata"
+     0000                           1-  374     _Charge_Cnt:
+     0000 0000                      1-  377     	dw	0x00	; 0
+                                    1-  380     .segment "idata"
+     0000                           1-  381     _Time_Temp:
+     0000 0001                      1-  384     	dw	0x01	; 1
+                                    1-  387     .segment "idata"
+     0000                           1-  388     _LED_FLAG:
+     0000 0000                      1-  391     	dw	0x00	; 0
+                                    1-  393     ;--------------------------------------------------------
+                                    1-  394     ; initialized absolute data
+                                    1-  395     ;--------------------------------------------------------
+                                    1-  396     ;--------------------------------------------------------
+                                    1-  397     ; overlayable items in internal ram 
+                                    1-  398     ;--------------------------------------------------------
+                                    1-  399     ;	udata_ovr
+                                    1-  400     ;--------------------------------------------------------
+                                    1-  401     ; code
+                                    1-  402     ;--------------------------------------------------------
+                                    1-  403     ; code_IncluDoc	code
+                                    1-  404     ;***
+                                    1-  405     ;  pBlock Stats: dbName = C
+                                    1-  406     ;***
+                                    1-  407     ;has an exit
+                                    1-  408     ;; Starting pCode block
+                                    1-  409     .segment "code"; module=IncluDoc, function=_Init
+     0000                           1-  411     _Init:
+                                    1-  412     ; 2 exit points
+                                    1-  413     	.line	60, "IncluDoc.c"; 	PCON = C_WDT_En|C_LVR_En ;
+     0000 2188                      1-  414     	MOVIA	0x88
+     0001 00rr                      1-  415     	MOVAR	_PCON
+                                    1-  416     	.line	63, "IncluDoc.c"; 	IOSTB=C_PB0_Input | C_PB1_Output | C_PB2_Output | C_PB3_Input; 
+     0002 2109                      1-  417     	MOVIA	0x09
+     0003 000r                      1-  418     	IOST	_IOSTB
+                                    1-  419     	.line	64, "IncluDoc.c"; 	PORTB = 0x02;   
+     0004 2102                      1-  420     	MOVIA	0x02
+     0005 00rr                      1-  421     	MOVAR	_PORTB
+                                    1-  422     	.line	65, "IncluDoc.c"; 	BPHCON = 0xf1;
+     0006 21F1                      1-  423     	MOVIA	0xf1
+     0007 00rr                      1-  424     	MOVAR	_BPHCON
+                                    1-  425     	.line	68, "IncluDoc.c"; 	PCON1=C_TMR0_En;         //启动定时器0；
+     0008 2101                      1-  426     	MOVIA	0x01
+     0009 000r                      1-  427     	IOST	_PCON1
+                                    1-  428     	.line	69, "IncluDoc.c"; 	TMR0=0x38;               //设置为216
+     000A 2138                      1-  429     	MOVIA	0x38
+     000B 00rr                      1-  430     	MOVAR	_TMR0
+                                    1-  431     	.line	70, "IncluDoc.c"; 	T0MD=C_PS0_TMR0 | C_PS0_Div2;         //分频器给TMR0
+     000C 0200                      1-  432     	CLRA	
+     000D 0003                      1-  433     	T0MD	
+                                    1-  434     	.line	74, "IncluDoc.c"; 	BWUCON =C_PB0_Wakeup | C_PB3_Wakeup;
+     000E 2109                      1-  435     	MOVIA	0x09
+     000F 00rr                      1-  436     	MOVAR	_BWUCON
+                                    1-  437     	.line	78, "IncluDoc.c"; 	T0IE = 1;
+     0010 18rr                      1-  438     	BSR	_INTE,0
+                                    1-  439     	.line	81, "IncluDoc.c"; 	INTF = 0;
+     0011 02rr                      1-  440     	CLRR	_INTF
+                                    1-  441     	.line	82, "IncluDoc.c"; 	ENI();
+     0012 0004                      1-  442     	ENI
+                                    1-  443     	.line	84, "IncluDoc.c"; 	}
+                                    1-  444     	RETURN	
+     0013 0010                      3-   39 m1      ret
+                                    1-  445     ; exit point of _Init
+                                    1-  448     ;	code size estimation:
+                                    1-  449     ;	   19+    0 =    19 instructions (   38 byte)
+                                    1-  451     	end
+
+SYMBOL TABLE            TYPE     VALUE
+__pin_count__           Constant 00000006
+__processor__           Constant 00800515
+C                       Constant 00000000
+DC                      Constant 00000001
+ENABLE_RAM_BANK         Constant 00000000
+F                       Constant 00000001
+FSR                     Constant 00000004
+INDF                    Constant 00000000
+PCHBUF                  Constant 0000000A
+PCL                     Constant 00000002
+STATUS                  Constant 00000003
+USEFGOTO                Constant 00000000
+W                       Constant 00000000
+Z                       Constant 00000002
+
+
+SOURCE FILE TABLE
+001 OBJ/IncluDoc.s
+002 ny8a051f.inc
+003 common.inc
+004 IncluDoc.c
+
+PROCESSOR    = NY8A051F (8 bits)
+PROGRAM ROM  = 0x00000000 - 0x000003FF
+DATA ROM     = 0x00000000 - 0x000003FF
+SRAM / SFR   = 0x00000000 - 0x00000000

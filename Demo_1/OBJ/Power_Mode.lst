@@ -1,0 +1,269 @@
+
+                    Nyquest Technology Co., Ltd.
+
+NYASM 2.50
+
+    ADDR  OPCODE/VALUE              LINE   TAG  SOURCE                   STATEMENT    
+
+                                    1-    1     ;--------------------------------------------------------
+                                    1-    2     ; File Created by SDCC : free open source ISO C Compiler 
+                                    1-    3     ; Version 4.2.2 #0 (MSVC)
+                                    1-    4     ;--------------------------------------------------------
+                                    1-    5     ; NY8A port
+                                    1-    6     ;--------------------------------------------------------
+                                    1-    7     	.file	"Power_Mode.c"
+                                    1-    8     	list	p=NY8A051F,c=on
+                                    1-    9     	#include "ny8a051f.inc"
+                                    2-    1     #include "common.inc"
+                                    3-    1     ;; header file for 8 bit series assembly -*- mode:asm; coding:utf-8; -*-
+                                    3-    2     ;; author    Ting
+                                    3-    3     ;; date      2020-12-24
+                                    3-    4     ;;
+                                    3-    5     ;; # constant definition
+                                    3-    6     ;;
+                                    3-    7     ;; ## instruction result store destination
+                                    3-    8     ;;  - W: the result is stored in the ACC.
+                                    3-    9     ;;  - F: the result is stored back in register.
+                                    3-   10     ;; ## flag name in STATUS register
+                                    3-   11     ;;  - C, DC, Z
+                                    3-   12     ;;
+                                    3-   13     ;; # macro define
+                                    3-   14     ;;
+                                    3-   15     ;; ## RETURN, used by C compiler, end of function
+                                    3-   16     ;; ## PAGESEL, empty macro, maybe used by C compiler (bug?)
+                                    3-   17     ;; ## BANKSEL, replace by .banksel pseudo command, empty if disable bank.
+                                    3-   18     ;; ## MGOTO, replace by LGOTO (ic<=2K word) or FGOTO (ic>2K word)
+                                    3-   19     ;; ## MCALL, same as above
+                                    3-   20     ;;
+                                    3-   21     W       EQU 0
+                                    3-   21     ;W = 0
+                                    3-   22     F       EQU 1
+                                    3-   22     ;F = 1
+                                    3-   23     C		EQU	0
+                                    3-   23     ;C = 0
+                                    3-   24     DC		EQU	1
+                                    3-   24     ;DC = 1
+                                    3-   25     Z		EQU	2
+                                    3-   25     ;Z = 2
+                                    3-   28     ;; common register for all series
+                                    3-   29     INDF    EQU 0x00
+                                    3-   29     ;INDF = 0
+                                    3-   30     PCL     EQU 0x02
+                                    3-   30     ;PCL = 2
+                                    3-   31     STATUS  EQU 0x03
+                                    3-   31     ;STATUS = 3
+                                    3-   32     FSR     EQU 0x04
+                                    3-   32     ;FSR = 4
+                                    3-   33     PCHBUF  EQU 0x0A
+                                    3-   33     ;PCHBUF = 10
+                                    1-   11     ;--------------------------------------------------------
+                                    1-   12     ; external declarations
+                                    1-   13     ;--------------------------------------------------------
+                                    1-   14     	extern	_Init
+                                    1-   15     	extern	_clear_ram
+                                    1-   16     	extern	_multi_16b
+                                    1-   17     	extern	_multi_8b
+                                    1-   18     	extern	_T0MD
+                                    1-   19     	extern	_PCON1
+                                    1-   20     	extern	_BODCON
+                                    1-   21     	extern	_PS0CV
+                                    1-   22     	extern	_IOSTB
+                                    1-   23     	extern	_OSCCR
+                                    1-   24     	extern	_TBHD
+                                    1-   25     	extern	_TBHP
+                                    1-   26     	extern	_IRCR
+                                    1-   27     	extern	_BZ1CR
+                                    1-   28     	extern	_PS1CV
+                                    1-   29     	extern	_PWM1DUTY
+                                    1-   30     	extern	_T1CR2
+                                    1-   31     	extern	_T1CR1
+                                    1-   32     	extern	_TMR1
+                                    1-   33     	extern	_PCHBUF
+                                    1-   34     	extern	_STATUS
+                                    1-   35     	extern	_PCL
+                                    1-   36     	extern	_TMR0
+                                    1-   37     	extern	_Timer_1min
+                                    1-   38     	extern	_Timer_1s
+                                    1-   39     	extern	_Timer_100ms
+                                    1-   40     	extern	_Timer_10ms
+                                    1-   41     	extern	_Timer_1ms
+                                    1-   42     	extern	_Unit_Time
+                                    1-   43     	extern	_LED_FLAG
+                                    1-   44     	extern	_Time_Temp
+                                    1-   45     	extern	_Sleep_Cnt
+                                    1-   46     	extern	_Key_Short_LED_Cnt
+                                    1-   47     	extern	_Key_Long_Cnt
+                                    1-   48     	extern	_Key_Press_Cnt
+                                    1-   49     	extern	_Motor_Counter_FLAG
+                                    1-   50     	extern	_Motor_Peri_1000
+                                    1-   51     	extern	_Motor_Peri_100
+                                    1-   52     	extern	_Motor_Peri_10
+                                    1-   53     	extern	_Motor_Peri_1
+                                    1-   54     	extern	_M1_Cnt
+                                    1-   55     	extern	_M1_Freq_Change_Set
+                                    1-   56     	extern	_M1_Freq_Change
+                                    1-   57     	extern	_Motor_Freq_Cnt2
+                                    1-   58     	extern	_Motor_Freq_Cnt1
+                                    1-   59     	extern	_Motor_Freq_Cnt0
+                                    1-   60     	extern	_Motor_Freq_Change
+                                    1-   61     	extern	_M1_Duty_1_Set
+                                    1-   62     	extern	_M1_Duty_Set
+                                    1-   63     	extern	_M1_Duty
+                                    1-   64     	extern	_M1_Cycle_1_Set
+                                    1-   65     	extern	_M1_Cycle_Set
+                                    1-   66     	extern	_M1_Cycle
+                                    1-   67     	extern	_Charge_Cnt
+                                    1-   68     	extern	_LED_Charge_Time
+                                    1-   69     	extern	_Full_Cnt
+                                    1-   70     	extern	_my_flag4
+                                    1-   71     	extern	_my_flag3
+                                    1-   72     	extern	_my_flag2
+                                    1-   73     	extern	_My_Flag
+                                    1-   74     	extern	_INTFbits
+                                    1-   75     	extern	_INTEbits
+                                    1-   76     	extern	_BPHCONbits
+                                    1-   77     	extern	_BPLCONbits
+                                    1-   78     	extern	_BWUCONbits
+                                    1-   79     	extern	_PCONbits
+                                    1-   80     	extern	_PORTBbits
+                                    1-   82     	extern PSAVE
+                                    1-   83     	extern SSAVE
+                                    1-   84     	extern WSAVE
+                                    1-   85     	extern STK12
+                                    1-   86     	extern ___STK12
+                                    1-   87     	extern STK11
+                                    1-   88     	extern ___STK11
+                                    1-   89     	extern STK10
+                                    1-   90     	extern ___STK10
+                                    1-   91     	extern STK09
+                                    1-   92     	extern ___STK09
+                                    1-   93     	extern STK08
+                                    1-   94     	extern ___STK08
+                                    1-   95     	extern STK07
+                                    1-   96     	extern ___STK07
+                                    1-   97     	extern STK06
+                                    1-   98     	extern ___STK06
+                                    1-   99     	extern STK05
+                                    1-  100     	extern ___STK05
+                                    1-  101     	extern STK04
+                                    1-  102     	extern ___STK04
+                                    1-  103     	extern STK03
+                                    1-  104     	extern ___STK03
+                                    1-  105     	extern STK02
+                                    1-  106     	extern ___STK02
+                                    1-  107     	extern STK01
+                                    1-  108     	extern ___STK01
+                                    1-  109     	extern STK00
+                                    1-  110     	extern ___STK00
+                                    1-  111     ;--------------------------------------------------------
+                                    1-  112     ; global declarations
+                                    1-  113     ;--------------------------------------------------------
+                                    1-  114     	extern	_my_flag0
+                                    1-  115     	extern	_my_flag1
+                                    1-  116     	extern	_INTF
+                                    1-  117     	extern	_INTE
+                                    1-  118     	extern	_BPHCON
+                                    1-  119     	extern	_BPLCON
+                                    1-  120     	extern	_BWUCON
+                                    1-  121     	extern	_PCON
+                                    1-  122     	extern	_PORTB
+                                    1-  123     	extern	_Switch_Power_Mode
+                                    1-  124     	extern	_Power_Off
+                                    1-  126     ;--------------------------------------------------------
+                                    1-  127     ; global definitions
+                                    1-  128     ;--------------------------------------------------------
+                                    1-  129     ;--------------------------------------------------------
+                                    1-  130     ; absolute symbol definitions
+                                    1-  131     ;--------------------------------------------------------
+                                    1-  132     ;--------------------------------------------------------
+                                    1-  133     ; compiler-defined variables
+                                    1-  134     ;--------------------------------------------------------
+                                    1-  135     ;--------------------------------------------------------
+                                    1-  136     ; initialized data
+                                    1-  137     ;--------------------------------------------------------
+                                    1-  138     ;--------------------------------------------------------
+                                    1-  139     ; initialized absolute data
+                                    1-  140     ;--------------------------------------------------------
+                                    1-  141     ;--------------------------------------------------------
+                                    1-  142     ; overlayable items in internal ram 
+                                    1-  143     ;--------------------------------------------------------
+                                    1-  144     ;	udata_ovr
+                                    1-  145     ;--------------------------------------------------------
+                                    1-  146     ; code
+                                    1-  147     ;--------------------------------------------------------
+                                    1-  148     ; code_Power_Mode	code
+                                    1-  149     ;***
+                                    1-  150     ;  pBlock Stats: dbName = C
+                                    1-  151     ;***
+                                    1-  152     ;has an exit
+                                    1-  153     ;; Starting pCode block
+                                    1-  154     .segment "code"; module=Power_Mode, function=_Power_Off
+     0000                           1-  156     _Power_Off:
+                                    1-  157     ; 2 exit points
+                                    1-  158     	.line	14, "Power_Mode.c"; 	Power_OnOff_FLAG = 0;
+     0000 1Crr                      1-  159     	BCR	_my_flag0,0
+                                    1-  160     	.line	15, "Power_Mode.c"; 	Sleep_Cnt = 0;
+     0001 02rr                      1-  161     	CLRR	_Sleep_Cnt
+     0002 02rr                      1-  162     	CLRR	(_Sleep_Cnt + 1)
+                                    1-  163     	.line	16, "Power_Mode.c"; 	M1_Work_FLAG = 0;
+     0003 1Drr                      1-  164     	BCR	_my_flag1,2
+                                    1-  165     	.line	17, "Power_Mode.c"; 	M1_Freq_Change = 0;
+     0004 02rr                      1-  166     	CLRR	_M1_Freq_Change
+                                    1-  167     	.line	18, "Power_Mode.c"; 	M1_OFF;
+     0005 1Drr                      1-  168     	BCR	_PORTB,2
+                                    1-  169     	.line	19, "Power_Mode.c"; 	}
+                                    1-  170     	RETURN	
+     0006 0010                      3-   39 m1      ret
+                                    1-  171     ; exit point of _Power_Off
+                                    1-  173     ;***
+                                    1-  174     ;  pBlock Stats: dbName = C
+                                    1-  175     ;***
+                                    1-  176     ;has an exit
+                                    1-  177     ;; Starting pCode block
+                                    1-  178     .segment "code"; module=Power_Mode, function=_Switch_Power_Mode
+     0000                           1-  180     _Switch_Power_Mode:
+                                    1-  181     ; 2 exit points
+                                    1-  182     	.line	5, "Power_Mode.c"; 	if (key_long_sign)
+     0000 09rr                      1-  183     	BTRSS	_My_Flag,2
+                                    1-  184     	MGOTO	_02007_DS_
+     0001 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  185     	.line	7, "Power_Mode.c"; 	UPDATE_REG(PORTB);  // 读取 PORTB 数据寄存器
+     0002 01rr                      1-  186     	MOVR	_PORTB,F
+                                    1-  187     	.line	8, "Power_Mode.c"; 	SLEEP();            // 执行指令进入 Halt 模式
+     0003 0001                      1-  188     	sleep
+     0004                           1-  189     _02007_DS_:
+                                    1-  190     	.line	10, "Power_Mode.c"; 	}
+                                    1-  191     	RETURN	
+     0004 0010                      3-   39 m1      ret
+                                    1-  192     ; exit point of _Switch_Power_Mode
+                                    1-  195     ;	code size estimation:
+                                    1-  196     ;	   10+    0 =    10 instructions (   20 byte)
+                                    1-  198     	end
+
+SYMBOL TABLE            TYPE     VALUE
+__pin_count__           Constant 00000006
+__processor__           Constant 00800515
+C                       Constant 00000000
+DC                      Constant 00000001
+ENABLE_RAM_BANK         Constant 00000000
+F                       Constant 00000001
+FSR                     Constant 00000004
+INDF                    Constant 00000000
+PCHBUF                  Constant 0000000A
+PCL                     Constant 00000002
+STATUS                  Constant 00000003
+USEFGOTO                Constant 00000000
+W                       Constant 00000000
+Z                       Constant 00000002
+
+
+SOURCE FILE TABLE
+001 OBJ/Power_Mode.s
+002 ny8a051f.inc
+003 common.inc
+004 Power_Mode.c
+
+PROCESSOR    = NY8A051F (8 bits)
+PROGRAM ROM  = 0x00000000 - 0x000003FF
+DATA ROM     = 0x00000000 - 0x000003FF
+SRAM / SFR   = 0x00000000 - 0x00000000

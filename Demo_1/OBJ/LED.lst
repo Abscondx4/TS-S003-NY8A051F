@@ -1,0 +1,342 @@
+
+                    Nyquest Technology Co., Ltd.
+
+NYASM 2.50
+
+    ADDR  OPCODE/VALUE              LINE   TAG  SOURCE                   STATEMENT    
+
+                                    1-    1     ;--------------------------------------------------------
+                                    1-    2     ; File Created by SDCC : free open source ISO C Compiler 
+                                    1-    3     ; Version 4.2.2 #0 (MSVC)
+                                    1-    4     ;--------------------------------------------------------
+                                    1-    5     ; NY8A port
+                                    1-    6     ;--------------------------------------------------------
+                                    1-    7     	.file	"LED.c"
+                                    1-    8     	list	p=NY8A051F,c=on
+                                    1-    9     	#include "ny8a051f.inc"
+                                    2-    1     #include "common.inc"
+                                    3-    1     ;; header file for 8 bit series assembly -*- mode:asm; coding:utf-8; -*-
+                                    3-    2     ;; author    Ting
+                                    3-    3     ;; date      2020-12-24
+                                    3-    4     ;;
+                                    3-    5     ;; # constant definition
+                                    3-    6     ;;
+                                    3-    7     ;; ## instruction result store destination
+                                    3-    8     ;;  - W: the result is stored in the ACC.
+                                    3-    9     ;;  - F: the result is stored back in register.
+                                    3-   10     ;; ## flag name in STATUS register
+                                    3-   11     ;;  - C, DC, Z
+                                    3-   12     ;;
+                                    3-   13     ;; # macro define
+                                    3-   14     ;;
+                                    3-   15     ;; ## RETURN, used by C compiler, end of function
+                                    3-   16     ;; ## PAGESEL, empty macro, maybe used by C compiler (bug?)
+                                    3-   17     ;; ## BANKSEL, replace by .banksel pseudo command, empty if disable bank.
+                                    3-   18     ;; ## MGOTO, replace by LGOTO (ic<=2K word) or FGOTO (ic>2K word)
+                                    3-   19     ;; ## MCALL, same as above
+                                    3-   20     ;;
+                                    3-   21     W       EQU 0
+                                    3-   21     ;W = 0
+                                    3-   22     F       EQU 1
+                                    3-   22     ;F = 1
+                                    3-   23     C		EQU	0
+                                    3-   23     ;C = 0
+                                    3-   24     DC		EQU	1
+                                    3-   24     ;DC = 1
+                                    3-   25     Z		EQU	2
+                                    3-   25     ;Z = 2
+                                    3-   28     ;; common register for all series
+                                    3-   29     INDF    EQU 0x00
+                                    3-   29     ;INDF = 0
+                                    3-   30     PCL     EQU 0x02
+                                    3-   30     ;PCL = 2
+                                    3-   31     STATUS  EQU 0x03
+                                    3-   31     ;STATUS = 3
+                                    3-   32     FSR     EQU 0x04
+                                    3-   32     ;FSR = 4
+                                    3-   33     PCHBUF  EQU 0x0A
+                                    3-   33     ;PCHBUF = 10
+                                    1-   11     ;--------------------------------------------------------
+                                    1-   12     ; external declarations
+                                    1-   13     ;--------------------------------------------------------
+                                    1-   14     	extern	_Init
+                                    1-   15     	extern	_clear_ram
+                                    1-   16     	extern	_multi_16b
+                                    1-   17     	extern	_multi_8b
+                                    1-   18     	extern	_T0MD
+                                    1-   19     	extern	_PCON1
+                                    1-   20     	extern	_BODCON
+                                    1-   21     	extern	_PS0CV
+                                    1-   22     	extern	_IOSTB
+                                    1-   23     	extern	_OSCCR
+                                    1-   24     	extern	_TBHD
+                                    1-   25     	extern	_TBHP
+                                    1-   26     	extern	_IRCR
+                                    1-   27     	extern	_BZ1CR
+                                    1-   28     	extern	_PS1CV
+                                    1-   29     	extern	_PWM1DUTY
+                                    1-   30     	extern	_T1CR2
+                                    1-   31     	extern	_T1CR1
+                                    1-   32     	extern	_TMR1
+                                    1-   33     	extern	_PCHBUF
+                                    1-   34     	extern	_STATUS
+                                    1-   35     	extern	_PCL
+                                    1-   36     	extern	_TMR0
+                                    1-   37     	extern	_Timer_1min
+                                    1-   38     	extern	_Timer_1s
+                                    1-   39     	extern	_Timer_100ms
+                                    1-   40     	extern	_Timer_10ms
+                                    1-   41     	extern	_Timer_1ms
+                                    1-   42     	extern	_Unit_Time
+                                    1-   43     	extern	_LED_FLAG
+                                    1-   44     	extern	_Time_Temp
+                                    1-   45     	extern	_Sleep_Cnt
+                                    1-   46     	extern	_Key_Short_LED_Cnt
+                                    1-   47     	extern	_Key_Long_Cnt
+                                    1-   48     	extern	_Key_Press_Cnt
+                                    1-   49     	extern	_Motor_Counter_FLAG
+                                    1-   50     	extern	_Motor_Peri_1000
+                                    1-   51     	extern	_Motor_Peri_100
+                                    1-   52     	extern	_Motor_Peri_10
+                                    1-   53     	extern	_Motor_Peri_1
+                                    1-   54     	extern	_M1_Cnt
+                                    1-   55     	extern	_M1_Freq_Change_Set
+                                    1-   56     	extern	_M1_Freq_Change
+                                    1-   57     	extern	_Motor_Freq_Cnt2
+                                    1-   58     	extern	_Motor_Freq_Cnt1
+                                    1-   59     	extern	_Motor_Freq_Cnt0
+                                    1-   60     	extern	_Motor_Freq_Change
+                                    1-   61     	extern	_M1_Duty_1_Set
+                                    1-   62     	extern	_M1_Duty_Set
+                                    1-   63     	extern	_M1_Duty
+                                    1-   64     	extern	_M1_Cycle_1_Set
+                                    1-   65     	extern	_M1_Cycle_Set
+                                    1-   66     	extern	_M1_Cycle
+                                    1-   67     	extern	_Charge_Cnt
+                                    1-   68     	extern	_LED_Charge_Time
+                                    1-   69     	extern	_Full_Cnt
+                                    1-   70     	extern	_my_flag4
+                                    1-   71     	extern	_my_flag3
+                                    1-   72     	extern	_my_flag2
+                                    1-   73     	extern	_My_Flag
+                                    1-   74     	extern	_INTFbits
+                                    1-   75     	extern	_INTEbits
+                                    1-   76     	extern	_BPHCONbits
+                                    1-   77     	extern	_BPLCONbits
+                                    1-   78     	extern	_BWUCONbits
+                                    1-   79     	extern	_PCONbits
+                                    1-   80     	extern	_PORTBbits
+                                    1-   82     	extern PSAVE
+                                    1-   83     	extern SSAVE
+                                    1-   84     	extern WSAVE
+                                    1-   85     	extern STK12
+                                    1-   86     	extern ___STK12
+                                    1-   87     	extern STK11
+                                    1-   88     	extern ___STK11
+                                    1-   89     	extern STK10
+                                    1-   90     	extern ___STK10
+                                    1-   91     	extern STK09
+                                    1-   92     	extern ___STK09
+                                    1-   93     	extern STK08
+                                    1-   94     	extern ___STK08
+                                    1-   95     	extern STK07
+                                    1-   96     	extern ___STK07
+                                    1-   97     	extern STK06
+                                    1-   98     	extern ___STK06
+                                    1-   99     	extern STK05
+                                    1-  100     	extern ___STK05
+                                    1-  101     	extern STK04
+                                    1-  102     	extern ___STK04
+                                    1-  103     	extern STK03
+                                    1-  104     	extern ___STK03
+                                    1-  105     	extern STK02
+                                    1-  106     	extern ___STK02
+                                    1-  107     	extern STK01
+                                    1-  108     	extern ___STK01
+                                    1-  109     	extern STK00
+                                    1-  110     	extern ___STK00
+                                    1-  111     ;--------------------------------------------------------
+                                    1-  112     ; global declarations
+                                    1-  113     ;--------------------------------------------------------
+                                    1-  114     	extern	_my_flag0
+                                    1-  115     	extern	_my_flag1
+                                    1-  116     	extern	_INTF
+                                    1-  117     	extern	_INTE
+                                    1-  118     	extern	_BPHCON
+                                    1-  119     	extern	_BPLCON
+                                    1-  120     	extern	_BWUCON
+                                    1-  121     	extern	_PCON
+                                    1-  122     	extern	_PORTB
+                                    1-  123     	extern	_Change_LED_State
+                                    1-  124     	extern	_LED
+                                    1-  126     ;--------------------------------------------------------
+                                    1-  127     ; global definitions
+                                    1-  128     ;--------------------------------------------------------
+                                    1-  129     ;--------------------------------------------------------
+                                    1-  130     ; absolute symbol definitions
+                                    1-  131     ;--------------------------------------------------------
+                                    1-  132     ;--------------------------------------------------------
+                                    1-  133     ; compiler-defined variables
+                                    1-  134     ;--------------------------------------------------------
+                                    1-  135     .segment "uninit"
+     0000                           1-  136     r0x1002:
+                                    1-  137     	.res	1
+                                    1-  138     ;--------------------------------------------------------
+                                    1-  139     ; initialized data
+                                    1-  140     ;--------------------------------------------------------
+                                    1-  141     ;--------------------------------------------------------
+                                    1-  142     ; initialized absolute data
+                                    1-  143     ;--------------------------------------------------------
+                                    1-  144     ;--------------------------------------------------------
+                                    1-  145     ; overlayable items in internal ram 
+                                    1-  146     ;--------------------------------------------------------
+                                    1-  147     ;	udata_ovr
+                                    1-  148     ;--------------------------------------------------------
+                                    1-  149     ; code
+                                    1-  150     ;--------------------------------------------------------
+                                    1-  151     ; code_LED	code
+                                    1-  152     ;***
+                                    1-  153     ;  pBlock Stats: dbName = C
+                                    1-  154     ;***
+                                    1-  155     ;has an exit
+                                    1-  156     ;; Starting pCode block
+                                    1-  157     .segment "code"; module=LED, function=_LED
+     0000                           1-  159     _LED:
+                                    1-  160     ; 2 exit points
+                                    1-  161     	.line	26, "LED.c"; 	if (!Power_OnOff_FLAG && !Charging_FLAG)
+     0000 0Crr                      1-  162     	BTRSC	_my_flag0,0
+                                    1-  163     	MGOTO	_02029_DS_
+     0001 3rrr                      3-   62 m1      LGOTO rom_address
+     0002 0Err                      1-  164     	BTRSC	_my_flag1,5
+                                    1-  165     	MGOTO	_02029_DS_
+     0003 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  166     	.line	28, "LED.c"; 	LED_OFF;
+     0004 18rr                      1-  167     	BSR	_PORTB,1
+                                    1-  168     	MGOTO	_02032_DS_
+     0005 3rrr                      3-   62 m1      LGOTO rom_address
+     0006                           1-  169     _02029_DS_:
+                                    1-  170     	.line	31, "LED.c"; 	else if (Charge_LED_Breathing_FLAG && !Charge_Full_LED_Light_FLAG)
+     0006 0Brr                      1-  171     	BTRSS	_my_flag1,6
+                                    1-  172     	MGOTO	_02025_DS_
+     0007 3rrr                      3-   62 m1      LGOTO rom_address
+     0008 0Frr                      1-  173     	BTRSC	_my_flag1,7
+                                    1-  174     	MGOTO	_02025_DS_
+     0009 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  175     ;;unsigned compare: left < lit(0x5=5), size=1
+                                    1-  176     	.line	33, "LED.c"; 	if (LED_Charge_Time >= LED_Change_Flash_Time)
+     000A 2105                      1-  177     	MOVIA	0x05
+     000B 04rr                      1-  178     	SUBAR	_LED_Charge_Time,W
+     000C 0803                      1-  179     	BTRSS	STATUS,0
+                                    1-  180     	MGOTO	_02032_DS_
+     000D 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  181     	.line	35, "LED.c"; 	LED_Charge_Time = 0;
+     000E 02rr                      1-  182     	CLRR	_LED_Charge_Time
+                                    1-  183     	.line	36, "LED.c"; 	LED1 =~  LED1;
+     000F 01rr                      1-  184     	MOVR	_PORTB,W
+     0010 2402                      1-  185     	XORIA	0x02
+     0011 00rr                      1-  186     	MOVAR	_PORTB
+                                    1-  187     	MGOTO	_02032_DS_
+     0012 3rrr                      3-   62 m1      LGOTO rom_address
+     0013                           1-  188     _02025_DS_:
+                                    1-  189     	.line	40, "LED.c"; 	else if (Charge_LED_Breathing_FLAG && Charge_Full_LED_Light_FLAG)
+     0013 0Brr                      1-  190     	BTRSS	_my_flag1,6
+                                    1-  191     	MGOTO	_02021_DS_
+     0014 3rrr                      3-   62 m1      LGOTO rom_address
+     0015 0Brr                      1-  192     	BTRSS	_my_flag1,7
+                                    1-  193     	MGOTO	_02021_DS_
+     0016 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  194     	.line	42, "LED.c"; 	LED_ON;
+     0017 1Crr                      1-  195     	BCR	_PORTB,1
+                                    1-  196     	MGOTO	_02032_DS_
+     0018 3rrr                      3-   62 m1      LGOTO rom_address
+     0019                           1-  197     _02021_DS_:
+                                    1-  198     	.line	45, "LED.c"; 	else if (Key_LED_Flash_FLAG)
+     0019 0Arr                      1-  199     	BTRSS	_my_flag0,4
+                                    1-  200     	MGOTO	_02018_DS_
+     001A 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  201     	.line	47, "LED.c"; 	LED_OFF;
+     001B 18rr                      1-  202     	BSR	_PORTB,1
+                                    1-  203     ;;unsigned compare: left < lit(0x14=20), size=1
+                                    1-  204     	.line	48, "LED.c"; 	if (Key_Short_LED_Cnt >= Key_Short_LED_Time)
+     001C 2114                      1-  205     	MOVIA	0x14
+     001D 04rr                      1-  206     	SUBAR	_Key_Short_LED_Cnt,W
+     001E 0803                      1-  207     	BTRSS	STATUS,0
+                                    1-  208     	MGOTO	_02032_DS_
+     001F 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  209     	.line	50, "LED.c"; 	Key_Short_LED_Cnt = 0;
+     0020 02rr                      1-  210     	CLRR	_Key_Short_LED_Cnt
+                                    1-  211     	.line	51, "LED.c"; 	LED_ON;
+     0021 1Crr                      1-  212     	BCR	_PORTB,1
+                                    1-  213     	.line	52, "LED.c"; 	Key_LED_Flash_FLAG = 0;
+     0022 1Err                      1-  214     	BCR	_my_flag0,4
+                                    1-  215     	MGOTO	_02032_DS_
+     0023 3rrr                      3-   62 m1      LGOTO rom_address
+     0024                           1-  216     _02018_DS_:
+                                    1-  217     	.line	57, "LED.c"; 	LED_ON;
+     0024 1Crr                      1-  218     	BCR	_PORTB,1
+     0025                           1-  219     _02032_DS_:
+                                    1-  220     	.line	59, "LED.c"; 	}
+                                    1-  221     	RETURN	
+     0025 0010                      3-   39 m1      ret
+                                    1-  222     ; exit point of _LED
+                                    1-  224     ;***
+                                    1-  225     ;  pBlock Stats: dbName = C
+                                    1-  226     ;***
+                                    1-  227     ;has an exit
+                                    1-  228     ;1 compiler assigned register :
+                                    1-  229     ;   r0x1002
+                                    1-  230     ;; Starting pCode block
+                                    1-  231     .segment "code"; module=LED, function=_Change_LED_State
+                                    1-  233     ;local variable name mapping:
+     0000                           1-  235     _Change_LED_State:
+                                    1-  236     ; 2 exit points
+                                    1-  237     	.line	9, "LED.c"; 	void Change_LED_State(unsigned char state)
+     0000 00rr                      1-  238     	MOVAR	r0x1002
+                                    1-  239     	.line	12, "LED.c"; 	if(state)
+     0001 01rr                      1-  240     	MOVR	r0x1002,W
+     0002 0D03                      1-  241     	BTRSC	STATUS,2
+                                    1-  242     	MGOTO	_02006_DS_
+     0003 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  243     	.line	15, "LED.c"; 	PORTB |= (1 << 1);
+     0004 18rr                      1-  244     	BSR	_PORTB,1
+                                    1-  245     	MGOTO	_02008_DS_
+     0005 3rrr                      3-   62 m1      LGOTO rom_address
+     0006                           1-  246     _02006_DS_:
+                                    1-  247     	.line	20, "LED.c"; 	PORTB &= ~(1 << 1);
+     0006 1Crr                      1-  248     	BCR	_PORTB,1
+     0007                           1-  249     _02008_DS_:
+                                    1-  250     	.line	22, "LED.c"; 	}
+                                    1-  251     	RETURN	
+     0007 0010                      3-   39 m1      ret
+                                    1-  252     ; exit point of _Change_LED_State
+                                    1-  255     ;	code size estimation:
+                                    1-  256     ;	   46+    0 =    46 instructions (   92 byte)
+                                    1-  258     	end
+
+SYMBOL TABLE            TYPE     VALUE
+__pin_count__           Constant 00000006
+__processor__           Constant 00800515
+C                       Constant 00000000
+DC                      Constant 00000001
+ENABLE_RAM_BANK         Constant 00000000
+F                       Constant 00000001
+FSR                     Constant 00000004
+INDF                    Constant 00000000
+PCHBUF                  Constant 0000000A
+PCL                     Constant 00000002
+STATUS                  Constant 00000003
+USEFGOTO                Constant 00000000
+W                       Constant 00000000
+Z                       Constant 00000002
+
+
+SOURCE FILE TABLE
+001 OBJ/LED.s
+002 ny8a051f.inc
+003 common.inc
+004 LED.c
+
+PROCESSOR    = NY8A051F (8 bits)
+PROGRAM ROM  = 0x00000000 - 0x000003FF
+DATA ROM     = 0x00000000 - 0x000003FF
+SRAM / SFR   = 0x00000000 - 0x00000000
