@@ -137,14 +137,14 @@ void M1_Work()
             }
         case 1:
             {   
-                M1_Cycle_Set = 93;
+                M1_Cycle_Set = 94;
                 M1_Duty_Set = 42;
                 break;
             }
         case 2:
             {
-                M1_Cycle_Set = 93;
-                M1_Duty_Set = 63;
+                M1_Cycle_Set = 94;
+                M1_Duty_Set = 64;
                 break;
             }
         case  3:
@@ -155,21 +155,21 @@ void M1_Work()
             }
         case  4:
             {
-                M1_Cycle_Set = 3450;
-                M1_Duty_Set = 2795;
+                M1_Cycle_Set = 3478;
+                M1_Duty_Set = 2817;
                 break;
             }
         case  5:
             {
                 if (!Motor_Freq_Cnt0)
                 {
-                    M1_Cycle_Set = 1990;
-                    M1_Duty_Set = 1035;
+                    M1_Cycle_Set = 1974;
+                    M1_Duty_Set = 1026;
                     Motor_PWM_Loop2(16);
                 }
                 else if (Motor_Freq_Cnt0 == 1)
                 {
-                    M1_Cycle_Set = 93;
+                    M1_Cycle_Set = 94;
                     M1_Duty_Set = 51;
                     Motor_PWM_Loop3(1600);
                 }
@@ -179,20 +179,20 @@ void M1_Work()
             {
                 if (!Motor_Freq_Cnt0)
                 {
-                    M1_Cycle_Set = 1590;
-                    M1_Duty_Set = 843;
+                    M1_Cycle_Set = 1599;
+                    M1_Duty_Set = 847;
                     Motor_PWM_Loop1(20);
                 }
                 else if (Motor_Freq_Cnt0 == 1)
                 {
-                    M1_Cycle_Set = 9530;
-                    M1_Duty_Set = 4765;
+                    M1_Cycle_Set = 9588;
+                    M1_Duty_Set = 4794;
                     Motor_PWM_Loop2(6);
                 }
                 else if (Motor_Freq_Cnt0 == 2)
                 {
-                    M1_Cycle_Set = 7550;
-                    M1_Duty_Set = 2794;
+                    M1_Cycle_Set = 7616;
+                    M1_Duty_Set = 2818;
                     Motor_PWM_Loop3(5);
                 }
                 break;
@@ -201,54 +201,54 @@ void M1_Work()
             {
                 if (!Motor_Freq_Cnt0)
                 {
-                    M1_Cycle_Set = 1120;
-                    M1_Duty_Set = 560;
+                    M1_Cycle_Set = 1128;
+                    M1_Duty_Set = 564;
                     Motor_PWM_Loop1(5);
                 }
                 else if (Motor_Freq_Cnt0 == 1)
                 {
-                    M1_Cycle_Set = 3180;
-                    M1_Duty_Set = 1113;
+                    M1_Cycle_Set = 3198;
+                    M1_Duty_Set = 1119;
                     Motor_PWM_Loop2(10);
                 }
                 else if (Motor_Freq_Cnt0 == 2)
                 {
-                    M1_Cycle_Set = 6250;
-                    M1_Duty_Set = 5125;
+                    M1_Cycle_Set = 6293;
+                    M1_Duty_Set = 5160;
                     Motor_PWM_Loop3(10);
                 }
                 break;
             }
             case 8:
             {
-                M1_Cycle_Set = 8320;
-                M1_Duty_Set = 5574;
+                M1_Cycle_Set = 8368;
+                M1_Duty_Set = 5607;
                 break;
             }
             case 9:
             {
-                M1_Cycle_Set = 2900;
-                M1_Duty_Set = 1392;
+                M1_Cycle_Set = 2913;
+                M1_Duty_Set = 1398;
                 break;
             }
             case 10:
             {
                 if (!Motor_Freq_Cnt0)
                 {
-                    M1_Cycle_Set = 1960;
-                    M1_Duty_Set = 937;
+                    M1_Cycle_Set = 1973;
+                    M1_Duty_Set = 943;
                     Motor_PWM_Loop1(10);
                 }
                 else if (Motor_Freq_Cnt0 == 1)
                 {
-                    M1_Cycle_Set = 9250;
-                    M1_Duty_Set = 4625;
+                    M1_Cycle_Set = 9311;
+                    M1_Duty_Set = 4656;
                     Motor_PWM_Loop2(5);
                 }
                 else if (Motor_Freq_Cnt0 == 2)
                 {
-                    M1_Cycle_Set = 5600;
-                    M1_Duty_Set = 2800;
+                    M1_Cycle_Set = 5640;
+                    M1_Duty_Set = 2820;
                     Motor_PWM_Loop3(10);
                 }
                 break;

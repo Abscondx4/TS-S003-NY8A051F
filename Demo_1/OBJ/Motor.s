@@ -255,8 +255,8 @@ _02043_DS_:
 	.line	136, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
 _02044_DS_:
-	.line	140, "Motor.c"; 	M1_Cycle_Set = 93;
-	MOVIA	0x5d
+	.line	140, "Motor.c"; 	M1_Cycle_Set = 94;
+	MOVIA	0x5e
 	MOVAR	_M1_Cycle_Set
 	CLRR	(_M1_Cycle_Set + 1)
 	.line	141, "Motor.c"; 	M1_Duty_Set = 42;
@@ -266,12 +266,12 @@ _02044_DS_:
 	.line	142, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
 _02045_DS_:
-	.line	146, "Motor.c"; 	M1_Cycle_Set = 93;
-	MOVIA	0x5d
+	.line	146, "Motor.c"; 	M1_Cycle_Set = 94;
+	MOVIA	0x5e
 	MOVAR	_M1_Cycle_Set
 	CLRR	(_M1_Cycle_Set + 1)
-	.line	147, "Motor.c"; 	M1_Duty_Set = 63;
-	MOVIA	0x3f
+	.line	147, "Motor.c"; 	M1_Duty_Set = 64;
+	MOVIA	0x40
 	MOVAR	_M1_Duty_Set
 	CLRR	(_M1_Duty_Set + 1)
 	.line	148, "Motor.c"; 	break;
@@ -288,15 +288,15 @@ _02046_DS_:
 	.line	154, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
 _02047_DS_:
-	.line	158, "Motor.c"; 	M1_Cycle_Set = 3450;
-	MOVIA	0x7a
+	.line	158, "Motor.c"; 	M1_Cycle_Set = 3478;
+	MOVIA	0x96
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x0d
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	159, "Motor.c"; 	M1_Duty_Set = 2795;
-	MOVIA	0xeb
+	.line	159, "Motor.c"; 	M1_Duty_Set = 2817;
+	MOVIA	0x01
 	MOVAR	_M1_Duty_Set
-	MOVIA	0x0a
+	MOVIA	0x0b
 	MOVAR	(_M1_Duty_Set + 1)
 	.line	160, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
@@ -305,13 +305,13 @@ _02048_DS_:
 	MOVR	_Motor_Freq_Cnt0,W
 	BTRSS	STATUS,2
 	MGOTO	_02052_DS_
-	.line	166, "Motor.c"; 	M1_Cycle_Set = 1990;
-	MOVIA	0xc6
+	.line	166, "Motor.c"; 	M1_Cycle_Set = 1974;
+	MOVIA	0xb6
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x07
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	167, "Motor.c"; 	M1_Duty_Set = 1035;
-	MOVIA	0x0b
+	.line	167, "Motor.c"; 	M1_Duty_Set = 1026;
+	MOVIA	0x02
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x04
 	MOVAR	(_M1_Duty_Set + 1)
@@ -327,8 +327,8 @@ _02052_DS_:
 	XORIA	0x01
 	BTRSS	STATUS,2
 	MGOTO	_02083_DS_
-	.line	172, "Motor.c"; 	M1_Cycle_Set = 93;
-	MOVIA	0x5d
+	.line	172, "Motor.c"; 	M1_Cycle_Set = 94;
+	MOVIA	0x5e
 	MOVAR	_M1_Cycle_Set
 	CLRR	(_M1_Cycle_Set + 1)
 	.line	173, "Motor.c"; 	M1_Duty_Set = 51;
@@ -347,13 +347,13 @@ _02054_DS_:
 	MOVR	_Motor_Freq_Cnt0,W
 	BTRSS	STATUS,2
 	MGOTO	_02061_DS_
-	.line	182, "Motor.c"; 	M1_Cycle_Set = 1590;
-	MOVIA	0x36
+	.line	182, "Motor.c"; 	M1_Cycle_Set = 1599;
+	MOVIA	0x3f
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x06
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	183, "Motor.c"; 	M1_Duty_Set = 843;
-	MOVIA	0x4b
+	.line	183, "Motor.c"; 	M1_Duty_Set = 847;
+	MOVIA	0x4f
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x03
 	MOVAR	(_M1_Duty_Set + 1)
@@ -369,13 +369,13 @@ _02061_DS_:
 	XORIA	0x01
 	BTRSS	STATUS,2
 	MGOTO	_02058_DS_
-	.line	188, "Motor.c"; 	M1_Cycle_Set = 9530;
-	MOVIA	0x3a
+	.line	188, "Motor.c"; 	M1_Cycle_Set = 9588;
+	MOVIA	0x74
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x25
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	189, "Motor.c"; 	M1_Duty_Set = 4765;
-	MOVIA	0x9d
+	.line	189, "Motor.c"; 	M1_Duty_Set = 4794;
+	MOVIA	0xba
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x12
 	MOVAR	(_M1_Duty_Set + 1)
@@ -391,15 +391,15 @@ _02058_DS_:
 	XORIA	0x02
 	BTRSS	STATUS,2
 	MGOTO	_02083_DS_
-	.line	194, "Motor.c"; 	M1_Cycle_Set = 7550;
-	MOVIA	0x7e
+	.line	194, "Motor.c"; 	M1_Cycle_Set = 7616;
+	MOVIA	0xc0
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x1d
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	195, "Motor.c"; 	M1_Duty_Set = 2794;
-	MOVIA	0xea
+	.line	195, "Motor.c"; 	M1_Duty_Set = 2818;
+	MOVIA	0x02
 	MOVAR	_M1_Duty_Set
-	MOVIA	0x0a
+	MOVIA	0x0b
 	MOVAR	(_M1_Duty_Set + 1)
 	.line	196, "Motor.c"; 	Motor_PWM_Loop3(5);
 	MOVIA	0x05
@@ -413,13 +413,13 @@ _02063_DS_:
 	MOVR	_Motor_Freq_Cnt0,W
 	BTRSS	STATUS,2
 	MGOTO	_02070_DS_
-	.line	204, "Motor.c"; 	M1_Cycle_Set = 1120;
-	MOVIA	0x60
+	.line	204, "Motor.c"; 	M1_Cycle_Set = 1128;
+	MOVIA	0x68
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x04
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	205, "Motor.c"; 	M1_Duty_Set = 560;
-	MOVIA	0x30
+	.line	205, "Motor.c"; 	M1_Duty_Set = 564;
+	MOVIA	0x34
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x02
 	MOVAR	(_M1_Duty_Set + 1)
@@ -435,13 +435,13 @@ _02070_DS_:
 	XORIA	0x01
 	BTRSS	STATUS,2
 	MGOTO	_02067_DS_
-	.line	210, "Motor.c"; 	M1_Cycle_Set = 3180;
-	MOVIA	0x6c
+	.line	210, "Motor.c"; 	M1_Cycle_Set = 3198;
+	MOVIA	0x7e
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x0c
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	211, "Motor.c"; 	M1_Duty_Set = 1113;
-	MOVIA	0x59
+	.line	211, "Motor.c"; 	M1_Duty_Set = 1119;
+	MOVIA	0x5f
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x04
 	MOVAR	(_M1_Duty_Set + 1)
@@ -457,13 +457,13 @@ _02067_DS_:
 	XORIA	0x02
 	BTRSS	STATUS,2
 	MGOTO	_02083_DS_
-	.line	216, "Motor.c"; 	M1_Cycle_Set = 6250;
-	MOVIA	0x6a
+	.line	216, "Motor.c"; 	M1_Cycle_Set = 6293;
+	MOVIA	0x95
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x18
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	217, "Motor.c"; 	M1_Duty_Set = 5125;
-	MOVIA	0x05
+	.line	217, "Motor.c"; 	M1_Duty_Set = 5160;
+	MOVIA	0x28
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x14
 	MOVAR	(_M1_Duty_Set + 1)
@@ -475,26 +475,26 @@ _02067_DS_:
 	.line	220, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
 _02072_DS_:
-	.line	224, "Motor.c"; 	M1_Cycle_Set = 8320;
-	MOVIA	0x80
+	.line	224, "Motor.c"; 	M1_Cycle_Set = 8368;
+	MOVIA	0xb0
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x20
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	225, "Motor.c"; 	M1_Duty_Set = 5574;
-	MOVIA	0xc6
+	.line	225, "Motor.c"; 	M1_Duty_Set = 5607;
+	MOVIA	0xe7
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x15
 	MOVAR	(_M1_Duty_Set + 1)
 	.line	226, "Motor.c"; 	break;
 	MGOTO	_02083_DS_
 _02073_DS_:
-	.line	230, "Motor.c"; 	M1_Cycle_Set = 2900;
-	MOVIA	0x54
+	.line	230, "Motor.c"; 	M1_Cycle_Set = 2913;
+	MOVIA	0x61
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x0b
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	231, "Motor.c"; 	M1_Duty_Set = 1392;
-	MOVIA	0x70
+	.line	231, "Motor.c"; 	M1_Duty_Set = 1398;
+	MOVIA	0x76
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x05
 	MOVAR	(_M1_Duty_Set + 1)
@@ -505,13 +505,13 @@ _02074_DS_:
 	MOVR	_Motor_Freq_Cnt0,W
 	BTRSS	STATUS,2
 	MGOTO	_02081_DS_
-	.line	238, "Motor.c"; 	M1_Cycle_Set = 1960;
-	MOVIA	0xa8
+	.line	238, "Motor.c"; 	M1_Cycle_Set = 1973;
+	MOVIA	0xb5
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x07
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	239, "Motor.c"; 	M1_Duty_Set = 937;
-	MOVIA	0xa9
+	.line	239, "Motor.c"; 	M1_Duty_Set = 943;
+	MOVIA	0xaf
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x03
 	MOVAR	(_M1_Duty_Set + 1)
@@ -527,13 +527,13 @@ _02081_DS_:
 	XORIA	0x01
 	BTRSS	STATUS,2
 	MGOTO	_02078_DS_
-	.line	244, "Motor.c"; 	M1_Cycle_Set = 9250;
-	MOVIA	0x22
+	.line	244, "Motor.c"; 	M1_Cycle_Set = 9311;
+	MOVIA	0x5f
 	MOVAR	_M1_Cycle_Set
 	MOVIA	0x24
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	245, "Motor.c"; 	M1_Duty_Set = 4625;
-	MOVIA	0x11
+	.line	245, "Motor.c"; 	M1_Duty_Set = 4656;
+	MOVIA	0x30
 	MOVAR	_M1_Duty_Set
 	MOVIA	0x12
 	MOVAR	(_M1_Duty_Set + 1)
@@ -549,17 +549,18 @@ _02078_DS_:
 	XORIA	0x02
 	BTRSS	STATUS,2
 	MGOTO	_02083_DS_
-	.line	250, "Motor.c"; 	M1_Cycle_Set = 5600;
-	MOVIA	0xe0
+	.line	250, "Motor.c"; 	M1_Cycle_Set = 5640;
+	MOVIA	0x08
 	MOVAR	_M1_Cycle_Set
-	MOVIA	0x15
+	MOVIA	0x16
 	MOVAR	(_M1_Cycle_Set + 1)
-	.line	251, "Motor.c"; 	M1_Duty_Set = 2800;
-	MOVIA	0xf0
+	.line	251, "Motor.c"; 	M1_Duty_Set = 2820;
+	MOVIA	0x04
 	MOVAR	_M1_Duty_Set
-	MOVIA	0x0a
+	MOVIA	0x0b
 	MOVAR	(_M1_Duty_Set + 1)
 	.line	252, "Motor.c"; 	Motor_PWM_Loop3(10);
+	MOVIA	0x0a
 	MOVAR	STK00
 	MOVIA	0x00
 	MCALL	_Motor_PWM_Loop3
@@ -784,6 +785,6 @@ _02015_DS_:
 
 
 ;	code size estimation:
-;	  379+    0 =   379 instructions (  758 byte)
+;	  380+    0 =   380 instructions (  760 byte)
 
 	end
