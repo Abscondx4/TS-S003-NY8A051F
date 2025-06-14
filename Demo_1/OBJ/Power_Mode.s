@@ -11,6 +11,10 @@
 ;--------------------------------------------------------
 ; external declarations
 ;--------------------------------------------------------
+	extern	_Reset_Clock
+	extern	_Clock
+	extern	_Delay_ms
+	extern	_Delay_us
 	extern	_Init
 	extern	_clear_ram
 	extern	_multi_16b
@@ -65,6 +69,7 @@
 	extern	_M1_Cycle_Set
 	extern	_M1_Cycle
 	extern	_Charge_Cnt
+	extern	_LED_Off_Cnt
 	extern	_LED_Charge_Time
 	extern	_Full_Cnt
 	extern	_my_flag4
@@ -122,6 +127,7 @@
 	extern	_PORTB
 	extern	_Switch_Power_Mode
 	extern	_Power_Off
+	extern	_Low_Voltage_Detection
 
 ;--------------------------------------------------------
 ; global definitions
@@ -151,22 +157,44 @@
 ;***
 ;has an exit
 ;; Starting pCode block
+.segment "code"; module=Power_Mode, function=_Low_Voltage_Detection
+	.debuginfo subprogram _Low_Voltage_Detection
+_Low_Voltage_Detection:
+; 2 exit points
+	.line	31, "Power_Mode.c"; 	}
+	RETURN	
+; exit point of _Low_Voltage_Detection
+
+;***
+;  pBlock Stats: dbName = C
+;***
+;has an exit
+;; Starting pCode block
 .segment "code"; module=Power_Mode, function=_Power_Off
 	.debuginfo subprogram _Power_Off
 _Power_Off:
 ; 2 exit points
-	.line	14, "Power_Mode.c"; 	Power_OnOff_FLAG = 0;
+;;unsigned compare: left < lit(0x2=2), size=1
+	.line	16, "Power_Mode.c"; 	if (LED_Off_Cnt  >= LED_Off_Time)
+	MOVIA	0x02
+	SUBAR	_LED_Off_Cnt,W
+	BTRSS	STATUS,0
+	MGOTO	_02014_DS_
+	.line	18, "Power_Mode.c"; 	LED_Off_Cnt  = 0;
+	CLRR	_LED_Off_Cnt
+	.line	19, "Power_Mode.c"; 	Power_OnOff_FLAG = 0;
 	BCR	_my_flag0,0
-	.line	15, "Power_Mode.c"; 	Sleep_Cnt = 0;
+	.line	20, "Power_Mode.c"; 	Sleep_Cnt = 0;
 	CLRR	_Sleep_Cnt
 	CLRR	(_Sleep_Cnt + 1)
-	.line	16, "Power_Mode.c"; 	M1_Work_FLAG = 0;
+	.line	21, "Power_Mode.c"; 	M1_Work_FLAG = 0;
 	BCR	_my_flag1,2
-	.line	17, "Power_Mode.c"; 	M1_Freq_Change = 0;
+	.line	22, "Power_Mode.c"; 	M1_Freq_Change = 0;
 	CLRR	_M1_Freq_Change
-	.line	18, "Power_Mode.c"; 	M1_OFF;
+	.line	23, "Power_Mode.c"; 	M1_OFF;
 	BCR	_PORTB,2
-	.line	19, "Power_Mode.c"; 	}
+_02014_DS_:
+	.line	26, "Power_Mode.c"; 	}
 	RETURN	
 ; exit point of _Power_Off
 
@@ -193,6 +221,6 @@ _02007_DS_:
 
 
 ;	code size estimation:
-;	   10+    0 =    10 instructions (   20 byte)
+;	   16+    0 =    16 instructions (   32 byte)
 
 	end

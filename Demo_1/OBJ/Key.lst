@@ -62,298 +62,301 @@ NYASM 2.50
                                     1-   14     	extern	_Key_Init
                                     1-   15     	extern	_Reset_Clock
                                     1-   16     	extern	_Clock
-                                    1-   17     	extern	_Delay_us
-                                    1-   18     	extern	_Power_Off
-                                    1-   19     	extern	_Switch_Power_Mode
-                                    1-   20     	extern	_Init
-                                    1-   21     	extern	_clear_ram
-                                    1-   22     	extern	_multi_16b
-                                    1-   23     	extern	_multi_8b
-                                    1-   24     	extern	_T0MD
-                                    1-   25     	extern	_PCON1
-                                    1-   26     	extern	_BODCON
-                                    1-   27     	extern	_PS0CV
-                                    1-   28     	extern	_IOSTB
-                                    1-   29     	extern	_OSCCR
-                                    1-   30     	extern	_TBHD
-                                    1-   31     	extern	_TBHP
-                                    1-   32     	extern	_IRCR
-                                    1-   33     	extern	_BZ1CR
-                                    1-   34     	extern	_PS1CV
-                                    1-   35     	extern	_PWM1DUTY
-                                    1-   36     	extern	_T1CR2
-                                    1-   37     	extern	_T1CR1
-                                    1-   38     	extern	_TMR1
-                                    1-   39     	extern	_PCHBUF
-                                    1-   40     	extern	_STATUS
-                                    1-   41     	extern	_PCL
-                                    1-   42     	extern	_TMR0
-                                    1-   43     	extern	_Timer_1min
-                                    1-   44     	extern	_Timer_1s
-                                    1-   45     	extern	_Timer_100ms
-                                    1-   46     	extern	_Timer_10ms
-                                    1-   47     	extern	_Timer_1ms
-                                    1-   48     	extern	_Unit_Time
-                                    1-   49     	extern	_LED_FLAG
-                                    1-   50     	extern	_Time_Temp
-                                    1-   51     	extern	_Sleep_Cnt
-                                    1-   52     	extern	_Key_Short_LED_Cnt
-                                    1-   53     	extern	_Key_Long_Cnt
-                                    1-   54     	extern	_Key_Press_Cnt
-                                    1-   55     	extern	_Motor_Counter_FLAG
-                                    1-   56     	extern	_Motor_Peri_1000
-                                    1-   57     	extern	_Motor_Peri_100
-                                    1-   58     	extern	_Motor_Peri_10
-                                    1-   59     	extern	_Motor_Peri_1
-                                    1-   60     	extern	_M1_Cnt
-                                    1-   61     	extern	_M1_Freq_Change_Set
-                                    1-   62     	extern	_M1_Freq_Change
-                                    1-   63     	extern	_Motor_Freq_Cnt2
-                                    1-   64     	extern	_Motor_Freq_Cnt1
-                                    1-   65     	extern	_Motor_Freq_Cnt0
-                                    1-   66     	extern	_Motor_Freq_Change
-                                    1-   67     	extern	_M1_Duty_1_Set
-                                    1-   68     	extern	_M1_Duty_Set
-                                    1-   69     	extern	_M1_Duty
-                                    1-   70     	extern	_M1_Cycle_1_Set
-                                    1-   71     	extern	_M1_Cycle_Set
-                                    1-   72     	extern	_M1_Cycle
-                                    1-   73     	extern	_Charge_Cnt
-                                    1-   74     	extern	_LED_Charge_Time
-                                    1-   75     	extern	_Full_Cnt
-                                    1-   76     	extern	_my_flag4
-                                    1-   77     	extern	_my_flag3
-                                    1-   78     	extern	_my_flag2
-                                    1-   79     	extern	_My_Flag
-                                    1-   80     	extern	_INTFbits
-                                    1-   81     	extern	_INTEbits
-                                    1-   82     	extern	_BPHCONbits
-                                    1-   83     	extern	_BPLCONbits
-                                    1-   84     	extern	_BWUCONbits
-                                    1-   85     	extern	_PCONbits
-                                    1-   86     	extern	_PORTBbits
-                                    1-   88     	extern PSAVE
-                                    1-   89     	extern SSAVE
-                                    1-   90     	extern WSAVE
-                                    1-   91     	extern STK12
-                                    1-   92     	extern ___STK12
-                                    1-   93     	extern STK11
-                                    1-   94     	extern ___STK11
-                                    1-   95     	extern STK10
-                                    1-   96     	extern ___STK10
-                                    1-   97     	extern STK09
-                                    1-   98     	extern ___STK09
-                                    1-   99     	extern STK08
-                                    1-  100     	extern ___STK08
-                                    1-  101     	extern STK07
-                                    1-  102     	extern ___STK07
-                                    1-  103     	extern STK06
-                                    1-  104     	extern ___STK06
-                                    1-  105     	extern STK05
-                                    1-  106     	extern ___STK05
-                                    1-  107     	extern STK04
-                                    1-  108     	extern ___STK04
-                                    1-  109     	extern STK03
-                                    1-  110     	extern ___STK03
-                                    1-  111     	extern STK02
-                                    1-  112     	extern ___STK02
-                                    1-  113     	extern STK01
-                                    1-  114     	extern ___STK01
-                                    1-  115     	extern STK00
-                                    1-  116     	extern ___STK00
-                                    1-  117     ;--------------------------------------------------------
-                                    1-  118     ; global declarations
-                                    1-  119     ;--------------------------------------------------------
-                                    1-  120     	extern	_my_flag0
-                                    1-  121     	extern	_my_flag1
-                                    1-  122     	extern	_INTF
-                                    1-  123     	extern	_INTE
-                                    1-  124     	extern	_BPHCON
-                                    1-  125     	extern	_BPLCON
-                                    1-  126     	extern	_BWUCON
-                                    1-  127     	extern	_PCON
-                                    1-  128     	extern	_PORTB
-                                    1-  129     	extern	_delay0
-                                    1-  130     	extern	_delay1
-                                    1-  131     	extern	_Key_Scan
-                                    1-  133     ;--------------------------------------------------------
-                                    1-  134     ; global definitions
-                                    1-  135     ;--------------------------------------------------------
-                                    1-  136     .segment "uninit"
-     0000                           1-  137     _delay1:
-                                    1-  138     	.res 1
-                                    1-  141     .segment "uninit"
-     0000                           1-  142     _delay0:
-                                    1-  143     	.res 1
-                                    1-  146     ;--------------------------------------------------------
-                                    1-  147     ; absolute symbol definitions
-                                    1-  148     ;--------------------------------------------------------
+                                    1-   17     	extern	_Delay_ms
+                                    1-   18     	extern	_Delay_us
+                                    1-   19     	extern	_Low_Voltage_Detection
+                                    1-   20     	extern	_Power_Off
+                                    1-   21     	extern	_Switch_Power_Mode
+                                    1-   22     	extern	_Init
+                                    1-   23     	extern	_clear_ram
+                                    1-   24     	extern	_multi_16b
+                                    1-   25     	extern	_multi_8b
+                                    1-   26     	extern	_T0MD
+                                    1-   27     	extern	_PCON1
+                                    1-   28     	extern	_BODCON
+                                    1-   29     	extern	_PS0CV
+                                    1-   30     	extern	_IOSTB
+                                    1-   31     	extern	_OSCCR
+                                    1-   32     	extern	_TBHD
+                                    1-   33     	extern	_TBHP
+                                    1-   34     	extern	_IRCR
+                                    1-   35     	extern	_BZ1CR
+                                    1-   36     	extern	_PS1CV
+                                    1-   37     	extern	_PWM1DUTY
+                                    1-   38     	extern	_T1CR2
+                                    1-   39     	extern	_T1CR1
+                                    1-   40     	extern	_TMR1
+                                    1-   41     	extern	_PCHBUF
+                                    1-   42     	extern	_STATUS
+                                    1-   43     	extern	_PCL
+                                    1-   44     	extern	_TMR0
+                                    1-   45     	extern	_Timer_1min
+                                    1-   46     	extern	_Timer_1s
+                                    1-   47     	extern	_Timer_100ms
+                                    1-   48     	extern	_Timer_10ms
+                                    1-   49     	extern	_Timer_1ms
+                                    1-   50     	extern	_Unit_Time
+                                    1-   51     	extern	_LED_FLAG
+                                    1-   52     	extern	_Time_Temp
+                                    1-   53     	extern	_Sleep_Cnt
+                                    1-   54     	extern	_Key_Short_LED_Cnt
+                                    1-   55     	extern	_Key_Long_Cnt
+                                    1-   56     	extern	_Key_Press_Cnt
+                                    1-   57     	extern	_Motor_Counter_FLAG
+                                    1-   58     	extern	_Motor_Peri_1000
+                                    1-   59     	extern	_Motor_Peri_100
+                                    1-   60     	extern	_Motor_Peri_10
+                                    1-   61     	extern	_Motor_Peri_1
+                                    1-   62     	extern	_M1_Cnt
+                                    1-   63     	extern	_M1_Freq_Change_Set
+                                    1-   64     	extern	_M1_Freq_Change
+                                    1-   65     	extern	_Motor_Freq_Cnt2
+                                    1-   66     	extern	_Motor_Freq_Cnt1
+                                    1-   67     	extern	_Motor_Freq_Cnt0
+                                    1-   68     	extern	_Motor_Freq_Change
+                                    1-   69     	extern	_M1_Duty_1_Set
+                                    1-   70     	extern	_M1_Duty_Set
+                                    1-   71     	extern	_M1_Duty
+                                    1-   72     	extern	_M1_Cycle_1_Set
+                                    1-   73     	extern	_M1_Cycle_Set
+                                    1-   74     	extern	_M1_Cycle
+                                    1-   75     	extern	_Charge_Cnt
+                                    1-   76     	extern	_LED_Off_Cnt
+                                    1-   77     	extern	_LED_Charge_Time
+                                    1-   78     	extern	_Full_Cnt
+                                    1-   79     	extern	_my_flag4
+                                    1-   80     	extern	_my_flag3
+                                    1-   81     	extern	_my_flag2
+                                    1-   82     	extern	_My_Flag
+                                    1-   83     	extern	_INTFbits
+                                    1-   84     	extern	_INTEbits
+                                    1-   85     	extern	_BPHCONbits
+                                    1-   86     	extern	_BPLCONbits
+                                    1-   87     	extern	_BWUCONbits
+                                    1-   88     	extern	_PCONbits
+                                    1-   89     	extern	_PORTBbits
+                                    1-   91     	extern PSAVE
+                                    1-   92     	extern SSAVE
+                                    1-   93     	extern WSAVE
+                                    1-   94     	extern STK12
+                                    1-   95     	extern ___STK12
+                                    1-   96     	extern STK11
+                                    1-   97     	extern ___STK11
+                                    1-   98     	extern STK10
+                                    1-   99     	extern ___STK10
+                                    1-  100     	extern STK09
+                                    1-  101     	extern ___STK09
+                                    1-  102     	extern STK08
+                                    1-  103     	extern ___STK08
+                                    1-  104     	extern STK07
+                                    1-  105     	extern ___STK07
+                                    1-  106     	extern STK06
+                                    1-  107     	extern ___STK06
+                                    1-  108     	extern STK05
+                                    1-  109     	extern ___STK05
+                                    1-  110     	extern STK04
+                                    1-  111     	extern ___STK04
+                                    1-  112     	extern STK03
+                                    1-  113     	extern ___STK03
+                                    1-  114     	extern STK02
+                                    1-  115     	extern ___STK02
+                                    1-  116     	extern STK01
+                                    1-  117     	extern ___STK01
+                                    1-  118     	extern STK00
+                                    1-  119     	extern ___STK00
+                                    1-  120     ;--------------------------------------------------------
+                                    1-  121     ; global declarations
+                                    1-  122     ;--------------------------------------------------------
+                                    1-  123     	extern	_my_flag0
+                                    1-  124     	extern	_my_flag1
+                                    1-  125     	extern	_INTF
+                                    1-  126     	extern	_INTE
+                                    1-  127     	extern	_BPHCON
+                                    1-  128     	extern	_BPLCON
+                                    1-  129     	extern	_BWUCON
+                                    1-  130     	extern	_PCON
+                                    1-  131     	extern	_PORTB
+                                    1-  132     	extern	_delay0
+                                    1-  133     	extern	_delay1
+                                    1-  134     	extern	_Key_Scan
+                                    1-  136     ;--------------------------------------------------------
+                                    1-  137     ; global definitions
+                                    1-  138     ;--------------------------------------------------------
+                                    1-  139     .segment "uninit"
+     0000                           1-  140     _delay1:
+                                    1-  141     	.res 1
+                                    1-  144     .segment "uninit"
+     0000                           1-  145     _delay0:
+                                    1-  146     	.res 1
                                     1-  149     ;--------------------------------------------------------
-                                    1-  150     ; compiler-defined variables
+                                    1-  150     ; absolute symbol definitions
                                     1-  151     ;--------------------------------------------------------
                                     1-  152     ;--------------------------------------------------------
-                                    1-  153     ; initialized data
+                                    1-  153     ; compiler-defined variables
                                     1-  154     ;--------------------------------------------------------
                                     1-  155     ;--------------------------------------------------------
-                                    1-  156     ; initialized absolute data
+                                    1-  156     ; initialized data
                                     1-  157     ;--------------------------------------------------------
                                     1-  158     ;--------------------------------------------------------
-                                    1-  159     ; overlayable items in internal ram 
+                                    1-  159     ; initialized absolute data
                                     1-  160     ;--------------------------------------------------------
-                                    1-  161     ;	udata_ovr
-                                    1-  162     ;--------------------------------------------------------
-                                    1-  163     ; code
-                                    1-  164     ;--------------------------------------------------------
-                                    1-  165     ; code_Key	code
-                                    1-  166     ;***
-                                    1-  167     ;  pBlock Stats: dbName = C
-                                    1-  168     ;***
-                                    1-  169     ;has an exit
-                                    1-  170     ;functions called:
-                                    1-  171     ;   _Power_Off
-                                    1-  172     ;   _Power_Off
-                                    1-  173     ;; Starting pCode block
-                                    1-  174     .segment "code"; module=Key, function=_Key_Scan
-     0000                           1-  176     _Key_Scan:
-                                    1-  177     ; 2 exit points
-                                    1-  178     	.line	14, "Key.c"; 	if (KEY)
-     0000 09rr                      1-  179     	BTRSS	_PORTB,3
-                                    1-  180     	MGOTO	_02012_DS_
+                                    1-  161     ;--------------------------------------------------------
+                                    1-  162     ; overlayable items in internal ram 
+                                    1-  163     ;--------------------------------------------------------
+                                    1-  164     ;	udata_ovr
+                                    1-  165     ;--------------------------------------------------------
+                                    1-  166     ; code
+                                    1-  167     ;--------------------------------------------------------
+                                    1-  168     ; code_Key	code
+                                    1-  169     ;***
+                                    1-  170     ;  pBlock Stats: dbName = C
+                                    1-  171     ;***
+                                    1-  172     ;has an exit
+                                    1-  173     ;functions called:
+                                    1-  174     ;   _Power_Off
+                                    1-  175     ;   _Power_Off
+                                    1-  176     ;; Starting pCode block
+                                    1-  177     .segment "code"; module=Key, function=_Key_Scan
+     0000                           1-  179     _Key_Scan:
+                                    1-  180     ; 2 exit points
+                                    1-  181     	.line	14, "Key.c"; 	if (KEY)
+     0000 09rr                      1-  182     	BTRSS	_PORTB,3
+                                    1-  183     	MGOTO	_02012_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  181     	.line	17, "Key.c"; 	if (Key_Press_FLAG)
-     0002 09rr                      1-  182     	BTRSS	_my_flag0,2
-                                    1-  183     	MGOTO	_02013_DS_
+                                    1-  184     	.line	17, "Key.c"; 	if (Key_Press_FLAG)
+     0002 09rr                      1-  185     	BTRSS	_my_flag0,2
+                                    1-  186     	MGOTO	_02013_DS_
      0003 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  184     	.line	19, "Key.c"; 	Key_Press_FLAG = 0;
-     0004 1Drr                      1-  185     	BCR	_my_flag0,2
-                                    1-  186     	.line	20, "Key.c"; 	Key_Press_Cnt = 0;
-     0005 02rr                      1-  187     	CLRR	_Key_Press_Cnt
-                                    1-  188     	MGOTO	_02013_DS_
+                                    1-  187     	.line	19, "Key.c"; 	Key_Press_FLAG = 0;
+     0004 1Drr                      1-  188     	BCR	_my_flag0,2
+                                    1-  189     	.line	20, "Key.c"; 	Key_Press_Cnt = 0;
+     0005 02rr                      1-  190     	CLRR	_Key_Press_Cnt
+                                    1-  191     	MGOTO	_02013_DS_
      0006 3rrr                      3-   62 m1      LGOTO rom_address
-     0007                           1-  189     _02012_DS_:
-                                    1-  190     	.line	23, "Key.c"; 	else if (!Key_Press_FLAG)
-     0007 0Drr                      1-  191     	BTRSC	_my_flag0,2
-                                    1-  192     	MGOTO	_02013_DS_
-     0008 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  193     	.line	26, "Key.c"; 	if (!Key_Press_FLAG)
-     0009 0Drr                      1-  194     	BTRSC	_my_flag0,2
+     0007                           1-  192     _02012_DS_:
+                                    1-  193     	.line	23, "Key.c"; 	else if (!Key_Press_FLAG)
+     0007 0Drr                      1-  194     	BTRSC	_my_flag0,2
                                     1-  195     	MGOTO	_02013_DS_
+     0008 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  196     	.line	26, "Key.c"; 	if (!Key_Press_FLAG)
+     0009 0Drr                      1-  197     	BTRSC	_my_flag0,2
+                                    1-  198     	MGOTO	_02013_DS_
      000A 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  196     	.line	28, "Key.c"; 	Key_Press_FLAG = 1;
-     000B 19rr                      1-  197     	BSR	_my_flag0,2
-                                    1-  198     	.line	29, "Key.c"; 	Key_Press_Cnt = 0;
-     000C 02rr                      1-  199     	CLRR	_Key_Press_Cnt
-                                    1-  200     ;;unsigned compare: left < lit(0x28=40), size=1
-     000D                           1-  201     _02013_DS_:
-                                    1-  202     	.line	34, "Key.c"; 	if (Key_Press_Cnt >= Key_Debounce_Time)
-     000D 2128                      1-  203     	MOVIA	0x28
-     000E 04rr                      1-  204     	SUBAR	_Key_Press_Cnt,W
-     000F 0803                      1-  205     	BTRSS	STATUS,0
-                                    1-  206     	MGOTO	_02022_DS_
+                                    1-  199     	.line	28, "Key.c"; 	Key_Press_FLAG = 1;
+     000B 19rr                      1-  200     	BSR	_my_flag0,2
+                                    1-  201     	.line	29, "Key.c"; 	Key_Press_Cnt = 0;
+     000C 02rr                      1-  202     	CLRR	_Key_Press_Cnt
+                                    1-  203     ;;unsigned compare: left < lit(0x28=40), size=1
+     000D                           1-  204     _02013_DS_:
+                                    1-  205     	.line	34, "Key.c"; 	if (Key_Press_Cnt >= Key_Debounce_Time)
+     000D 2128                      1-  206     	MOVIA	0x28
+     000E 04rr                      1-  207     	SUBAR	_Key_Press_Cnt,W
+     000F 0803                      1-  208     	BTRSS	STATUS,0
+                                    1-  209     	MGOTO	_02022_DS_
      0010 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  207     	.line	37, "Key.c"; 	if (Key_Press_FLAG)
-     0011 09rr                      1-  208     	BTRSS	_my_flag0,2
-                                    1-  209     	MGOTO	_02015_DS_
+                                    1-  210     	.line	37, "Key.c"; 	if (Key_Press_FLAG)
+     0011 09rr                      1-  211     	BTRSS	_my_flag0,2
+                                    1-  212     	MGOTO	_02015_DS_
      0012 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  210     	.line	39, "Key.c"; 	Key_Debounce_FLAG = 1;
-     0013 19rr                      1-  211     	BSR	_my_flag0,3
-                                    1-  212     	MGOTO	_02016_DS_
+                                    1-  213     	.line	39, "Key.c"; 	Key_Debounce_FLAG = 1;
+     0013 19rr                      1-  214     	BSR	_my_flag0,3
+                                    1-  215     	MGOTO	_02016_DS_
      0014 3rrr                      3-   62 m1      LGOTO rom_address
-     0015                           1-  213     _02015_DS_:
-                                    1-  214     	.line	43, "Key.c"; 	Key_Debounce_FLAG = 0;
-     0015 1Drr                      1-  215     	BCR	_my_flag0,3
-     0016                           1-  216     _02016_DS_:
-                                    1-  217     	.line	47, "Key.c"; 	if (Key_Debounce_FLAG)
-     0016 09rr                      1-  218     	BTRSS	_my_flag0,3
-                                    1-  219     	MGOTO	_02020_DS_
+     0015                           1-  216     _02015_DS_:
+                                    1-  217     	.line	43, "Key.c"; 	Key_Debounce_FLAG = 0;
+     0015 1Drr                      1-  218     	BCR	_my_flag0,3
+     0016                           1-  219     _02016_DS_:
+                                    1-  220     	.line	47, "Key.c"; 	if (Key_Debounce_FLAG)
+     0016 09rr                      1-  221     	BTRSS	_my_flag0,3
+                                    1-  222     	MGOTO	_02020_DS_
      0017 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  220     ;;swapping arguments (AOP_TYPEs 1/3)
-                                    1-  221     ;;unsigned compare: left >= lit(0x24=36), size=1
-                                    1-  222     	.line	49, "Key.c"; 	if (Key_Long_Cnt <= Key_Long_Time)
-     0018 2124                      1-  223     	MOVIA	0x24
-     0019 04rr                      1-  224     	SUBAR	_Key_Long_Cnt,W
-     001A 0803                      1-  225     	BTRSS	STATUS,0
-                                    1-  226     	.line	51, "Key.c"; 	Key_Long_Cnt++;
-     001B 05rr                      1-  227     	INCR	_Key_Long_Cnt,F
-     001C                           1-  228     _02020_DS_:
-                                    1-  229     	.line	56, "Key.c"; 	Key_Press_Cnt = 0;
-     001C 02rr                      1-  230     	CLRR	_Key_Press_Cnt
-     001D                           1-  231     _02022_DS_:
-                                    1-  232     	.line	60, "Key.c"; 	if (!Key_Debounce_FLAG)
-     001D 0Drr                      1-  233     	BTRSC	_my_flag0,3
-                                    1-  234     	MGOTO	_02031_DS_
+                                    1-  223     ;;swapping arguments (AOP_TYPEs 1/3)
+                                    1-  224     ;;unsigned compare: left >= lit(0x21=33), size=1
+                                    1-  225     	.line	49, "Key.c"; 	if (Key_Long_Cnt <= Key_Long_Time)
+     0018 2121                      1-  226     	MOVIA	0x21
+     0019 04rr                      1-  227     	SUBAR	_Key_Long_Cnt,W
+     001A 0803                      1-  228     	BTRSS	STATUS,0
+                                    1-  229     	.line	51, "Key.c"; 	Key_Long_Cnt++;
+     001B 05rr                      1-  230     	INCR	_Key_Long_Cnt,F
+     001C                           1-  231     _02020_DS_:
+                                    1-  232     	.line	56, "Key.c"; 	Key_Press_Cnt = 0;
+     001C 02rr                      1-  233     	CLRR	_Key_Press_Cnt
+     001D                           1-  234     _02022_DS_:
+                                    1-  235     	.line	60, "Key.c"; 	if (!Key_Debounce_FLAG)
+     001D 0Drr                      1-  236     	BTRSC	_my_flag0,3
+                                    1-  237     	MGOTO	_02031_DS_
      001E 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  235     	.line	62, "Key.c"; 	if (Key_Long_Cnt)
-     001F 01rr                      1-  236     	MOVR	_Key_Long_Cnt,W
-     0020 0D03                      1-  237     	BTRSC	STATUS,2
-                                    1-  238     	MGOTO	_02031_DS_
+                                    1-  238     	.line	62, "Key.c"; 	if (Key_Long_Cnt)
+     001F 01rr                      1-  239     	MOVR	_Key_Long_Cnt,W
+     0020 0D03                      1-  240     	BTRSC	STATUS,2
+                                    1-  241     	MGOTO	_02031_DS_
      0021 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  239     ;;unsigned compare: left < lit(0x23=35), size=1
-                                    1-  240     	.line	65, "Key.c"; 	if (Key_Long_Cnt < Key_Long_Time && Power_OnOff_FLAG)
-     0022 2123                      1-  241     	MOVIA	0x23
-     0023 04rr                      1-  242     	SUBAR	_Key_Long_Cnt,W
-     0024 0C03                      1-  243     	BTRSC	STATUS,0
-                                    1-  244     	MGOTO	_02026_DS_
+                                    1-  242     ;;unsigned compare: left < lit(0x20=32), size=1
+                                    1-  243     	.line	65, "Key.c"; 	if (Key_Long_Cnt < Key_Long_Time && Power_OnOff_FLAG)
+     0022 2120                      1-  244     	MOVIA	0x20
+     0023 04rr                      1-  245     	SUBAR	_Key_Long_Cnt,W
+     0024 0C03                      1-  246     	BTRSC	STATUS,0
+                                    1-  247     	MGOTO	_02026_DS_
      0025 3rrr                      3-   62 m1      LGOTO rom_address
-     0026 08rr                      1-  245     	BTRSS	_my_flag0,0
-                                    1-  246     	MGOTO	_02026_DS_
+     0026 08rr                      1-  248     	BTRSS	_my_flag0,0
+                                    1-  249     	MGOTO	_02026_DS_
      0027 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  247     	.line	67, "Key.c"; 	Key_LED_Flash_FLAG = 1;
-     0028 1Arr                      1-  248     	BSR	_my_flag0,4
-                                    1-  249     	.line	68, "Key.c"; 	M1_PWM_Write_FLAG = 1;
-     0029 19rr                      1-  250     	BSR	_my_flag1,3
-                                    1-  251     	.line	69, "Key.c"; 	M1_Freq_Change_Set++;
-     002A 05rr                      1-  252     	INCR	_M1_Freq_Change_Set,F
-                                    1-  253     ;;swapping arguments (AOP_TYPEs 1/3)
-                                    1-  254     ;;unsigned compare: left >= lit(0xB=11), size=1
-                                    1-  255     	.line	70, "Key.c"; 	if (M1_Freq_Change_Set > 10)
-     002B 210B                      1-  256     	MOVIA	0x0b
-     002C 04rr                      1-  257     	SUBAR	_M1_Freq_Change_Set,W
-     002D 0803                      1-  258     	BTRSS	STATUS,0
-                                    1-  259     	MGOTO	_02026_DS_
+                                    1-  250     	.line	67, "Key.c"; 	Key_LED_Flash_FLAG = 1;
+     0028 1Arr                      1-  251     	BSR	_my_flag0,4
+                                    1-  252     	.line	68, "Key.c"; 	M1_PWM_Write_FLAG = 1;
+     0029 19rr                      1-  253     	BSR	_my_flag1,3
+                                    1-  254     	.line	69, "Key.c"; 	M1_Freq_Change_Set++;
+     002A 05rr                      1-  255     	INCR	_M1_Freq_Change_Set,F
+                                    1-  256     ;;swapping arguments (AOP_TYPEs 1/3)
+                                    1-  257     ;;unsigned compare: left >= lit(0xB=11), size=1
+                                    1-  258     	.line	70, "Key.c"; 	if (M1_Freq_Change_Set > 10)
+     002B 210B                      1-  259     	MOVIA	0x0b
+     002C 04rr                      1-  260     	SUBAR	_M1_Freq_Change_Set,W
+     002D 0803                      1-  261     	BTRSS	STATUS,0
+                                    1-  262     	MGOTO	_02026_DS_
      002E 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  260     	.line	72, "Key.c"; 	M1_Freq_Change_Set = 1;
-     002F 2101                      1-  261     	MOVIA	0x01
-     0030 00rr                      1-  262     	MOVAR	_M1_Freq_Change_Set
-     0031                           1-  263     _02026_DS_:
-                                    1-  264     	.line	77, "Key.c"; 	Key_Long_Cnt = 0;
-     0031 02rr                      1-  265     	CLRR	_Key_Long_Cnt
-     0032                           1-  266     _02031_DS_:
-                                    1-  267     	.line	82, "Key.c"; 	if (Key_Long_Cnt == Key_Long_Time)
-     0032 01rr                      1-  268     	MOVR	_Key_Long_Cnt,W
-     0033 2423                      1-  269     	XORIA	0x23
-     0034 0903                      1-  270     	BTRSS	STATUS,2
-                                    1-  271     	MGOTO	_02037_DS_
+                                    1-  263     	.line	72, "Key.c"; 	M1_Freq_Change_Set = 1;
+     002F 2101                      1-  264     	MOVIA	0x01
+     0030 00rr                      1-  265     	MOVAR	_M1_Freq_Change_Set
+     0031                           1-  266     _02026_DS_:
+                                    1-  267     	.line	77, "Key.c"; 	Key_Long_Cnt = 0;
+     0031 02rr                      1-  268     	CLRR	_Key_Long_Cnt
+     0032                           1-  269     _02031_DS_:
+                                    1-  270     	.line	82, "Key.c"; 	if (Key_Long_Cnt == Key_Long_Time)
+     0032 01rr                      1-  271     	MOVR	_Key_Long_Cnt,W
+     0033 2420                      1-  272     	XORIA	0x20
+     0034 0903                      1-  273     	BTRSS	STATUS,2
+                                    1-  274     	MGOTO	_02037_DS_
      0035 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  272     	.line	84, "Key.c"; 	Key_Long_Cnt++;
-     0036 05rr                      1-  273     	INCR	_Key_Long_Cnt,F
-                                    1-  274     	.line	85, "Key.c"; 	if (Power_OnOff_FLAG)
-     0037 08rr                      1-  275     	BTRSS	_my_flag0,0
-                                    1-  276     	MGOTO	_02033_DS_
+                                    1-  275     	.line	84, "Key.c"; 	Key_Long_Cnt++;
+     0036 05rr                      1-  276     	INCR	_Key_Long_Cnt,F
+                                    1-  277     	.line	85, "Key.c"; 	if (Power_OnOff_FLAG)
+     0037 08rr                      1-  278     	BTRSS	_my_flag0,0
+                                    1-  279     	MGOTO	_02033_DS_
      0038 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  277     	.line	87, "Key.c"; 	Power_Off();
-                                    1-  278     	MCALL	_Power_Off
+                                    1-  280     	.line	87, "Key.c"; 	Power_Off();
+                                    1-  281     	MCALL	_Power_Off
      0039 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  279     	MGOTO	_02037_DS_
+                                    1-  282     	MGOTO	_02037_DS_
      003A 3rrr                      3-   62 m1      LGOTO rom_address
-     003B                           1-  280     _02033_DS_:
-                                    1-  281     	.line	91, "Key.c"; 	Power_OnOff_FLAG = 1;
-     003B 18rr                      1-  282     	BSR	_my_flag0,0
-                                    1-  283     	.line	92, "Key.c"; 	M1_PWM_Write_FLAG = 1;
-     003C 19rr                      1-  284     	BSR	_my_flag1,3
-                                    1-  285     	.line	93, "Key.c"; 	M1_Freq_Change_Set = 1;
-     003D 2101                      1-  286     	MOVIA	0x01
-     003E 00rr                      1-  287     	MOVAR	_M1_Freq_Change_Set
-                                    1-  288     	.line	94, "Key.c"; 	Key_LED_Flash_FLAG = 1;
-     003F 1Arr                      1-  289     	BSR	_my_flag0,4
-     0040                           1-  290     _02037_DS_:
-                                    1-  291     	.line	97, "Key.c"; 	}
-                                    1-  292     	RETURN	
+     003B                           1-  283     _02033_DS_:
+                                    1-  284     	.line	91, "Key.c"; 	Power_OnOff_FLAG = 1;
+     003B 18rr                      1-  285     	BSR	_my_flag0,0
+                                    1-  286     	.line	92, "Key.c"; 	M1_PWM_Write_FLAG = 1;
+     003C 19rr                      1-  287     	BSR	_my_flag1,3
+                                    1-  288     	.line	93, "Key.c"; 	M1_Freq_Change_Set = 1;
+     003D 2101                      1-  289     	MOVIA	0x01
+     003E 00rr                      1-  290     	MOVAR	_M1_Freq_Change_Set
+                                    1-  291     	.line	94, "Key.c"; 	Key_LED_Flash_FLAG = 1;
+     003F 1Arr                      1-  292     	BSR	_my_flag0,4
+     0040                           1-  293     _02037_DS_:
+                                    1-  294     	.line	97, "Key.c"; 	}
+                                    1-  295     	RETURN	
      0040 0010                      3-   39 m1      ret
-                                    1-  293     ; exit point of _Key_Scan
-                                    1-  296     ;	code size estimation:
-                                    1-  297     ;	   65+    0 =    65 instructions (  130 byte)
-                                    1-  299     	end
+                                    1-  296     ; exit point of _Key_Scan
+                                    1-  299     ;	code size estimation:
+                                    1-  300     ;	   65+    0 =    65 instructions (  130 byte)
+                                    1-  302     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006

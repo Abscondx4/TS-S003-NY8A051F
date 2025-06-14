@@ -59,277 +59,283 @@ NYASM 2.50
                                     1-   11     ;--------------------------------------------------------
                                     1-   12     ; external declarations
                                     1-   13     ;--------------------------------------------------------
-                                    1-   14     	extern	_Power_Off
-                                    1-   15     	extern	_Switch_Power_Mode
-                                    1-   16     	extern	_Init
-                                    1-   17     	extern	_clear_ram
-                                    1-   18     	extern	_multi_16b
-                                    1-   19     	extern	_multi_8b
-                                    1-   20     	extern	_T0MD
-                                    1-   21     	extern	_PCON1
-                                    1-   22     	extern	_BODCON
-                                    1-   23     	extern	_PS0CV
-                                    1-   24     	extern	_IOSTB
-                                    1-   25     	extern	_OSCCR
-                                    1-   26     	extern	_TBHD
-                                    1-   27     	extern	_TBHP
-                                    1-   28     	extern	_IRCR
-                                    1-   29     	extern	_BZ1CR
-                                    1-   30     	extern	_PS1CV
-                                    1-   31     	extern	_PWM1DUTY
-                                    1-   32     	extern	_T1CR2
-                                    1-   33     	extern	_T1CR1
-                                    1-   34     	extern	_TMR1
-                                    1-   35     	extern	_PCHBUF
-                                    1-   36     	extern	_STATUS
-                                    1-   37     	extern	_PCL
-                                    1-   38     	extern	_TMR0
-                                    1-   39     	extern	_Full_Cnt
-                                    1-   40     	extern	_Charge_Cnt
-                                    1-   41     	extern	_LED_Charge_Time
-                                    1-   42     	extern	_Timer_1min
-                                    1-   43     	extern	_Timer_1s
-                                    1-   44     	extern	_Timer_100ms
-                                    1-   45     	extern	_Timer_10ms
-                                    1-   46     	extern	_Timer_1ms
-                                    1-   47     	extern	_Unit_Time
-                                    1-   48     	extern	_LED_FLAG
-                                    1-   49     	extern	_Time_Temp
-                                    1-   50     	extern	_Sleep_Cnt
-                                    1-   51     	extern	_Key_Short_LED_Cnt
-                                    1-   52     	extern	_Key_Long_Cnt
-                                    1-   53     	extern	_Key_Press_Cnt
-                                    1-   54     	extern	_Motor_Counter_FLAG
-                                    1-   55     	extern	_Motor_Peri_1000
-                                    1-   56     	extern	_Motor_Peri_100
-                                    1-   57     	extern	_Motor_Peri_10
-                                    1-   58     	extern	_Motor_Peri_1
-                                    1-   59     	extern	_M1_Cnt
-                                    1-   60     	extern	_M1_Freq_Change_Set
-                                    1-   61     	extern	_M1_Freq_Change
-                                    1-   62     	extern	_Motor_Freq_Cnt2
-                                    1-   63     	extern	_Motor_Freq_Cnt1
-                                    1-   64     	extern	_Motor_Freq_Cnt0
-                                    1-   65     	extern	_Motor_Freq_Change
-                                    1-   66     	extern	_M1_Duty_1_Set
-                                    1-   67     	extern	_M1_Duty_Set
-                                    1-   68     	extern	_M1_Duty
-                                    1-   69     	extern	_M1_Cycle_1_Set
-                                    1-   70     	extern	_M1_Cycle_Set
-                                    1-   71     	extern	_M1_Cycle
-                                    1-   72     	extern	_my_flag4
-                                    1-   73     	extern	_my_flag3
-                                    1-   74     	extern	_my_flag2
-                                    1-   75     	extern	_My_Flag
-                                    1-   76     	extern	_INTFbits
-                                    1-   77     	extern	_INTEbits
-                                    1-   78     	extern	_BPHCONbits
-                                    1-   79     	extern	_BPLCONbits
-                                    1-   80     	extern	_BWUCONbits
-                                    1-   81     	extern	_PCONbits
-                                    1-   82     	extern	_PORTBbits
-                                    1-   84     	extern PSAVE
-                                    1-   85     	extern SSAVE
-                                    1-   86     	extern WSAVE
-                                    1-   87     	extern STK12
-                                    1-   88     	extern ___STK12
-                                    1-   89     	extern STK11
-                                    1-   90     	extern ___STK11
-                                    1-   91     	extern STK10
-                                    1-   92     	extern ___STK10
-                                    1-   93     	extern STK09
-                                    1-   94     	extern ___STK09
-                                    1-   95     	extern STK08
-                                    1-   96     	extern ___STK08
-                                    1-   97     	extern STK07
-                                    1-   98     	extern ___STK07
-                                    1-   99     	extern STK06
-                                    1-  100     	extern ___STK06
-                                    1-  101     	extern STK05
-                                    1-  102     	extern ___STK05
-                                    1-  103     	extern STK04
-                                    1-  104     	extern ___STK04
-                                    1-  105     	extern STK03
-                                    1-  106     	extern ___STK03
-                                    1-  107     	extern STK02
-                                    1-  108     	extern ___STK02
-                                    1-  109     	extern STK01
-                                    1-  110     	extern ___STK01
-                                    1-  111     	extern STK00
-                                    1-  112     	extern ___STK00
-                                    1-  113     ;--------------------------------------------------------
-                                    1-  114     ; global declarations
-                                    1-  115     ;--------------------------------------------------------
-                                    1-  116     	extern	_my_flag0
-                                    1-  117     	extern	_my_flag1
-                                    1-  118     	extern	_INTF
-                                    1-  119     	extern	_INTE
-                                    1-  120     	extern	_BPHCON
-                                    1-  121     	extern	_BPLCON
-                                    1-  122     	extern	_BWUCON
-                                    1-  123     	extern	_PCON
-                                    1-  124     	extern	_PORTB
-                                    1-  125     	extern	_Charge_Dectect
-                                    1-  126     	extern	_Charge_Process
-                                    1-  128     ;--------------------------------------------------------
-                                    1-  129     ; global definitions
-                                    1-  130     ;--------------------------------------------------------
-                                    1-  131     ;--------------------------------------------------------
-                                    1-  132     ; absolute symbol definitions
-                                    1-  133     ;--------------------------------------------------------
+                                    1-   14     	extern	_Low_Voltage_Detection
+                                    1-   15     	extern	_Power_Off
+                                    1-   16     	extern	_Switch_Power_Mode
+                                    1-   17     	extern	_Reset_Clock
+                                    1-   18     	extern	_Clock
+                                    1-   19     	extern	_Delay_ms
+                                    1-   20     	extern	_Delay_us
+                                    1-   21     	extern	_Init
+                                    1-   22     	extern	_clear_ram
+                                    1-   23     	extern	_multi_16b
+                                    1-   24     	extern	_multi_8b
+                                    1-   25     	extern	_T0MD
+                                    1-   26     	extern	_PCON1
+                                    1-   27     	extern	_BODCON
+                                    1-   28     	extern	_PS0CV
+                                    1-   29     	extern	_IOSTB
+                                    1-   30     	extern	_OSCCR
+                                    1-   31     	extern	_TBHD
+                                    1-   32     	extern	_TBHP
+                                    1-   33     	extern	_IRCR
+                                    1-   34     	extern	_BZ1CR
+                                    1-   35     	extern	_PS1CV
+                                    1-   36     	extern	_PWM1DUTY
+                                    1-   37     	extern	_T1CR2
+                                    1-   38     	extern	_T1CR1
+                                    1-   39     	extern	_TMR1
+                                    1-   40     	extern	_PCHBUF
+                                    1-   41     	extern	_STATUS
+                                    1-   42     	extern	_PCL
+                                    1-   43     	extern	_TMR0
+                                    1-   44     	extern	_Full_Cnt
+                                    1-   45     	extern	_Charge_Cnt
+                                    1-   46     	extern	_LED_Charge_Time
+                                    1-   47     	extern	_Timer_1min
+                                    1-   48     	extern	_Timer_1s
+                                    1-   49     	extern	_Timer_100ms
+                                    1-   50     	extern	_Timer_10ms
+                                    1-   51     	extern	_Timer_1ms
+                                    1-   52     	extern	_Unit_Time
+                                    1-   53     	extern	_LED_FLAG
+                                    1-   54     	extern	_Time_Temp
+                                    1-   55     	extern	_Sleep_Cnt
+                                    1-   56     	extern	_Key_Short_LED_Cnt
+                                    1-   57     	extern	_Key_Long_Cnt
+                                    1-   58     	extern	_Key_Press_Cnt
+                                    1-   59     	extern	_Motor_Counter_FLAG
+                                    1-   60     	extern	_Motor_Peri_1000
+                                    1-   61     	extern	_Motor_Peri_100
+                                    1-   62     	extern	_Motor_Peri_10
+                                    1-   63     	extern	_Motor_Peri_1
+                                    1-   64     	extern	_M1_Cnt
+                                    1-   65     	extern	_M1_Freq_Change_Set
+                                    1-   66     	extern	_M1_Freq_Change
+                                    1-   67     	extern	_Motor_Freq_Cnt2
+                                    1-   68     	extern	_Motor_Freq_Cnt1
+                                    1-   69     	extern	_Motor_Freq_Cnt0
+                                    1-   70     	extern	_Motor_Freq_Change
+                                    1-   71     	extern	_M1_Duty_1_Set
+                                    1-   72     	extern	_M1_Duty_Set
+                                    1-   73     	extern	_M1_Duty
+                                    1-   74     	extern	_M1_Cycle_1_Set
+                                    1-   75     	extern	_M1_Cycle_Set
+                                    1-   76     	extern	_M1_Cycle
+                                    1-   77     	extern	_LED_Off_Cnt
+                                    1-   78     	extern	_my_flag4
+                                    1-   79     	extern	_my_flag3
+                                    1-   80     	extern	_my_flag2
+                                    1-   81     	extern	_My_Flag
+                                    1-   82     	extern	_INTFbits
+                                    1-   83     	extern	_INTEbits
+                                    1-   84     	extern	_BPHCONbits
+                                    1-   85     	extern	_BPLCONbits
+                                    1-   86     	extern	_BWUCONbits
+                                    1-   87     	extern	_PCONbits
+                                    1-   88     	extern	_PORTBbits
+                                    1-   90     	extern PSAVE
+                                    1-   91     	extern SSAVE
+                                    1-   92     	extern WSAVE
+                                    1-   93     	extern STK12
+                                    1-   94     	extern ___STK12
+                                    1-   95     	extern STK11
+                                    1-   96     	extern ___STK11
+                                    1-   97     	extern STK10
+                                    1-   98     	extern ___STK10
+                                    1-   99     	extern STK09
+                                    1-  100     	extern ___STK09
+                                    1-  101     	extern STK08
+                                    1-  102     	extern ___STK08
+                                    1-  103     	extern STK07
+                                    1-  104     	extern ___STK07
+                                    1-  105     	extern STK06
+                                    1-  106     	extern ___STK06
+                                    1-  107     	extern STK05
+                                    1-  108     	extern ___STK05
+                                    1-  109     	extern STK04
+                                    1-  110     	extern ___STK04
+                                    1-  111     	extern STK03
+                                    1-  112     	extern ___STK03
+                                    1-  113     	extern STK02
+                                    1-  114     	extern ___STK02
+                                    1-  115     	extern STK01
+                                    1-  116     	extern ___STK01
+                                    1-  117     	extern STK00
+                                    1-  118     	extern ___STK00
+                                    1-  119     ;--------------------------------------------------------
+                                    1-  120     ; global declarations
+                                    1-  121     ;--------------------------------------------------------
+                                    1-  122     	extern	_my_flag0
+                                    1-  123     	extern	_my_flag1
+                                    1-  124     	extern	_INTF
+                                    1-  125     	extern	_INTE
+                                    1-  126     	extern	_BPHCON
+                                    1-  127     	extern	_BPLCON
+                                    1-  128     	extern	_BWUCON
+                                    1-  129     	extern	_PCON
+                                    1-  130     	extern	_PORTB
+                                    1-  131     	extern	_Charge_Dectect
+                                    1-  132     	extern	_Charge_Process
                                     1-  134     ;--------------------------------------------------------
-                                    1-  135     ; compiler-defined variables
+                                    1-  135     ; global definitions
                                     1-  136     ;--------------------------------------------------------
                                     1-  137     ;--------------------------------------------------------
-                                    1-  138     ; initialized data
+                                    1-  138     ; absolute symbol definitions
                                     1-  139     ;--------------------------------------------------------
                                     1-  140     ;--------------------------------------------------------
-                                    1-  141     ; initialized absolute data
+                                    1-  141     ; compiler-defined variables
                                     1-  142     ;--------------------------------------------------------
                                     1-  143     ;--------------------------------------------------------
-                                    1-  144     ; overlayable items in internal ram 
+                                    1-  144     ; initialized data
                                     1-  145     ;--------------------------------------------------------
-                                    1-  146     ;	udata_ovr
-                                    1-  147     ;--------------------------------------------------------
-                                    1-  148     ; code
+                                    1-  146     ;--------------------------------------------------------
+                                    1-  147     ; initialized absolute data
+                                    1-  148     ;--------------------------------------------------------
                                     1-  149     ;--------------------------------------------------------
-                                    1-  150     ; code_Charge	code
-                                    1-  151     ;***
-                                    1-  152     ;  pBlock Stats: dbName = C
-                                    1-  153     ;***
-                                    1-  154     ;has an exit
-                                    1-  155     ;functions called:
-                                    1-  156     ;   _Power_Off
-                                    1-  157     ;   _Power_Off
-                                    1-  158     ;; Starting pCode block
-                                    1-  159     .segment "code"; module=Charge, function=_Charge_Process
-     0000                           1-  161     _Charge_Process:
-                                    1-  162     ; 2 exit points
-                                    1-  163     	.line	61, "Charge.c"; 	if (Power_OnOff_FLAG)
-     0000 08rr                      1-  164     	BTRSS	_my_flag0,0
-                                    1-  165     	MGOTO	_02019_DS_
+                                    1-  150     ; overlayable items in internal ram 
+                                    1-  151     ;--------------------------------------------------------
+                                    1-  152     ;	udata_ovr
+                                    1-  153     ;--------------------------------------------------------
+                                    1-  154     ; code
+                                    1-  155     ;--------------------------------------------------------
+                                    1-  156     ; code_Charge	code
+                                    1-  157     ;***
+                                    1-  158     ;  pBlock Stats: dbName = C
+                                    1-  159     ;***
+                                    1-  160     ;has an exit
+                                    1-  161     ;functions called:
+                                    1-  162     ;   _Power_Off
+                                    1-  163     ;   _Power_Off
+                                    1-  164     ;; Starting pCode block
+                                    1-  165     .segment "code"; module=Charge, function=_Charge_Process
+     0000                           1-  167     _Charge_Process:
+                                    1-  168     ; 2 exit points
+                                    1-  169     	.line	61, "Charge.c"; 	if (Power_OnOff_FLAG)
+     0000 08rr                      1-  170     	BTRSS	_my_flag0,0
+                                    1-  171     	MGOTO	_02019_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  166     	.line	63, "Charge.c"; 	Power_Off();
-                                    1-  167     	MCALL	_Power_Off
+                                    1-  172     	.line	63, "Charge.c"; 	Power_Off();
+                                    1-  173     	MCALL	_Power_Off
      0002 2rrr                      3-   65 m1      LCALL rom_address
-     0003                           1-  168     _02019_DS_:
-                                    1-  169     	.line	67, "Charge.c"; 	if (CHARGE_Full)
-     0003 09rr                      1-  170     	BTRSS	_PORTB,3
-                                    1-  171     	MGOTO	_02031_DS_
+     0003                           1-  174     _02019_DS_:
+                                    1-  175     	.line	67, "Charge.c"; 	if (CHARGE_Full)
+     0003 09rr                      1-  176     	BTRSS	_PORTB,3
+                                    1-  177     	MGOTO	_02031_DS_
      0004 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  172     	.line	70, "Charge.c"; 	if (Charge_Full_FLAG)
-     0005 0Arr                      1-  173     	BTRSS	_my_flag1,4
-                                    1-  174     	MGOTO	_02023_DS_
+                                    1-  178     	.line	70, "Charge.c"; 	if (Charge_Full_FLAG)
+     0005 0Arr                      1-  179     	BTRSS	_my_flag1,4
+                                    1-  180     	MGOTO	_02023_DS_
      0006 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  175     	.line	72, "Charge.c"; 	Full_Cnt = 0;
-     0007 02rr                      1-  176     	CLRR	_Full_Cnt
-                                    1-  177     	.line	73, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 1;
-     0008 1Brr                      1-  178     	BSR	_my_flag1,7
-                                    1-  179     	MGOTO	_02033_DS_
+                                    1-  181     	.line	72, "Charge.c"; 	Full_Cnt = 0;
+     0007 02rr                      1-  182     	CLRR	_Full_Cnt
+                                    1-  183     	.line	73, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 1;
+     0008 1Brr                      1-  184     	BSR	_my_flag1,7
+                                    1-  185     	MGOTO	_02033_DS_
      0009 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  180     ;;unsigned compare: left < lit(0x5=5), size=1
-     000A                           1-  181     _02023_DS_:
-                                    1-  182     	.line	75, "Charge.c"; 	else if (Full_Cnt >= Full_Debounce_Time)
-     000A 2105                      1-  183     	MOVIA	0x05
-     000B 04rr                      1-  184     	SUBAR	_Full_Cnt,W
-     000C 0803                      1-  185     	BTRSS	STATUS,0
-                                    1-  186     	MGOTO	_02033_DS_
+                                    1-  186     ;;unsigned compare: left < lit(0x5=5), size=1
+     000A                           1-  187     _02023_DS_:
+                                    1-  188     	.line	75, "Charge.c"; 	else if (Full_Cnt >= Full_Debounce_Time)
+     000A 2105                      1-  189     	MOVIA	0x05
+     000B 04rr                      1-  190     	SUBAR	_Full_Cnt,W
+     000C 0803                      1-  191     	BTRSS	STATUS,0
+                                    1-  192     	MGOTO	_02033_DS_
      000D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  187     	.line	77, "Charge.c"; 	Full_Cnt = 0;
-     000E 02rr                      1-  188     	CLRR	_Full_Cnt
-                                    1-  189     	.line	78, "Charge.c"; 	Charge_Full_FLAG = 1;
-     000F 1Arr                      1-  190     	BSR	_my_flag1,4
-                                    1-  191     	MGOTO	_02033_DS_
+                                    1-  193     	.line	77, "Charge.c"; 	Full_Cnt = 0;
+     000E 02rr                      1-  194     	CLRR	_Full_Cnt
+                                    1-  195     	.line	78, "Charge.c"; 	Charge_Full_FLAG = 1;
+     000F 1Arr                      1-  196     	BSR	_my_flag1,4
+                                    1-  197     	MGOTO	_02033_DS_
      0010 3rrr                      3-   62 m1      LGOTO rom_address
-     0011                           1-  192     _02031_DS_:
-                                    1-  193     	.line	85, "Charge.c"; 	if (Charge_Full_FLAG)
-     0011 0Arr                      1-  194     	BTRSS	_my_flag1,4
-                                    1-  195     	MGOTO	_02028_DS_
+     0011                           1-  198     _02031_DS_:
+                                    1-  199     	.line	85, "Charge.c"; 	if (Charge_Full_FLAG)
+     0011 0Arr                      1-  200     	BTRSS	_my_flag1,4
+                                    1-  201     	MGOTO	_02028_DS_
      0012 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  196     ;;unsigned compare: left < lit(0x5=5), size=1
-                                    1-  197     	.line	88, "Charge.c"; 	if (Full_Cnt >= Full_Debounce_Time)
-     0013 2105                      1-  198     	MOVIA	0x05
-     0014 04rr                      1-  199     	SUBAR	_Full_Cnt,W
-     0015 0803                      1-  200     	BTRSS	STATUS,0
-                                    1-  201     	MGOTO	_02033_DS_
+                                    1-  202     ;;unsigned compare: left < lit(0x5=5), size=1
+                                    1-  203     	.line	88, "Charge.c"; 	if (Full_Cnt >= Full_Debounce_Time)
+     0013 2105                      1-  204     	MOVIA	0x05
+     0014 04rr                      1-  205     	SUBAR	_Full_Cnt,W
+     0015 0803                      1-  206     	BTRSS	STATUS,0
+                                    1-  207     	MGOTO	_02033_DS_
      0016 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  202     	.line	90, "Charge.c"; 	Full_Cnt = 0;
-     0017 02rr                      1-  203     	CLRR	_Full_Cnt
-                                    1-  204     	.line	91, "Charge.c"; 	LED_Charge_Time = 0;
-     0018 02rr                      1-  205     	CLRR	_LED_Charge_Time
-                                    1-  206     	.line	92, "Charge.c"; 	Charge_Full_FLAG = 0;
-     0019 1Err                      1-  207     	BCR	_my_flag1,4
-                                    1-  208     	MGOTO	_02033_DS_
+                                    1-  208     	.line	90, "Charge.c"; 	Full_Cnt = 0;
+     0017 02rr                      1-  209     	CLRR	_Full_Cnt
+                                    1-  210     	.line	91, "Charge.c"; 	LED_Charge_Time = 0;
+     0018 02rr                      1-  211     	CLRR	_LED_Charge_Time
+                                    1-  212     	.line	92, "Charge.c"; 	Charge_Full_FLAG = 0;
+     0019 1Err                      1-  213     	BCR	_my_flag1,4
+                                    1-  214     	MGOTO	_02033_DS_
      001A 3rrr                      3-   62 m1      LGOTO rom_address
-     001B                           1-  209     _02028_DS_:
-                                    1-  210     	.line	98, "Charge.c"; 	Full_Cnt = 0;
-     001B 02rr                      1-  211     	CLRR	_Full_Cnt
-                                    1-  212     	.line	99, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
-     001C 1Frr                      1-  213     	BCR	_my_flag1,7
-     001D                           1-  214     _02033_DS_:
-                                    1-  215     	.line	102, "Charge.c"; 	}
-                                    1-  216     	RETURN	
+     001B                           1-  215     _02028_DS_:
+                                    1-  216     	.line	98, "Charge.c"; 	Full_Cnt = 0;
+     001B 02rr                      1-  217     	CLRR	_Full_Cnt
+                                    1-  218     	.line	99, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
+     001C 1Frr                      1-  219     	BCR	_my_flag1,7
+     001D                           1-  220     _02033_DS_:
+                                    1-  221     	.line	102, "Charge.c"; 	}
+                                    1-  222     	RETURN	
      001D 0010                      3-   39 m1      ret
-                                    1-  217     ; exit point of _Charge_Process
-                                    1-  219     ;***
-                                    1-  220     ;  pBlock Stats: dbName = C
-                                    1-  221     ;***
-                                    1-  222     ;has an exit
-                                    1-  223     ;; Starting pCode block
-                                    1-  224     .segment "code"; module=Charge, function=_Charge_Dectect
-     0000                           1-  226     _Charge_Dectect:
-                                    1-  227     ; 2 exit points
-                                    1-  228     	.line	12, "Charge.c"; 	if (CHARGE_DET)
-     0000 08rr                      1-  229     	BTRSS	_PORTB,0
-                                    1-  230     	MGOTO	_02011_DS_
+                                    1-  223     ; exit point of _Charge_Process
+                                    1-  225     ;***
+                                    1-  226     ;  pBlock Stats: dbName = C
+                                    1-  227     ;***
+                                    1-  228     ;has an exit
+                                    1-  229     ;; Starting pCode block
+                                    1-  230     .segment "code"; module=Charge, function=_Charge_Dectect
+     0000                           1-  232     _Charge_Dectect:
+                                    1-  233     ; 2 exit points
+                                    1-  234     	.line	12, "Charge.c"; 	if (CHARGE_DET)
+     0000 08rr                      1-  235     	BTRSS	_PORTB,0
+                                    1-  236     	MGOTO	_02011_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  231     	.line	15, "Charge.c"; 	if (Charging_FLAG)
-     0002 0Arr                      1-  232     	BTRSS	_my_flag1,5
-                                    1-  233     	MGOTO	_02008_DS_
+                                    1-  237     	.line	15, "Charge.c"; 	if (Charging_FLAG)
+     0002 0Arr                      1-  238     	BTRSS	_my_flag1,5
+                                    1-  239     	MGOTO	_02008_DS_
      0003 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  234     	.line	18, "Charge.c"; 	Charge_LED_Breathing_FLAG = 1;
-     0004 1Brr                      1-  235     	BSR	_my_flag1,6
-                                    1-  236     	.line	20, "Charge.c"; 	Key_Long_Cnt = 0;
-     0005 02rr                      1-  237     	CLRR	_Key_Long_Cnt
-                                    1-  238     	.line	22, "Charge.c"; 	Key_Press_Cnt = 0;
-     0006 02rr                      1-  239     	CLRR	_Key_Press_Cnt
-                                    1-  240     	MGOTO	_02013_DS_
+                                    1-  240     	.line	18, "Charge.c"; 	Charge_LED_Breathing_FLAG = 1;
+     0004 1Brr                      1-  241     	BSR	_my_flag1,6
+                                    1-  242     	.line	20, "Charge.c"; 	Key_Long_Cnt = 0;
+     0005 02rr                      1-  243     	CLRR	_Key_Long_Cnt
+                                    1-  244     	.line	22, "Charge.c"; 	Key_Press_Cnt = 0;
+     0006 02rr                      1-  245     	CLRR	_Key_Press_Cnt
+                                    1-  246     	MGOTO	_02013_DS_
      0007 3rrr                      3-   62 m1      LGOTO rom_address
-     0008                           1-  241     _02008_DS_:
-                                    1-  242     	.line	26, "Charge.c"; 	else if (Charge_Cnt)
-     0008 01rr                      1-  243     	MOVR	_Charge_Cnt,W
-     0009 0D03                      1-  244     	BTRSC	STATUS,2
-                                    1-  245     	MGOTO	_02013_DS_
+     0008                           1-  247     _02008_DS_:
+                                    1-  248     	.line	26, "Charge.c"; 	else if (Charge_Cnt)
+     0008 01rr                      1-  249     	MOVR	_Charge_Cnt,W
+     0009 0D03                      1-  250     	BTRSC	STATUS,2
+                                    1-  251     	MGOTO	_02013_DS_
      000A 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  246     	.line	29, "Charge.c"; 	Charge_Cnt = 0;
-     000B 02rr                      1-  247     	CLRR	_Charge_Cnt
-                                    1-  248     	.line	31, "Charge.c"; 	Charging_FLAG = 1;
-     000C 1Arr                      1-  249     	BSR	_my_flag1,5
-                                    1-  250     	.line	33, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
-     000D 1Frr                      1-  251     	BCR	_my_flag1,7
-                                    1-  252     	.line	35, "Charge.c"; 	Full_Cnt = 0;
-     000E 02rr                      1-  253     	CLRR	_Full_Cnt
-                                    1-  254     	.line	37, "Charge.c"; 	Charge_Full_FLAG = 0;
-     000F 1Err                      1-  255     	BCR	_my_flag1,4
-                                    1-  256     	MGOTO	_02013_DS_
+                                    1-  252     	.line	29, "Charge.c"; 	Charge_Cnt = 0;
+     000B 02rr                      1-  253     	CLRR	_Charge_Cnt
+                                    1-  254     	.line	31, "Charge.c"; 	Charging_FLAG = 1;
+     000C 1Arr                      1-  255     	BSR	_my_flag1,5
+                                    1-  256     	.line	33, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
+     000D 1Frr                      1-  257     	BCR	_my_flag1,7
+                                    1-  258     	.line	35, "Charge.c"; 	Full_Cnt = 0;
+     000E 02rr                      1-  259     	CLRR	_Full_Cnt
+                                    1-  260     	.line	37, "Charge.c"; 	Charge_Full_FLAG = 0;
+     000F 1Err                      1-  261     	BCR	_my_flag1,4
+                                    1-  262     	MGOTO	_02013_DS_
      0010 3rrr                      3-   62 m1      LGOTO rom_address
-     0011                           1-  257     _02011_DS_:
-                                    1-  258     	.line	44, "Charge.c"; 	Charging_FLAG = 0;
-     0011 1Err                      1-  259     	BCR	_my_flag1,5
-                                    1-  260     	.line	46, "Charge.c"; 	Charge_Cnt = 0;
-     0012 02rr                      1-  261     	CLRR	_Charge_Cnt
-                                    1-  262     	.line	48, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
-     0013 1Frr                      1-  263     	BCR	_my_flag1,7
-                                    1-  264     	.line	50, "Charge.c"; 	Charge_LED_Breathing_FLAG = 0;
-     0014 1Frr                      1-  265     	BCR	_my_flag1,6
-     0015                           1-  266     _02013_DS_:
-                                    1-  267     	.line	52, "Charge.c"; 	}
-                                    1-  268     	RETURN	
+     0011                           1-  263     _02011_DS_:
+                                    1-  264     	.line	44, "Charge.c"; 	Charging_FLAG = 0;
+     0011 1Err                      1-  265     	BCR	_my_flag1,5
+                                    1-  266     	.line	46, "Charge.c"; 	Charge_Cnt = 0;
+     0012 02rr                      1-  267     	CLRR	_Charge_Cnt
+                                    1-  268     	.line	48, "Charge.c"; 	Charge_Full_LED_Light_FLAG = 0;
+     0013 1Frr                      1-  269     	BCR	_my_flag1,7
+                                    1-  270     	.line	50, "Charge.c"; 	Charge_LED_Breathing_FLAG = 0;
+     0014 1Frr                      1-  271     	BCR	_my_flag1,6
+     0015                           1-  272     _02013_DS_:
+                                    1-  273     	.line	52, "Charge.c"; 	}
+                                    1-  274     	RETURN	
      0015 0010                      3-   39 m1      ret
-                                    1-  269     ; exit point of _Charge_Dectect
-                                    1-  272     ;	code size estimation:
-                                    1-  273     ;	   52+    0 =    52 instructions (  104 byte)
-                                    1-  275     	end
+                                    1-  275     ; exit point of _Charge_Dectect
+                                    1-  278     ;	code size estimation:
+                                    1-  279     ;	   52+    0 =    52 instructions (  104 byte)
+                                    1-  281     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006

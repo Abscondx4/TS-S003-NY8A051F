@@ -59,186 +59,214 @@ NYASM 2.50
                                     1-   11     ;--------------------------------------------------------
                                     1-   12     ; external declarations
                                     1-   13     ;--------------------------------------------------------
-                                    1-   14     	extern	_Init
-                                    1-   15     	extern	_clear_ram
-                                    1-   16     	extern	_multi_16b
-                                    1-   17     	extern	_multi_8b
-                                    1-   18     	extern	_T0MD
-                                    1-   19     	extern	_PCON1
-                                    1-   20     	extern	_BODCON
-                                    1-   21     	extern	_PS0CV
-                                    1-   22     	extern	_IOSTB
-                                    1-   23     	extern	_OSCCR
-                                    1-   24     	extern	_TBHD
-                                    1-   25     	extern	_TBHP
-                                    1-   26     	extern	_IRCR
-                                    1-   27     	extern	_BZ1CR
-                                    1-   28     	extern	_PS1CV
-                                    1-   29     	extern	_PWM1DUTY
-                                    1-   30     	extern	_T1CR2
-                                    1-   31     	extern	_T1CR1
-                                    1-   32     	extern	_TMR1
-                                    1-   33     	extern	_PCHBUF
-                                    1-   34     	extern	_STATUS
-                                    1-   35     	extern	_PCL
-                                    1-   36     	extern	_TMR0
-                                    1-   37     	extern	_Timer_1min
-                                    1-   38     	extern	_Timer_1s
-                                    1-   39     	extern	_Timer_100ms
-                                    1-   40     	extern	_Timer_10ms
-                                    1-   41     	extern	_Timer_1ms
-                                    1-   42     	extern	_Unit_Time
-                                    1-   43     	extern	_LED_FLAG
-                                    1-   44     	extern	_Time_Temp
-                                    1-   45     	extern	_Sleep_Cnt
-                                    1-   46     	extern	_Key_Short_LED_Cnt
-                                    1-   47     	extern	_Key_Long_Cnt
-                                    1-   48     	extern	_Key_Press_Cnt
-                                    1-   49     	extern	_Motor_Counter_FLAG
-                                    1-   50     	extern	_Motor_Peri_1000
-                                    1-   51     	extern	_Motor_Peri_100
-                                    1-   52     	extern	_Motor_Peri_10
-                                    1-   53     	extern	_Motor_Peri_1
-                                    1-   54     	extern	_M1_Cnt
-                                    1-   55     	extern	_M1_Freq_Change_Set
-                                    1-   56     	extern	_M1_Freq_Change
-                                    1-   57     	extern	_Motor_Freq_Cnt2
-                                    1-   58     	extern	_Motor_Freq_Cnt1
-                                    1-   59     	extern	_Motor_Freq_Cnt0
-                                    1-   60     	extern	_Motor_Freq_Change
-                                    1-   61     	extern	_M1_Duty_1_Set
-                                    1-   62     	extern	_M1_Duty_Set
-                                    1-   63     	extern	_M1_Duty
-                                    1-   64     	extern	_M1_Cycle_1_Set
-                                    1-   65     	extern	_M1_Cycle_Set
-                                    1-   66     	extern	_M1_Cycle
-                                    1-   67     	extern	_Charge_Cnt
-                                    1-   68     	extern	_LED_Charge_Time
-                                    1-   69     	extern	_Full_Cnt
-                                    1-   70     	extern	_my_flag4
-                                    1-   71     	extern	_my_flag3
-                                    1-   72     	extern	_my_flag2
-                                    1-   73     	extern	_My_Flag
-                                    1-   74     	extern	_INTFbits
-                                    1-   75     	extern	_INTEbits
-                                    1-   76     	extern	_BPHCONbits
-                                    1-   77     	extern	_BPLCONbits
-                                    1-   78     	extern	_BWUCONbits
-                                    1-   79     	extern	_PCONbits
-                                    1-   80     	extern	_PORTBbits
-                                    1-   82     	extern PSAVE
-                                    1-   83     	extern SSAVE
-                                    1-   84     	extern WSAVE
-                                    1-   85     	extern STK12
-                                    1-   86     	extern ___STK12
-                                    1-   87     	extern STK11
-                                    1-   88     	extern ___STK11
-                                    1-   89     	extern STK10
-                                    1-   90     	extern ___STK10
-                                    1-   91     	extern STK09
-                                    1-   92     	extern ___STK09
-                                    1-   93     	extern STK08
-                                    1-   94     	extern ___STK08
-                                    1-   95     	extern STK07
-                                    1-   96     	extern ___STK07
-                                    1-   97     	extern STK06
-                                    1-   98     	extern ___STK06
-                                    1-   99     	extern STK05
-                                    1-  100     	extern ___STK05
-                                    1-  101     	extern STK04
-                                    1-  102     	extern ___STK04
-                                    1-  103     	extern STK03
-                                    1-  104     	extern ___STK03
-                                    1-  105     	extern STK02
-                                    1-  106     	extern ___STK02
-                                    1-  107     	extern STK01
-                                    1-  108     	extern ___STK01
-                                    1-  109     	extern STK00
-                                    1-  110     	extern ___STK00
-                                    1-  111     ;--------------------------------------------------------
-                                    1-  112     ; global declarations
-                                    1-  113     ;--------------------------------------------------------
-                                    1-  114     	extern	_my_flag0
-                                    1-  115     	extern	_my_flag1
-                                    1-  116     	extern	_INTF
-                                    1-  117     	extern	_INTE
-                                    1-  118     	extern	_BPHCON
-                                    1-  119     	extern	_BPLCON
-                                    1-  120     	extern	_BWUCON
-                                    1-  121     	extern	_PCON
-                                    1-  122     	extern	_PORTB
-                                    1-  123     	extern	_Switch_Power_Mode
-                                    1-  124     	extern	_Power_Off
-                                    1-  126     ;--------------------------------------------------------
-                                    1-  127     ; global definitions
-                                    1-  128     ;--------------------------------------------------------
-                                    1-  129     ;--------------------------------------------------------
-                                    1-  130     ; absolute symbol definitions
-                                    1-  131     ;--------------------------------------------------------
+                                    1-   14     	extern	_Reset_Clock
+                                    1-   15     	extern	_Clock
+                                    1-   16     	extern	_Delay_ms
+                                    1-   17     	extern	_Delay_us
+                                    1-   18     	extern	_Init
+                                    1-   19     	extern	_clear_ram
+                                    1-   20     	extern	_multi_16b
+                                    1-   21     	extern	_multi_8b
+                                    1-   22     	extern	_T0MD
+                                    1-   23     	extern	_PCON1
+                                    1-   24     	extern	_BODCON
+                                    1-   25     	extern	_PS0CV
+                                    1-   26     	extern	_IOSTB
+                                    1-   27     	extern	_OSCCR
+                                    1-   28     	extern	_TBHD
+                                    1-   29     	extern	_TBHP
+                                    1-   30     	extern	_IRCR
+                                    1-   31     	extern	_BZ1CR
+                                    1-   32     	extern	_PS1CV
+                                    1-   33     	extern	_PWM1DUTY
+                                    1-   34     	extern	_T1CR2
+                                    1-   35     	extern	_T1CR1
+                                    1-   36     	extern	_TMR1
+                                    1-   37     	extern	_PCHBUF
+                                    1-   38     	extern	_STATUS
+                                    1-   39     	extern	_PCL
+                                    1-   40     	extern	_TMR0
+                                    1-   41     	extern	_Timer_1min
+                                    1-   42     	extern	_Timer_1s
+                                    1-   43     	extern	_Timer_100ms
+                                    1-   44     	extern	_Timer_10ms
+                                    1-   45     	extern	_Timer_1ms
+                                    1-   46     	extern	_Unit_Time
+                                    1-   47     	extern	_LED_FLAG
+                                    1-   48     	extern	_Time_Temp
+                                    1-   49     	extern	_Sleep_Cnt
+                                    1-   50     	extern	_Key_Short_LED_Cnt
+                                    1-   51     	extern	_Key_Long_Cnt
+                                    1-   52     	extern	_Key_Press_Cnt
+                                    1-   53     	extern	_Motor_Counter_FLAG
+                                    1-   54     	extern	_Motor_Peri_1000
+                                    1-   55     	extern	_Motor_Peri_100
+                                    1-   56     	extern	_Motor_Peri_10
+                                    1-   57     	extern	_Motor_Peri_1
+                                    1-   58     	extern	_M1_Cnt
+                                    1-   59     	extern	_M1_Freq_Change_Set
+                                    1-   60     	extern	_M1_Freq_Change
+                                    1-   61     	extern	_Motor_Freq_Cnt2
+                                    1-   62     	extern	_Motor_Freq_Cnt1
+                                    1-   63     	extern	_Motor_Freq_Cnt0
+                                    1-   64     	extern	_Motor_Freq_Change
+                                    1-   65     	extern	_M1_Duty_1_Set
+                                    1-   66     	extern	_M1_Duty_Set
+                                    1-   67     	extern	_M1_Duty
+                                    1-   68     	extern	_M1_Cycle_1_Set
+                                    1-   69     	extern	_M1_Cycle_Set
+                                    1-   70     	extern	_M1_Cycle
+                                    1-   71     	extern	_Charge_Cnt
+                                    1-   72     	extern	_LED_Off_Cnt
+                                    1-   73     	extern	_LED_Charge_Time
+                                    1-   74     	extern	_Full_Cnt
+                                    1-   75     	extern	_my_flag4
+                                    1-   76     	extern	_my_flag3
+                                    1-   77     	extern	_my_flag2
+                                    1-   78     	extern	_My_Flag
+                                    1-   79     	extern	_INTFbits
+                                    1-   80     	extern	_INTEbits
+                                    1-   81     	extern	_BPHCONbits
+                                    1-   82     	extern	_BPLCONbits
+                                    1-   83     	extern	_BWUCONbits
+                                    1-   84     	extern	_PCONbits
+                                    1-   85     	extern	_PORTBbits
+                                    1-   87     	extern PSAVE
+                                    1-   88     	extern SSAVE
+                                    1-   89     	extern WSAVE
+                                    1-   90     	extern STK12
+                                    1-   91     	extern ___STK12
+                                    1-   92     	extern STK11
+                                    1-   93     	extern ___STK11
+                                    1-   94     	extern STK10
+                                    1-   95     	extern ___STK10
+                                    1-   96     	extern STK09
+                                    1-   97     	extern ___STK09
+                                    1-   98     	extern STK08
+                                    1-   99     	extern ___STK08
+                                    1-  100     	extern STK07
+                                    1-  101     	extern ___STK07
+                                    1-  102     	extern STK06
+                                    1-  103     	extern ___STK06
+                                    1-  104     	extern STK05
+                                    1-  105     	extern ___STK05
+                                    1-  106     	extern STK04
+                                    1-  107     	extern ___STK04
+                                    1-  108     	extern STK03
+                                    1-  109     	extern ___STK03
+                                    1-  110     	extern STK02
+                                    1-  111     	extern ___STK02
+                                    1-  112     	extern STK01
+                                    1-  113     	extern ___STK01
+                                    1-  114     	extern STK00
+                                    1-  115     	extern ___STK00
+                                    1-  116     ;--------------------------------------------------------
+                                    1-  117     ; global declarations
+                                    1-  118     ;--------------------------------------------------------
+                                    1-  119     	extern	_my_flag0
+                                    1-  120     	extern	_my_flag1
+                                    1-  121     	extern	_INTF
+                                    1-  122     	extern	_INTE
+                                    1-  123     	extern	_BPHCON
+                                    1-  124     	extern	_BPLCON
+                                    1-  125     	extern	_BWUCON
+                                    1-  126     	extern	_PCON
+                                    1-  127     	extern	_PORTB
+                                    1-  128     	extern	_Switch_Power_Mode
+                                    1-  129     	extern	_Power_Off
+                                    1-  130     	extern	_Low_Voltage_Detection
                                     1-  132     ;--------------------------------------------------------
-                                    1-  133     ; compiler-defined variables
+                                    1-  133     ; global definitions
                                     1-  134     ;--------------------------------------------------------
                                     1-  135     ;--------------------------------------------------------
-                                    1-  136     ; initialized data
+                                    1-  136     ; absolute symbol definitions
                                     1-  137     ;--------------------------------------------------------
                                     1-  138     ;--------------------------------------------------------
-                                    1-  139     ; initialized absolute data
+                                    1-  139     ; compiler-defined variables
                                     1-  140     ;--------------------------------------------------------
                                     1-  141     ;--------------------------------------------------------
-                                    1-  142     ; overlayable items in internal ram 
+                                    1-  142     ; initialized data
                                     1-  143     ;--------------------------------------------------------
-                                    1-  144     ;	udata_ovr
-                                    1-  145     ;--------------------------------------------------------
-                                    1-  146     ; code
+                                    1-  144     ;--------------------------------------------------------
+                                    1-  145     ; initialized absolute data
+                                    1-  146     ;--------------------------------------------------------
                                     1-  147     ;--------------------------------------------------------
-                                    1-  148     ; code_Power_Mode	code
-                                    1-  149     ;***
-                                    1-  150     ;  pBlock Stats: dbName = C
-                                    1-  151     ;***
-                                    1-  152     ;has an exit
-                                    1-  153     ;; Starting pCode block
-                                    1-  154     .segment "code"; module=Power_Mode, function=_Power_Off
-     0000                           1-  156     _Power_Off:
-                                    1-  157     ; 2 exit points
-                                    1-  158     	.line	14, "Power_Mode.c"; 	Power_OnOff_FLAG = 0;
-     0000 1Crr                      1-  159     	BCR	_my_flag0,0
-                                    1-  160     	.line	15, "Power_Mode.c"; 	Sleep_Cnt = 0;
-     0001 02rr                      1-  161     	CLRR	_Sleep_Cnt
-     0002 02rr                      1-  162     	CLRR	(_Sleep_Cnt + 1)
-                                    1-  163     	.line	16, "Power_Mode.c"; 	M1_Work_FLAG = 0;
-     0003 1Drr                      1-  164     	BCR	_my_flag1,2
-                                    1-  165     	.line	17, "Power_Mode.c"; 	M1_Freq_Change = 0;
-     0004 02rr                      1-  166     	CLRR	_M1_Freq_Change
-                                    1-  167     	.line	18, "Power_Mode.c"; 	M1_OFF;
-     0005 1Drr                      1-  168     	BCR	_PORTB,2
-                                    1-  169     	.line	19, "Power_Mode.c"; 	}
-                                    1-  170     	RETURN	
-     0006 0010                      3-   39 m1      ret
-                                    1-  171     ; exit point of _Power_Off
-                                    1-  173     ;***
-                                    1-  174     ;  pBlock Stats: dbName = C
-                                    1-  175     ;***
-                                    1-  176     ;has an exit
-                                    1-  177     ;; Starting pCode block
-                                    1-  178     .segment "code"; module=Power_Mode, function=_Switch_Power_Mode
-     0000                           1-  180     _Switch_Power_Mode:
-                                    1-  181     ; 2 exit points
-                                    1-  182     	.line	5, "Power_Mode.c"; 	if (key_long_sign)
-     0000 09rr                      1-  183     	BTRSS	_My_Flag,2
-                                    1-  184     	MGOTO	_02007_DS_
+                                    1-  148     ; overlayable items in internal ram 
+                                    1-  149     ;--------------------------------------------------------
+                                    1-  150     ;	udata_ovr
+                                    1-  151     ;--------------------------------------------------------
+                                    1-  152     ; code
+                                    1-  153     ;--------------------------------------------------------
+                                    1-  154     ; code_Power_Mode	code
+                                    1-  155     ;***
+                                    1-  156     ;  pBlock Stats: dbName = C
+                                    1-  157     ;***
+                                    1-  158     ;has an exit
+                                    1-  159     ;; Starting pCode block
+                                    1-  160     .segment "code"; module=Power_Mode, function=_Low_Voltage_Detection
+     0000                           1-  162     _Low_Voltage_Detection:
+                                    1-  163     ; 2 exit points
+                                    1-  164     	.line	31, "Power_Mode.c"; 	}
+                                    1-  165     	RETURN	
+     0000 0010                      3-   39 m1      ret
+                                    1-  166     ; exit point of _Low_Voltage_Detection
+                                    1-  168     ;***
+                                    1-  169     ;  pBlock Stats: dbName = C
+                                    1-  170     ;***
+                                    1-  171     ;has an exit
+                                    1-  172     ;; Starting pCode block
+                                    1-  173     .segment "code"; module=Power_Mode, function=_Power_Off
+     0000                           1-  175     _Power_Off:
+                                    1-  176     ; 2 exit points
+                                    1-  177     ;;unsigned compare: left < lit(0x2=2), size=1
+                                    1-  178     	.line	16, "Power_Mode.c"; 	if (LED_Off_Cnt  >= LED_Off_Time)
+     0000 2102                      1-  179     	MOVIA	0x02
+     0001 04rr                      1-  180     	SUBAR	_LED_Off_Cnt,W
+     0002 0803                      1-  181     	BTRSS	STATUS,0
+                                    1-  182     	MGOTO	_02014_DS_
+     0003 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  183     	.line	18, "Power_Mode.c"; 	LED_Off_Cnt  = 0;
+     0004 02rr                      1-  184     	CLRR	_LED_Off_Cnt
+                                    1-  185     	.line	19, "Power_Mode.c"; 	Power_OnOff_FLAG = 0;
+     0005 1Crr                      1-  186     	BCR	_my_flag0,0
+                                    1-  187     	.line	20, "Power_Mode.c"; 	Sleep_Cnt = 0;
+     0006 02rr                      1-  188     	CLRR	_Sleep_Cnt
+     0007 02rr                      1-  189     	CLRR	(_Sleep_Cnt + 1)
+                                    1-  190     	.line	21, "Power_Mode.c"; 	M1_Work_FLAG = 0;
+     0008 1Drr                      1-  191     	BCR	_my_flag1,2
+                                    1-  192     	.line	22, "Power_Mode.c"; 	M1_Freq_Change = 0;
+     0009 02rr                      1-  193     	CLRR	_M1_Freq_Change
+                                    1-  194     	.line	23, "Power_Mode.c"; 	M1_OFF;
+     000A 1Drr                      1-  195     	BCR	_PORTB,2
+     000B                           1-  196     _02014_DS_:
+                                    1-  197     	.line	26, "Power_Mode.c"; 	}
+                                    1-  198     	RETURN	
+     000B 0010                      3-   39 m1      ret
+                                    1-  199     ; exit point of _Power_Off
+                                    1-  201     ;***
+                                    1-  202     ;  pBlock Stats: dbName = C
+                                    1-  203     ;***
+                                    1-  204     ;has an exit
+                                    1-  205     ;; Starting pCode block
+                                    1-  206     .segment "code"; module=Power_Mode, function=_Switch_Power_Mode
+     0000                           1-  208     _Switch_Power_Mode:
+                                    1-  209     ; 2 exit points
+                                    1-  210     	.line	5, "Power_Mode.c"; 	if (key_long_sign)
+     0000 09rr                      1-  211     	BTRSS	_My_Flag,2
+                                    1-  212     	MGOTO	_02007_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  185     	.line	7, "Power_Mode.c"; 	UPDATE_REG(PORTB);  // 读取 PORTB 数据寄存器
-     0002 01rr                      1-  186     	MOVR	_PORTB,F
-                                    1-  187     	.line	8, "Power_Mode.c"; 	SLEEP();            // 执行指令进入 Halt 模式
-     0003 0001                      1-  188     	sleep
-     0004                           1-  189     _02007_DS_:
-                                    1-  190     	.line	10, "Power_Mode.c"; 	}
-                                    1-  191     	RETURN	
+                                    1-  213     	.line	7, "Power_Mode.c"; 	UPDATE_REG(PORTB);  // 读取 PORTB 数据寄存器
+     0002 01rr                      1-  214     	MOVR	_PORTB,F
+                                    1-  215     	.line	8, "Power_Mode.c"; 	SLEEP();            // 执行指令进入 Halt 模式
+     0003 0001                      1-  216     	sleep
+     0004                           1-  217     _02007_DS_:
+                                    1-  218     	.line	10, "Power_Mode.c"; 	}
+                                    1-  219     	RETURN	
      0004 0010                      3-   39 m1      ret
-                                    1-  192     ; exit point of _Switch_Power_Mode
-                                    1-  195     ;	code size estimation:
-                                    1-  196     ;	   10+    0 =    10 instructions (   20 byte)
-                                    1-  198     	end
+                                    1-  220     ; exit point of _Switch_Power_Mode
+                                    1-  223     ;	code size estimation:
+                                    1-  224     ;	   16+    0 =    16 instructions (   32 byte)
+                                    1-  226     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006

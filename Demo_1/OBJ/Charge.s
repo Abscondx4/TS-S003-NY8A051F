@@ -11,8 +11,13 @@
 ;--------------------------------------------------------
 ; external declarations
 ;--------------------------------------------------------
+	extern	_Low_Voltage_Detection
 	extern	_Power_Off
 	extern	_Switch_Power_Mode
+	extern	_Reset_Clock
+	extern	_Clock
+	extern	_Delay_ms
+	extern	_Delay_us
 	extern	_Init
 	extern	_clear_ram
 	extern	_multi_16b
@@ -69,6 +74,7 @@
 	extern	_M1_Cycle_1_Set
 	extern	_M1_Cycle_Set
 	extern	_M1_Cycle
+	extern	_LED_Off_Cnt
 	extern	_my_flag4
 	extern	_my_flag3
 	extern	_my_flag2

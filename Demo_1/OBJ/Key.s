@@ -14,7 +14,9 @@
 	extern	_Key_Init
 	extern	_Reset_Clock
 	extern	_Clock
+	extern	_Delay_ms
 	extern	_Delay_us
+	extern	_Low_Voltage_Detection
 	extern	_Power_Off
 	extern	_Switch_Power_Mode
 	extern	_Init
@@ -71,6 +73,7 @@
 	extern	_M1_Cycle_Set
 	extern	_M1_Cycle
 	extern	_Charge_Cnt
+	extern	_LED_Off_Cnt
 	extern	_LED_Charge_Time
 	extern	_Full_Cnt
 	extern	_my_flag4
@@ -218,9 +221,9 @@ _02016_DS_:
 	BTRSS	_my_flag0,3
 	MGOTO	_02020_DS_
 ;;swapping arguments (AOP_TYPEs 1/3)
-;;unsigned compare: left >= lit(0x24=36), size=1
+;;unsigned compare: left >= lit(0x21=33), size=1
 	.line	49, "Key.c"; 	if (Key_Long_Cnt <= Key_Long_Time)
-	MOVIA	0x24
+	MOVIA	0x21
 	SUBAR	_Key_Long_Cnt,W
 	BTRSS	STATUS,0
 	.line	51, "Key.c"; 	Key_Long_Cnt++;
@@ -236,9 +239,9 @@ _02022_DS_:
 	MOVR	_Key_Long_Cnt,W
 	BTRSC	STATUS,2
 	MGOTO	_02031_DS_
-;;unsigned compare: left < lit(0x23=35), size=1
+;;unsigned compare: left < lit(0x20=32), size=1
 	.line	65, "Key.c"; 	if (Key_Long_Cnt < Key_Long_Time && Power_OnOff_FLAG)
-	MOVIA	0x23
+	MOVIA	0x20
 	SUBAR	_Key_Long_Cnt,W
 	BTRSC	STATUS,0
 	MGOTO	_02026_DS_
@@ -266,7 +269,7 @@ _02026_DS_:
 _02031_DS_:
 	.line	82, "Key.c"; 	if (Key_Long_Cnt == Key_Long_Time)
 	MOVR	_Key_Long_Cnt,W
-	XORIA	0x23
+	XORIA	0x20
 	BTRSS	STATUS,2
 	MGOTO	_02037_DS_
 	.line	84, "Key.c"; 	Key_Long_Cnt++;

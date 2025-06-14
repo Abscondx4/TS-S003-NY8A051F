@@ -89,6 +89,7 @@
 	extern	_LED_FLAG
 	extern	_Time_Temp
 	extern	_Charge_Cnt
+	extern	_LED_Off_Cnt
 	extern	_LED_Charge_Time
 	extern	_Full_Cnt
 	extern	_Sleep_Cnt
@@ -137,32 +138,32 @@ _Key_Short_LED_Cnt:
 .segment "uninit"
 _Unit_Time:
 	.res 1
-	.debuginfo complex-type (symbol "_Unit_Time" 1 global "IncluDoc.c" 49 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Unit_Time" 1 global "IncluDoc.c" 50 (basetype 1 unsigned))
 
 .segment "uninit"
 _Timer_1ms:
 	.res 1
-	.debuginfo complex-type (symbol "_Timer_1ms" 1 global "IncluDoc.c" 50 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Timer_1ms" 1 global "IncluDoc.c" 51 (basetype 1 unsigned))
 
 .segment "uninit"
 _Timer_10ms:
 	.res 1
-	.debuginfo complex-type (symbol "_Timer_10ms" 1 global "IncluDoc.c" 51 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Timer_10ms" 1 global "IncluDoc.c" 52 (basetype 1 unsigned))
 
 .segment "uninit"
 _Timer_100ms:
 	.res 1
-	.debuginfo complex-type (symbol "_Timer_100ms" 1 global "IncluDoc.c" 52 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Timer_100ms" 1 global "IncluDoc.c" 53 (basetype 1 unsigned))
 
 .segment "uninit"
 _Timer_1s:
 	.res 1
-	.debuginfo complex-type (symbol "_Timer_1s" 1 global "IncluDoc.c" 53 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Timer_1s" 1 global "IncluDoc.c" 54 (basetype 1 unsigned))
 
 .segment "uninit"
 _Timer_1min:
 	.res 1
-	.debuginfo complex-type (symbol "_Timer_1min" 1 global "IncluDoc.c" 54 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Timer_1min" 1 global "IncluDoc.c" 55 (basetype 1 unsigned))
 
 ;--------------------------------------------------------
 ; absolute symbol definitions
@@ -371,22 +372,29 @@ _LED_Charge_Time:
 
 
 .segment "idata"
+_LED_Off_Cnt:
+	.debuginfo complex-type (symbol "_LED_Off_Cnt" 1 global "IncluDoc.c" 44 (basetype 1 unsigned))
+
+	dw	0x00	; 0
+
+
+.segment "idata"
 _Charge_Cnt:
-	.debuginfo complex-type (symbol "_Charge_Cnt" 1 global "IncluDoc.c" 44 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Charge_Cnt" 1 global "IncluDoc.c" 45 (basetype 1 unsigned))
 
 	dw	0x00	; 0
 
 
 .segment "idata"
 _Time_Temp:
-	.debuginfo complex-type (symbol "_Time_Temp" 1 global "IncluDoc.c" 46 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_Time_Temp" 1 global "IncluDoc.c" 47 (basetype 1 unsigned))
 
 	dw	0x01	; 1
 
 
 .segment "idata"
 _LED_FLAG:
-	.debuginfo complex-type (symbol "_LED_FLAG" 1 global "IncluDoc.c" 47 (basetype 1 unsigned))
+	.debuginfo complex-type (symbol "_LED_FLAG" 1 global "IncluDoc.c" 48 (basetype 1 unsigned))
 
 	dw	0x00	; 0
 
@@ -410,37 +418,37 @@ _LED_FLAG:
 	.debuginfo subprogram _Init
 _Init:
 ; 2 exit points
-	.line	60, "IncluDoc.c"; 	PCON = C_WDT_En|C_LVR_En ;
+	.line	61, "IncluDoc.c"; 	PCON = C_WDT_En|C_LVR_En ;
 	MOVIA	0x88
 	MOVAR	_PCON
-	.line	63, "IncluDoc.c"; 	IOSTB=C_PB0_Input | C_PB1_Output | C_PB2_Output | C_PB3_Input; 
+	.line	64, "IncluDoc.c"; 	IOSTB=C_PB0_Input | C_PB1_Output | C_PB2_Output | C_PB3_Input; 
 	MOVIA	0x09
 	IOST	_IOSTB
-	.line	64, "IncluDoc.c"; 	PORTB = 0x02;   
+	.line	65, "IncluDoc.c"; 	PORTB = 0x02;   
 	MOVIA	0x02
 	MOVAR	_PORTB
-	.line	65, "IncluDoc.c"; 	BPHCON = 0xf1;
+	.line	66, "IncluDoc.c"; 	BPHCON = 0xf1;
 	MOVIA	0xf1
 	MOVAR	_BPHCON
-	.line	68, "IncluDoc.c"; 	PCON1=C_TMR0_En;         //启动定时器0；
+	.line	69, "IncluDoc.c"; 	PCON1=C_TMR0_En;         //启动定时器0；
 	MOVIA	0x01
 	IOST	_PCON1
-	.line	69, "IncluDoc.c"; 	TMR0=0x38;               //设置为216
+	.line	70, "IncluDoc.c"; 	TMR0=0x38;               //设置为216
 	MOVIA	0x38
 	MOVAR	_TMR0
-	.line	70, "IncluDoc.c"; 	T0MD=C_PS0_TMR0 | C_PS0_Div2;         //分频器给TMR0
+	.line	71, "IncluDoc.c"; 	T0MD=C_PS0_TMR0 | C_PS0_Div2;         //分频器给TMR0
 	CLRA	
 	T0MD	
-	.line	74, "IncluDoc.c"; 	BWUCON =C_PB0_Wakeup | C_PB3_Wakeup;
+	.line	75, "IncluDoc.c"; 	BWUCON =C_PB0_Wakeup | C_PB3_Wakeup;
 	MOVIA	0x09
 	MOVAR	_BWUCON
-	.line	78, "IncluDoc.c"; 	T0IE = 1;
+	.line	79, "IncluDoc.c"; 	T0IE = 1;
 	BSR	_INTE,0
-	.line	81, "IncluDoc.c"; 	INTF = 0;
+	.line	82, "IncluDoc.c"; 	INTF = 0;
 	CLRR	_INTF
-	.line	82, "IncluDoc.c"; 	ENI();
+	.line	83, "IncluDoc.c"; 	ENI();
 	ENI
-	.line	84, "IncluDoc.c"; 	}
+	.line	85, "IncluDoc.c"; 	}
 	RETURN	
 ; exit point of _Init
 

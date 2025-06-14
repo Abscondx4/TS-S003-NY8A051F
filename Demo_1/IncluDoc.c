@@ -41,6 +41,7 @@ short Sleep_Cnt = 0;
 char Full_Cnt = 0;
 
 char LED_Charge_Time = 0;
+char LED_Off_Cnt = 0;
 char Charge_Cnt = 0;
 
 char Time_Temp = 1;

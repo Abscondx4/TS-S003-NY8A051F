@@ -68,6 +68,7 @@
 	extern	_M1_Cycle_Set
 	extern	_M1_Cycle
 	extern	_Charge_Cnt
+	extern	_LED_Off_Cnt
 	extern	_LED_Charge_Time
 	extern	_Full_Cnt
 	extern	_my_flag4

@@ -136,222 +136,226 @@ NYASM 2.50
                                     1-   89     	extern	_LED_FLAG
                                     1-   90     	extern	_Time_Temp
                                     1-   91     	extern	_Charge_Cnt
-                                    1-   92     	extern	_LED_Charge_Time
-                                    1-   93     	extern	_Full_Cnt
-                                    1-   94     	extern	_Sleep_Cnt
-                                    1-   95     	extern	_Key_Short_LED_Cnt
-                                    1-   96     	extern	_Key_Long_Cnt
-                                    1-   97     	extern	_Key_Press_Cnt
-                                    1-   98     	extern	_Motor_Counter_FLAG
-                                    1-   99     	extern	_Motor_Peri_1000
-                                    1-  100     	extern	_Motor_Peri_100
-                                    1-  101     	extern	_Motor_Peri_10
-                                    1-  102     	extern	_Motor_Peri_1
-                                    1-  103     	extern	_M1_Cnt
-                                    1-  104     	extern	_M1_Freq_Change_Set
-                                    1-  105     	extern	_M1_Freq_Change
-                                    1-  106     	extern	_Motor_Freq_Cnt2
-                                    1-  107     	extern	_Motor_Freq_Cnt1
-                                    1-  108     	extern	_Motor_Freq_Cnt0
-                                    1-  109     	extern	_Motor_Freq_Change
-                                    1-  110     	extern	_M1_Duty_1_Set
-                                    1-  111     	extern	_M1_Duty_Set
-                                    1-  112     	extern	_M1_Duty
-                                    1-  113     	extern	_M1_Cycle_1_Set
-                                    1-  114     	extern	_M1_Cycle_Set
-                                    1-  115     	extern	_M1_Cycle
-                                    1-  116     	extern	_my_flag4
-                                    1-  117     	extern	_my_flag3
-                                    1-  118     	extern	_my_flag2
-                                    1-  119     	extern	_my_flag1
-                                    1-  120     	extern	_my_flag0
-                                    1-  121     	extern	_My_Flag
-                                    1-  122     	extern	_Init
-                                    1-  124     ;--------------------------------------------------------
-                                    1-  125     ; global definitions
-                                    1-  126     ;--------------------------------------------------------
-                                    1-  127     .segment "uninit"
-     0000                           1-  128     _My_Flag:
-                                    1-  129     	.res 1
-                                    1-  132     .segment "uninit"
-     0000                           1-  133     _Key_Short_LED_Cnt:
-                                    1-  134     	.res 1
-                                    1-  137     .segment "uninit"
-     0000                           1-  138     _Unit_Time:
-                                    1-  139     	.res 1
-                                    1-  142     .segment "uninit"
-     0000                           1-  143     _Timer_1ms:
-                                    1-  144     	.res 1
-                                    1-  147     .segment "uninit"
-     0000                           1-  148     _Timer_10ms:
-                                    1-  149     	.res 1
-                                    1-  152     .segment "uninit"
-     0000                           1-  153     _Timer_100ms:
-                                    1-  154     	.res 1
-                                    1-  157     .segment "uninit"
-     0000                           1-  158     _Timer_1s:
-                                    1-  159     	.res 1
-                                    1-  162     .segment "uninit"
-     0000                           1-  163     _Timer_1min:
-                                    1-  164     	.res 1
-                                    1-  167     ;--------------------------------------------------------
-                                    1-  168     ; absolute symbol definitions
-                                    1-  169     ;--------------------------------------------------------
+                                    1-   92     	extern	_LED_Off_Cnt
+                                    1-   93     	extern	_LED_Charge_Time
+                                    1-   94     	extern	_Full_Cnt
+                                    1-   95     	extern	_Sleep_Cnt
+                                    1-   96     	extern	_Key_Short_LED_Cnt
+                                    1-   97     	extern	_Key_Long_Cnt
+                                    1-   98     	extern	_Key_Press_Cnt
+                                    1-   99     	extern	_Motor_Counter_FLAG
+                                    1-  100     	extern	_Motor_Peri_1000
+                                    1-  101     	extern	_Motor_Peri_100
+                                    1-  102     	extern	_Motor_Peri_10
+                                    1-  103     	extern	_Motor_Peri_1
+                                    1-  104     	extern	_M1_Cnt
+                                    1-  105     	extern	_M1_Freq_Change_Set
+                                    1-  106     	extern	_M1_Freq_Change
+                                    1-  107     	extern	_Motor_Freq_Cnt2
+                                    1-  108     	extern	_Motor_Freq_Cnt1
+                                    1-  109     	extern	_Motor_Freq_Cnt0
+                                    1-  110     	extern	_Motor_Freq_Change
+                                    1-  111     	extern	_M1_Duty_1_Set
+                                    1-  112     	extern	_M1_Duty_Set
+                                    1-  113     	extern	_M1_Duty
+                                    1-  114     	extern	_M1_Cycle_1_Set
+                                    1-  115     	extern	_M1_Cycle_Set
+                                    1-  116     	extern	_M1_Cycle
+                                    1-  117     	extern	_my_flag4
+                                    1-  118     	extern	_my_flag3
+                                    1-  119     	extern	_my_flag2
+                                    1-  120     	extern	_my_flag1
+                                    1-  121     	extern	_my_flag0
+                                    1-  122     	extern	_My_Flag
+                                    1-  123     	extern	_Init
+                                    1-  125     ;--------------------------------------------------------
+                                    1-  126     ; global definitions
+                                    1-  127     ;--------------------------------------------------------
+                                    1-  128     .segment "uninit"
+     0000                           1-  129     _My_Flag:
+                                    1-  130     	.res 1
+                                    1-  133     .segment "uninit"
+     0000                           1-  134     _Key_Short_LED_Cnt:
+                                    1-  135     	.res 1
+                                    1-  138     .segment "uninit"
+     0000                           1-  139     _Unit_Time:
+                                    1-  140     	.res 1
+                                    1-  143     .segment "uninit"
+     0000                           1-  144     _Timer_1ms:
+                                    1-  145     	.res 1
+                                    1-  148     .segment "uninit"
+     0000                           1-  149     _Timer_10ms:
+                                    1-  150     	.res 1
+                                    1-  153     .segment "uninit"
+     0000                           1-  154     _Timer_100ms:
+                                    1-  155     	.res 1
+                                    1-  158     .segment "uninit"
+     0000                           1-  159     _Timer_1s:
+                                    1-  160     	.res 1
+                                    1-  163     .segment "uninit"
+     0000                           1-  164     _Timer_1min:
+                                    1-  165     	.res 1
+                                    1-  168     ;--------------------------------------------------------
+                                    1-  169     ; absolute symbol definitions
                                     1-  170     ;--------------------------------------------------------
-                                    1-  171     ; compiler-defined variables
-                                    1-  172     ;--------------------------------------------------------
+                                    1-  171     ;--------------------------------------------------------
+                                    1-  172     ; compiler-defined variables
                                     1-  173     ;--------------------------------------------------------
-                                    1-  174     ; initialized data
-                                    1-  175     ;--------------------------------------------------------
-                                    1-  177     .segment "idata"
-     0000                           1-  178     _my_flag0:
-     0000 0000                      1-  181     	dw	0x00	; 0
-                                    1-  184     .segment "idata"
-     0000                           1-  185     _my_flag1:
-     0000 0000                      1-  188     	dw	0x00	; 0
-                                    1-  191     .segment "idata"
-     0000                           1-  192     _my_flag2:
-     0000 0000                      1-  195     	dw	0x00	; 0
-                                    1-  198     .segment "idata"
-     0000                           1-  199     _my_flag3:
-     0000 0000                      1-  202     	dw	0x00	; 0
-                                    1-  205     .segment "idata"
-     0000                           1-  206     _my_flag4:
-     0000 0000                      1-  209     	dw	0x00	; 0
-                                    1-  212     .segment "idata"
-     0000                           1-  213     _M1_Cycle:
-     0000 0000 0000                 1-  216     	dw	0x00, 0x00	;  0
-                                    1-  219     .segment "idata"
-     0000                           1-  220     _M1_Cycle_Set:
-     0000 0000 0000                 1-  223     	dw	0x00, 0x00	;  0
-                                    1-  226     .segment "idata"
-     0000                           1-  227     _M1_Cycle_1_Set:
-     0000 0000 0000                 1-  230     	dw	0x00, 0x00	;  0
-                                    1-  233     .segment "idata"
-     0000                           1-  234     _M1_Duty:
-     0000 0000 0000                 1-  237     	dw	0x00, 0x00	;  0
-                                    1-  240     .segment "idata"
-     0000                           1-  241     _M1_Duty_Set:
-     0000 0000 0000                 1-  244     	dw	0x00, 0x00	;  0
-                                    1-  247     .segment "idata"
-     0000                           1-  248     _M1_Duty_1_Set:
-     0000 0000 0000                 1-  251     	dw	0x00, 0x00	;  0
-                                    1-  254     .segment "idata"
-     0000                           1-  255     _Motor_Freq_Change:
-     0000 0000                      1-  258     	dw	0x00	; 0
-                                    1-  261     .segment "idata"
-     0000                           1-  262     _Motor_Freq_Cnt0:
-     0000 0000                      1-  265     	dw	0x00	; 0
-                                    1-  268     .segment "idata"
-     0000                           1-  269     _Motor_Freq_Cnt1:
-     0000 0000 0000                 1-  272     	dw	0x00, 0x00	;  0
-                                    1-  275     .segment "idata"
-     0000                           1-  276     _Motor_Freq_Cnt2:
-     0000 0000                      1-  279     	dw	0x00	; 0
-                                    1-  282     .segment "idata"
-     0000                           1-  283     _M1_Freq_Change:
-     0000 0000                      1-  286     	dw	0x00	; 0
-                                    1-  289     .segment "idata"
-     0000                           1-  290     _M1_Freq_Change_Set:
-     0000 0000                      1-  293     	dw	0x00	; 0
-                                    1-  296     .segment "idata"
-     0000                           1-  297     _M1_Cnt:
-     0000 0000 0000                 1-  300     	dw	0x00, 0x00	;  0
-                                    1-  303     .segment "idata"
-     0000                           1-  304     _Motor_Peri_1:
-     0000 0000 0000                 1-  307     	dw	0x00, 0x00	;  0
-                                    1-  310     .segment "idata"
-     0000                           1-  311     _Motor_Peri_10:
-     0000 0000 0000                 1-  314     	dw	0x00, 0x00	;  0
-                                    1-  317     .segment "idata"
-     0000                           1-  318     _Motor_Peri_100:
-     0000 0000 0000                 1-  321     	dw	0x00, 0x00	;  0
-                                    1-  324     .segment "idata"
-     0000                           1-  325     _Motor_Peri_1000:
-     0000 0000 0000                 1-  328     	dw	0x00, 0x00	;  0
-                                    1-  331     .segment "idata"
-     0000                           1-  332     _Motor_Counter_FLAG:
-     0000 0000 0000                 1-  335     	dw	0x00, 0x00	;  0
-                                    1-  338     .segment "idata"
-     0000                           1-  339     _Key_Press_Cnt:
-     0000 0000                      1-  342     	dw	0x00	; 0
-                                    1-  345     .segment "idata"
-     0000                           1-  346     _Key_Long_Cnt:
-     0000 0000                      1-  349     	dw	0x00	; 0
-                                    1-  352     .segment "idata"
-     0000                           1-  353     _Sleep_Cnt:
-     0000 0000 0000                 1-  356     	dw	0x00, 0x00	;  0
-                                    1-  359     .segment "idata"
-     0000                           1-  360     _Full_Cnt:
-     0000 0000                      1-  363     	dw	0x00	; 0
-                                    1-  366     .segment "idata"
-     0000                           1-  367     _LED_Charge_Time:
-     0000 0000                      1-  370     	dw	0x00	; 0
-                                    1-  373     .segment "idata"
-     0000                           1-  374     _Charge_Cnt:
-     0000 0000                      1-  377     	dw	0x00	; 0
-                                    1-  380     .segment "idata"
-     0000                           1-  381     _Time_Temp:
-     0000 0001                      1-  384     	dw	0x01	; 1
-                                    1-  387     .segment "idata"
-     0000                           1-  388     _LED_FLAG:
-     0000 0000                      1-  391     	dw	0x00	; 0
-                                    1-  393     ;--------------------------------------------------------
-                                    1-  394     ; initialized absolute data
-                                    1-  395     ;--------------------------------------------------------
-                                    1-  396     ;--------------------------------------------------------
-                                    1-  397     ; overlayable items in internal ram 
-                                    1-  398     ;--------------------------------------------------------
-                                    1-  399     ;	udata_ovr
-                                    1-  400     ;--------------------------------------------------------
-                                    1-  401     ; code
-                                    1-  402     ;--------------------------------------------------------
-                                    1-  403     ; code_IncluDoc	code
-                                    1-  404     ;***
-                                    1-  405     ;  pBlock Stats: dbName = C
-                                    1-  406     ;***
-                                    1-  407     ;has an exit
-                                    1-  408     ;; Starting pCode block
-                                    1-  409     .segment "code"; module=IncluDoc, function=_Init
-     0000                           1-  411     _Init:
-                                    1-  412     ; 2 exit points
-                                    1-  413     	.line	60, "IncluDoc.c"; 	PCON = C_WDT_En|C_LVR_En ;
-     0000 2188                      1-  414     	MOVIA	0x88
-     0001 00rr                      1-  415     	MOVAR	_PCON
-                                    1-  416     	.line	63, "IncluDoc.c"; 	IOSTB=C_PB0_Input | C_PB1_Output | C_PB2_Output | C_PB3_Input; 
-     0002 2109                      1-  417     	MOVIA	0x09
-     0003 000r                      1-  418     	IOST	_IOSTB
-                                    1-  419     	.line	64, "IncluDoc.c"; 	PORTB = 0x02;   
-     0004 2102                      1-  420     	MOVIA	0x02
-     0005 00rr                      1-  421     	MOVAR	_PORTB
-                                    1-  422     	.line	65, "IncluDoc.c"; 	BPHCON = 0xf1;
-     0006 21F1                      1-  423     	MOVIA	0xf1
-     0007 00rr                      1-  424     	MOVAR	_BPHCON
-                                    1-  425     	.line	68, "IncluDoc.c"; 	PCON1=C_TMR0_En;         //启动定时器0；
-     0008 2101                      1-  426     	MOVIA	0x01
-     0009 000r                      1-  427     	IOST	_PCON1
-                                    1-  428     	.line	69, "IncluDoc.c"; 	TMR0=0x38;               //设置为216
-     000A 2138                      1-  429     	MOVIA	0x38
-     000B 00rr                      1-  430     	MOVAR	_TMR0
-                                    1-  431     	.line	70, "IncluDoc.c"; 	T0MD=C_PS0_TMR0 | C_PS0_Div2;         //分频器给TMR0
-     000C 0200                      1-  432     	CLRA	
-     000D 0003                      1-  433     	T0MD	
-                                    1-  434     	.line	74, "IncluDoc.c"; 	BWUCON =C_PB0_Wakeup | C_PB3_Wakeup;
-     000E 2109                      1-  435     	MOVIA	0x09
-     000F 00rr                      1-  436     	MOVAR	_BWUCON
-                                    1-  437     	.line	78, "IncluDoc.c"; 	T0IE = 1;
-     0010 18rr                      1-  438     	BSR	_INTE,0
-                                    1-  439     	.line	81, "IncluDoc.c"; 	INTF = 0;
-     0011 02rr                      1-  440     	CLRR	_INTF
-                                    1-  441     	.line	82, "IncluDoc.c"; 	ENI();
-     0012 0004                      1-  442     	ENI
-                                    1-  443     	.line	84, "IncluDoc.c"; 	}
-                                    1-  444     	RETURN	
+                                    1-  174     ;--------------------------------------------------------
+                                    1-  175     ; initialized data
+                                    1-  176     ;--------------------------------------------------------
+                                    1-  178     .segment "idata"
+     0000                           1-  179     _my_flag0:
+     0000 0000                      1-  182     	dw	0x00	; 0
+                                    1-  185     .segment "idata"
+     0000                           1-  186     _my_flag1:
+     0000 0000                      1-  189     	dw	0x00	; 0
+                                    1-  192     .segment "idata"
+     0000                           1-  193     _my_flag2:
+     0000 0000                      1-  196     	dw	0x00	; 0
+                                    1-  199     .segment "idata"
+     0000                           1-  200     _my_flag3:
+     0000 0000                      1-  203     	dw	0x00	; 0
+                                    1-  206     .segment "idata"
+     0000                           1-  207     _my_flag4:
+     0000 0000                      1-  210     	dw	0x00	; 0
+                                    1-  213     .segment "idata"
+     0000                           1-  214     _M1_Cycle:
+     0000 0000 0000                 1-  217     	dw	0x00, 0x00	;  0
+                                    1-  220     .segment "idata"
+     0000                           1-  221     _M1_Cycle_Set:
+     0000 0000 0000                 1-  224     	dw	0x00, 0x00	;  0
+                                    1-  227     .segment "idata"
+     0000                           1-  228     _M1_Cycle_1_Set:
+     0000 0000 0000                 1-  231     	dw	0x00, 0x00	;  0
+                                    1-  234     .segment "idata"
+     0000                           1-  235     _M1_Duty:
+     0000 0000 0000                 1-  238     	dw	0x00, 0x00	;  0
+                                    1-  241     .segment "idata"
+     0000                           1-  242     _M1_Duty_Set:
+     0000 0000 0000                 1-  245     	dw	0x00, 0x00	;  0
+                                    1-  248     .segment "idata"
+     0000                           1-  249     _M1_Duty_1_Set:
+     0000 0000 0000                 1-  252     	dw	0x00, 0x00	;  0
+                                    1-  255     .segment "idata"
+     0000                           1-  256     _Motor_Freq_Change:
+     0000 0000                      1-  259     	dw	0x00	; 0
+                                    1-  262     .segment "idata"
+     0000                           1-  263     _Motor_Freq_Cnt0:
+     0000 0000                      1-  266     	dw	0x00	; 0
+                                    1-  269     .segment "idata"
+     0000                           1-  270     _Motor_Freq_Cnt1:
+     0000 0000 0000                 1-  273     	dw	0x00, 0x00	;  0
+                                    1-  276     .segment "idata"
+     0000                           1-  277     _Motor_Freq_Cnt2:
+     0000 0000                      1-  280     	dw	0x00	; 0
+                                    1-  283     .segment "idata"
+     0000                           1-  284     _M1_Freq_Change:
+     0000 0000                      1-  287     	dw	0x00	; 0
+                                    1-  290     .segment "idata"
+     0000                           1-  291     _M1_Freq_Change_Set:
+     0000 0000                      1-  294     	dw	0x00	; 0
+                                    1-  297     .segment "idata"
+     0000                           1-  298     _M1_Cnt:
+     0000 0000 0000                 1-  301     	dw	0x00, 0x00	;  0
+                                    1-  304     .segment "idata"
+     0000                           1-  305     _Motor_Peri_1:
+     0000 0000 0000                 1-  308     	dw	0x00, 0x00	;  0
+                                    1-  311     .segment "idata"
+     0000                           1-  312     _Motor_Peri_10:
+     0000 0000 0000                 1-  315     	dw	0x00, 0x00	;  0
+                                    1-  318     .segment "idata"
+     0000                           1-  319     _Motor_Peri_100:
+     0000 0000 0000                 1-  322     	dw	0x00, 0x00	;  0
+                                    1-  325     .segment "idata"
+     0000                           1-  326     _Motor_Peri_1000:
+     0000 0000 0000                 1-  329     	dw	0x00, 0x00	;  0
+                                    1-  332     .segment "idata"
+     0000                           1-  333     _Motor_Counter_FLAG:
+     0000 0000 0000                 1-  336     	dw	0x00, 0x00	;  0
+                                    1-  339     .segment "idata"
+     0000                           1-  340     _Key_Press_Cnt:
+     0000 0000                      1-  343     	dw	0x00	; 0
+                                    1-  346     .segment "idata"
+     0000                           1-  347     _Key_Long_Cnt:
+     0000 0000                      1-  350     	dw	0x00	; 0
+                                    1-  353     .segment "idata"
+     0000                           1-  354     _Sleep_Cnt:
+     0000 0000 0000                 1-  357     	dw	0x00, 0x00	;  0
+                                    1-  360     .segment "idata"
+     0000                           1-  361     _Full_Cnt:
+     0000 0000                      1-  364     	dw	0x00	; 0
+                                    1-  367     .segment "idata"
+     0000                           1-  368     _LED_Charge_Time:
+     0000 0000                      1-  371     	dw	0x00	; 0
+                                    1-  374     .segment "idata"
+     0000                           1-  375     _LED_Off_Cnt:
+     0000 0000                      1-  378     	dw	0x00	; 0
+                                    1-  381     .segment "idata"
+     0000                           1-  382     _Charge_Cnt:
+     0000 0000                      1-  385     	dw	0x00	; 0
+                                    1-  388     .segment "idata"
+     0000                           1-  389     _Time_Temp:
+     0000 0001                      1-  392     	dw	0x01	; 1
+                                    1-  395     .segment "idata"
+     0000                           1-  396     _LED_FLAG:
+     0000 0000                      1-  399     	dw	0x00	; 0
+                                    1-  401     ;--------------------------------------------------------
+                                    1-  402     ; initialized absolute data
+                                    1-  403     ;--------------------------------------------------------
+                                    1-  404     ;--------------------------------------------------------
+                                    1-  405     ; overlayable items in internal ram 
+                                    1-  406     ;--------------------------------------------------------
+                                    1-  407     ;	udata_ovr
+                                    1-  408     ;--------------------------------------------------------
+                                    1-  409     ; code
+                                    1-  410     ;--------------------------------------------------------
+                                    1-  411     ; code_IncluDoc	code
+                                    1-  412     ;***
+                                    1-  413     ;  pBlock Stats: dbName = C
+                                    1-  414     ;***
+                                    1-  415     ;has an exit
+                                    1-  416     ;; Starting pCode block
+                                    1-  417     .segment "code"; module=IncluDoc, function=_Init
+     0000                           1-  419     _Init:
+                                    1-  420     ; 2 exit points
+                                    1-  421     	.line	61, "IncluDoc.c"; 	PCON = C_WDT_En|C_LVR_En ;
+     0000 2188                      1-  422     	MOVIA	0x88
+     0001 00rr                      1-  423     	MOVAR	_PCON
+                                    1-  424     	.line	64, "IncluDoc.c"; 	IOSTB=C_PB0_Input | C_PB1_Output | C_PB2_Output | C_PB3_Input; 
+     0002 2109                      1-  425     	MOVIA	0x09
+     0003 000r                      1-  426     	IOST	_IOSTB
+                                    1-  427     	.line	65, "IncluDoc.c"; 	PORTB = 0x02;   
+     0004 2102                      1-  428     	MOVIA	0x02
+     0005 00rr                      1-  429     	MOVAR	_PORTB
+                                    1-  430     	.line	66, "IncluDoc.c"; 	BPHCON = 0xf1;
+     0006 21F1                      1-  431     	MOVIA	0xf1
+     0007 00rr                      1-  432     	MOVAR	_BPHCON
+                                    1-  433     	.line	69, "IncluDoc.c"; 	PCON1=C_TMR0_En;         //启动定时器0；
+     0008 2101                      1-  434     	MOVIA	0x01
+     0009 000r                      1-  435     	IOST	_PCON1
+                                    1-  436     	.line	70, "IncluDoc.c"; 	TMR0=0x38;               //设置为216
+     000A 2138                      1-  437     	MOVIA	0x38
+     000B 00rr                      1-  438     	MOVAR	_TMR0
+                                    1-  439     	.line	71, "IncluDoc.c"; 	T0MD=C_PS0_TMR0 | C_PS0_Div2;         //分频器给TMR0
+     000C 0200                      1-  440     	CLRA	
+     000D 0003                      1-  441     	T0MD	
+                                    1-  442     	.line	75, "IncluDoc.c"; 	BWUCON =C_PB0_Wakeup | C_PB3_Wakeup;
+     000E 2109                      1-  443     	MOVIA	0x09
+     000F 00rr                      1-  444     	MOVAR	_BWUCON
+                                    1-  445     	.line	79, "IncluDoc.c"; 	T0IE = 1;
+     0010 18rr                      1-  446     	BSR	_INTE,0
+                                    1-  447     	.line	82, "IncluDoc.c"; 	INTF = 0;
+     0011 02rr                      1-  448     	CLRR	_INTF
+                                    1-  449     	.line	83, "IncluDoc.c"; 	ENI();
+     0012 0004                      1-  450     	ENI
+                                    1-  451     	.line	85, "IncluDoc.c"; 	}
+                                    1-  452     	RETURN	
      0013 0010                      3-   39 m1      ret
-                                    1-  445     ; exit point of _Init
-                                    1-  448     ;	code size estimation:
-                                    1-  449     ;	   19+    0 =    19 instructions (   38 byte)
-                                    1-  451     	end
+                                    1-  453     ; exit point of _Init
+                                    1-  456     ;	code size estimation:
+                                    1-  457     ;	   19+    0 =    19 instructions (   38 byte)
+                                    1-  459     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006

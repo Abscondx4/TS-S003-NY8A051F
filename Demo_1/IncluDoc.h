@@ -39,6 +39,7 @@ extern char my_flag4;
 #define Charge_Debounce_Time 0
 #define Full_Debounce_Time 5
 #define LED_Change_Flash_Time 5
+#define LED_Off_Time 2 // 200ms
 
 __sbit Charge_Full_FLAG = my_flag1:4;
 __sbit Charging_FLAG = my_flag1:5;
@@ -53,6 +54,7 @@ extern char Full_Cnt;
 #define LED_OFF LED1 = 1
 
 extern char LED_Charge_Time;
+extern char LED_Off_Cnt;
 extern char Charge_Cnt;
 
 //电机参数设置
@@ -89,7 +91,7 @@ extern short Motor_Counter_FLAG;
 //按键参数设置
 #define KEY PB3
 #define Key_Debounce_Time 40
-#define Key_Long_Time 35
+#define Key_Long_Time 33
 #define Key_Short_LED_Time 20
 #define Key_Fast_Press_Time 400
 
@@ -115,6 +117,9 @@ extern char Timer_10ms;
 extern char Timer_100ms;
 extern char Timer_1s;
 extern char Timer_1min;
+
+#define Low_Voltage_Time 10 // 1s
+#define Low_Voltage_Debounce_Time 40 // 消抖时间40ms
 
 void Init();
 

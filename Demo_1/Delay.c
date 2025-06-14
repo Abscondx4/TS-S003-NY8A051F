@@ -22,6 +22,14 @@ void Delay_us(short us)
     }
 }
 
+void Delay_ms(short ms)
+{
+    for (short i = 0; i < ms; i++)
+    {
+        Delay_us(1000);
+    }
+}
+
 void Clock()
 {
     if (Unit_Time >= TIME_1MS)
@@ -42,6 +50,7 @@ void Clock()
             if (Timer_10ms  >= TIME_100MS)
             {
                 LED_Charge_Time++;
+                // LED_Off_Cnt++;
                 Timer_10ms = 0;
                 Timer_100ms++;
                 if (Timer_100ms  >= TIME_1S)

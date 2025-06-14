@@ -5,6 +5,7 @@
 #include "Power_Mode.h"
 
 void Delay_us(short us);
+void Delay_ms(short ms);
 void Clock();
 void Reset_Clock();
 

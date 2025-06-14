@@ -152,8 +152,8 @@
     <Array name="EEPROMOverwriteData" />
     <Array name="ExternalResource" />
     <Array name="files">
-      <Element value="main.c|True" />
-      <Element value="Key.c|False" />
+      <Element value="main.c|False" />
+      <Element value="Key.c|True" />
       <Element value="Key.h|False" />
       <Element value="Power_Mode.c|False" />
       <Element value="IncluDoc.h|False" />
@@ -161,7 +161,7 @@
       <Element value="Delay.c|False" />
       <Element value="IncluDoc.c|False" />
       <Element value="LED.c|False" />
-      <Element value="Motor.c|False" />
+      <Element value="Motor.c|True" />
     </Array>
     <Array name="MelodyDatabaseFiles" />
     <Array name="RegisterWindowExpandInfo">

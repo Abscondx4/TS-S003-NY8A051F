@@ -11,9 +11,17 @@ void Switch_Power_Mode()
 
 void Power_Off()
 {
+    // NOP();
+    // NOP();
     Power_OnOff_FLAG = 0;
     Sleep_Cnt = 0;
     M1_Work_FLAG = 0;
     M1_Freq_Change = 0;
     M1_OFF;
+    
+}
+
+void Low_Voltage_Detection()
+{
+    
 }

@@ -116,782 +116,783 @@ NYASM 2.50
                                     1-   68     	extern	_M1_Cycle_Set
                                     1-   69     	extern	_M1_Cycle
                                     1-   70     	extern	_Charge_Cnt
-                                    1-   71     	extern	_LED_Charge_Time
-                                    1-   72     	extern	_Full_Cnt
-                                    1-   73     	extern	_my_flag4
-                                    1-   74     	extern	_my_flag3
-                                    1-   75     	extern	_my_flag2
-                                    1-   76     	extern	_My_Flag
-                                    1-   77     	extern	_INTFbits
-                                    1-   78     	extern	_INTEbits
-                                    1-   79     	extern	_BPHCONbits
-                                    1-   80     	extern	_BPLCONbits
-                                    1-   81     	extern	_BWUCONbits
-                                    1-   82     	extern	_PCONbits
-                                    1-   83     	extern	_PORTBbits
-                                    1-   85     	extern PSAVE
-                                    1-   86     	extern SSAVE
-                                    1-   87     	extern WSAVE
-                                    1-   88     	extern STK12
-                                    1-   89     	extern ___STK12
-                                    1-   90     	extern STK11
-                                    1-   91     	extern ___STK11
-                                    1-   92     	extern STK10
-                                    1-   93     	extern ___STK10
-                                    1-   94     	extern STK09
-                                    1-   95     	extern ___STK09
-                                    1-   96     	extern STK08
-                                    1-   97     	extern ___STK08
-                                    1-   98     	extern STK07
-                                    1-   99     	extern ___STK07
-                                    1-  100     	extern STK06
-                                    1-  101     	extern ___STK06
-                                    1-  102     	extern STK05
-                                    1-  103     	extern ___STK05
-                                    1-  104     	extern STK04
-                                    1-  105     	extern ___STK04
-                                    1-  106     	extern STK03
-                                    1-  107     	extern ___STK03
-                                    1-  108     	extern STK02
-                                    1-  109     	extern ___STK02
-                                    1-  110     	extern STK01
-                                    1-  111     	extern ___STK01
-                                    1-  112     	extern STK00
-                                    1-  113     	extern ___STK00
-                                    1-  114     ;--------------------------------------------------------
-                                    1-  115     ; global declarations
-                                    1-  116     ;--------------------------------------------------------
-                                    1-  117     	extern	_my_flag0
-                                    1-  118     	extern	_my_flag1
-                                    1-  119     	extern	_INTF
-                                    1-  120     	extern	_INTE
-                                    1-  121     	extern	_BPHCON
-                                    1-  122     	extern	_BPLCON
-                                    1-  123     	extern	_BWUCON
-                                    1-  124     	extern	_PCON
-                                    1-  125     	extern	_PORTB
-                                    1-  126     	extern	_M1_Work_Process
-                                    1-  127     	extern	_Motor_PWM_Loop1
-                                    1-  128     	extern	_Motor_PWM_Loop2
-                                    1-  129     	extern	_Motor_PWM_Loop3
-                                    1-  130     	extern	_M1_Work
-                                    1-  132     ;--------------------------------------------------------
-                                    1-  133     ; global definitions
-                                    1-  134     ;--------------------------------------------------------
+                                    1-   71     	extern	_LED_Off_Cnt
+                                    1-   72     	extern	_LED_Charge_Time
+                                    1-   73     	extern	_Full_Cnt
+                                    1-   74     	extern	_my_flag4
+                                    1-   75     	extern	_my_flag3
+                                    1-   76     	extern	_my_flag2
+                                    1-   77     	extern	_My_Flag
+                                    1-   78     	extern	_INTFbits
+                                    1-   79     	extern	_INTEbits
+                                    1-   80     	extern	_BPHCONbits
+                                    1-   81     	extern	_BPLCONbits
+                                    1-   82     	extern	_BWUCONbits
+                                    1-   83     	extern	_PCONbits
+                                    1-   84     	extern	_PORTBbits
+                                    1-   86     	extern PSAVE
+                                    1-   87     	extern SSAVE
+                                    1-   88     	extern WSAVE
+                                    1-   89     	extern STK12
+                                    1-   90     	extern ___STK12
+                                    1-   91     	extern STK11
+                                    1-   92     	extern ___STK11
+                                    1-   93     	extern STK10
+                                    1-   94     	extern ___STK10
+                                    1-   95     	extern STK09
+                                    1-   96     	extern ___STK09
+                                    1-   97     	extern STK08
+                                    1-   98     	extern ___STK08
+                                    1-   99     	extern STK07
+                                    1-  100     	extern ___STK07
+                                    1-  101     	extern STK06
+                                    1-  102     	extern ___STK06
+                                    1-  103     	extern STK05
+                                    1-  104     	extern ___STK05
+                                    1-  105     	extern STK04
+                                    1-  106     	extern ___STK04
+                                    1-  107     	extern STK03
+                                    1-  108     	extern ___STK03
+                                    1-  109     	extern STK02
+                                    1-  110     	extern ___STK02
+                                    1-  111     	extern STK01
+                                    1-  112     	extern ___STK01
+                                    1-  113     	extern STK00
+                                    1-  114     	extern ___STK00
+                                    1-  115     ;--------------------------------------------------------
+                                    1-  116     ; global declarations
+                                    1-  117     ;--------------------------------------------------------
+                                    1-  118     	extern	_my_flag0
+                                    1-  119     	extern	_my_flag1
+                                    1-  120     	extern	_INTF
+                                    1-  121     	extern	_INTE
+                                    1-  122     	extern	_BPHCON
+                                    1-  123     	extern	_BPLCON
+                                    1-  124     	extern	_BWUCON
+                                    1-  125     	extern	_PCON
+                                    1-  126     	extern	_PORTB
+                                    1-  127     	extern	_M1_Work_Process
+                                    1-  128     	extern	_Motor_PWM_Loop1
+                                    1-  129     	extern	_Motor_PWM_Loop2
+                                    1-  130     	extern	_Motor_PWM_Loop3
+                                    1-  131     	extern	_M1_Work
+                                    1-  133     ;--------------------------------------------------------
+                                    1-  134     ; global definitions
                                     1-  135     ;--------------------------------------------------------
-                                    1-  136     ; absolute symbol definitions
-                                    1-  137     ;--------------------------------------------------------
+                                    1-  136     ;--------------------------------------------------------
+                                    1-  137     ; absolute symbol definitions
                                     1-  138     ;--------------------------------------------------------
-                                    1-  139     ; compiler-defined variables
-                                    1-  140     ;--------------------------------------------------------
-                                    1-  141     .segment "uninit"
-     0000                           1-  142     r0x1013:
-                                    1-  143     	.res	1
-                                    1-  144     .segment "uninit"
-     0000                           1-  145     r0x1012:
-                                    1-  146     	.res	1
-                                    1-  147     ;--------------------------------------------------------
-                                    1-  148     ; initialized data
-                                    1-  149     ;--------------------------------------------------------
+                                    1-  139     ;--------------------------------------------------------
+                                    1-  140     ; compiler-defined variables
+                                    1-  141     ;--------------------------------------------------------
+                                    1-  142     .segment "uninit"
+     0000                           1-  143     r0x1013:
+                                    1-  144     	.res	1
+                                    1-  145     .segment "uninit"
+     0000                           1-  146     r0x1012:
+                                    1-  147     	.res	1
+                                    1-  148     ;--------------------------------------------------------
+                                    1-  149     ; initialized data
                                     1-  150     ;--------------------------------------------------------
-                                    1-  151     ; initialized absolute data
-                                    1-  152     ;--------------------------------------------------------
+                                    1-  151     ;--------------------------------------------------------
+                                    1-  152     ; initialized absolute data
                                     1-  153     ;--------------------------------------------------------
-                                    1-  154     ; overlayable items in internal ram 
-                                    1-  155     ;--------------------------------------------------------
-                                    1-  156     ;	udata_ovr
-                                    1-  157     ;--------------------------------------------------------
-                                    1-  158     ; code
-                                    1-  159     ;--------------------------------------------------------
-                                    1-  160     ; code_Motor	code
-                                    1-  161     ;***
-                                    1-  162     ;  pBlock Stats: dbName = C
-                                    1-  163     ;***
-                                    1-  164     ;has an exit
-                                    1-  165     ;functions called:
-                                    1-  166     ;   _Motor_PWM_Loop2
-                                    1-  167     ;   _Motor_PWM_Loop3
-                                    1-  168     ;   _Motor_PWM_Loop1
-                                    1-  169     ;   _Motor_PWM_Loop2
-                                    1-  170     ;   _Motor_PWM_Loop3
-                                    1-  171     ;   _Motor_PWM_Loop1
-                                    1-  172     ;   _Motor_PWM_Loop2
-                                    1-  173     ;   _Motor_PWM_Loop3
-                                    1-  174     ;   _Motor_PWM_Loop1
-                                    1-  175     ;   _Motor_PWM_Loop2
-                                    1-  176     ;   _Motor_PWM_Loop3
-                                    1-  177     ;   _Motor_PWM_Loop2
-                                    1-  178     ;   _Motor_PWM_Loop3
-                                    1-  179     ;   _Motor_PWM_Loop1
-                                    1-  180     ;   _Motor_PWM_Loop2
-                                    1-  181     ;   _Motor_PWM_Loop3
-                                    1-  182     ;   _Motor_PWM_Loop1
-                                    1-  183     ;   _Motor_PWM_Loop2
-                                    1-  184     ;   _Motor_PWM_Loop3
-                                    1-  185     ;   _Motor_PWM_Loop1
-                                    1-  186     ;   _Motor_PWM_Loop2
-                                    1-  187     ;   _Motor_PWM_Loop3
-                                    1-  188     ;1 compiler assigned register :
-                                    1-  189     ;   STK00
-                                    1-  190     ;; Starting pCode block
-                                    1-  191     .segment "code"; module=Motor, function=_M1_Work
-     0000                           1-  193     _M1_Work:
-                                    1-  194     ; 2 exit points
-                                    1-  195     	.line	116, "Motor.c"; 	if (M1_PWM_Write_FLAG)
-     0000 09rr                      1-  196     	BTRSS	_my_flag1,3
-                                    1-  197     	MGOTO	_02088_DS_
+                                    1-  154     ;--------------------------------------------------------
+                                    1-  155     ; overlayable items in internal ram 
+                                    1-  156     ;--------------------------------------------------------
+                                    1-  157     ;	udata_ovr
+                                    1-  158     ;--------------------------------------------------------
+                                    1-  159     ; code
+                                    1-  160     ;--------------------------------------------------------
+                                    1-  161     ; code_Motor	code
+                                    1-  162     ;***
+                                    1-  163     ;  pBlock Stats: dbName = C
+                                    1-  164     ;***
+                                    1-  165     ;has an exit
+                                    1-  166     ;functions called:
+                                    1-  167     ;   _Motor_PWM_Loop2
+                                    1-  168     ;   _Motor_PWM_Loop3
+                                    1-  169     ;   _Motor_PWM_Loop1
+                                    1-  170     ;   _Motor_PWM_Loop2
+                                    1-  171     ;   _Motor_PWM_Loop3
+                                    1-  172     ;   _Motor_PWM_Loop1
+                                    1-  173     ;   _Motor_PWM_Loop2
+                                    1-  174     ;   _Motor_PWM_Loop3
+                                    1-  175     ;   _Motor_PWM_Loop1
+                                    1-  176     ;   _Motor_PWM_Loop2
+                                    1-  177     ;   _Motor_PWM_Loop3
+                                    1-  178     ;   _Motor_PWM_Loop2
+                                    1-  179     ;   _Motor_PWM_Loop3
+                                    1-  180     ;   _Motor_PWM_Loop1
+                                    1-  181     ;   _Motor_PWM_Loop2
+                                    1-  182     ;   _Motor_PWM_Loop3
+                                    1-  183     ;   _Motor_PWM_Loop1
+                                    1-  184     ;   _Motor_PWM_Loop2
+                                    1-  185     ;   _Motor_PWM_Loop3
+                                    1-  186     ;   _Motor_PWM_Loop1
+                                    1-  187     ;   _Motor_PWM_Loop2
+                                    1-  188     ;   _Motor_PWM_Loop3
+                                    1-  189     ;1 compiler assigned register :
+                                    1-  190     ;   STK00
+                                    1-  191     ;; Starting pCode block
+                                    1-  192     .segment "code"; module=Motor, function=_M1_Work
+     0000                           1-  194     _M1_Work:
+                                    1-  195     ; 2 exit points
+                                    1-  196     	.line	116, "Motor.c"; 	if (M1_PWM_Write_FLAG)
+     0000 09rr                      1-  197     	BTRSS	_my_flag1,3
+                                    1-  198     	MGOTO	_02088_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  198     	.line	118, "Motor.c"; 	if (!(M1_Freq_Change_Set == M1_Freq_Change))
-     0002 01rr                      1-  199     	MOVR	_M1_Freq_Change,W
-     0003 12rr                      1-  200     	XORAR	_M1_Freq_Change_Set,W
-     0004 0D03                      1-  201     	BTRSC	STATUS,2
-                                    1-  202     	MGOTO	_02042_DS_
+                                    1-  199     	.line	118, "Motor.c"; 	if (!(M1_Freq_Change_Set == M1_Freq_Change))
+     0002 01rr                      1-  200     	MOVR	_M1_Freq_Change,W
+     0003 12rr                      1-  201     	XORAR	_M1_Freq_Change_Set,W
+     0004 0D03                      1-  202     	BTRSC	STATUS,2
+                                    1-  203     	MGOTO	_02042_DS_
      0005 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  203     	.line	120, "Motor.c"; 	M1_Freq_Change = M1_Freq_Change_Set;
-     0006 01rr                      1-  204     	MOVR	_M1_Freq_Change_Set,W
-     0007 00rr                      1-  205     	MOVAR	_M1_Freq_Change
-                                    1-  206     	.line	121, "Motor.c"; 	Motor_Freq_Cnt0 = 0;
-     0008 02rr                      1-  207     	CLRR	_Motor_Freq_Cnt0
-                                    1-  208     	.line	122, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
-     0009 02rr                      1-  209     	CLRR	_Motor_Freq_Cnt1
-     000A 02rr                      1-  210     	CLRR	(_Motor_Freq_Cnt1 + 1)
-                                    1-  211     	.line	123, "Motor.c"; 	Motor_Freq_Cnt2 = 0;
-     000B 02rr                      1-  212     	CLRR	_Motor_Freq_Cnt2
-                                    1-  213     	.line	124, "Motor.c"; 	M1_Cnt = 0;
-     000C 02rr                      1-  214     	CLRR	_M1_Cnt
-     000D 02rr                      1-  215     	CLRR	(_M1_Cnt + 1)
-                                    1-  216     	.line	125, "Motor.c"; 	M1_Cycle = 1;
-     000E 2101                      1-  217     	MOVIA	0x01
-     000F 00rr                      1-  218     	MOVAR	_M1_Cycle
-     0010 02rr                      1-  219     	CLRR	(_M1_Cycle + 1)
-     0011                           1-  220     _02042_DS_:
-                                    1-  221     	.line	128, "Motor.c"; 	M1_PWM_Write_FLAG = 0;
-     0011 1Drr                      1-  222     	BCR	_my_flag1,3
-                                    1-  223     	.line	129, "Motor.c"; 	M1_Work_FLAG = 0;
-     0012 1Drr                      1-  224     	BCR	_my_flag1,2
-                                    1-  225     ;;swapping arguments (AOP_TYPEs 1/3)
-                                    1-  226     ;;unsigned compare: left >= lit(0xB=11), size=1
-                                    1-  227     	.line	131, "Motor.c"; 	switch (M1_Freq_Change)
-     0013 210B                      1-  228     	MOVIA	0x0b
-     0014 04rr                      1-  229     	SUBAR	_M1_Freq_Change,W
-     0015 0C03                      1-  230     	BTRSC	STATUS,0
-                                    1-  231     	MGOTO	_02043_DS_
+                                    1-  204     	.line	120, "Motor.c"; 	M1_Freq_Change = M1_Freq_Change_Set;
+     0006 01rr                      1-  205     	MOVR	_M1_Freq_Change_Set,W
+     0007 00rr                      1-  206     	MOVAR	_M1_Freq_Change
+                                    1-  207     	.line	121, "Motor.c"; 	Motor_Freq_Cnt0 = 0;
+     0008 02rr                      1-  208     	CLRR	_Motor_Freq_Cnt0
+                                    1-  209     	.line	122, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
+     0009 02rr                      1-  210     	CLRR	_Motor_Freq_Cnt1
+     000A 02rr                      1-  211     	CLRR	(_Motor_Freq_Cnt1 + 1)
+                                    1-  212     	.line	123, "Motor.c"; 	Motor_Freq_Cnt2 = 0;
+     000B 02rr                      1-  213     	CLRR	_Motor_Freq_Cnt2
+                                    1-  214     	.line	124, "Motor.c"; 	M1_Cnt = 0;
+     000C 02rr                      1-  215     	CLRR	_M1_Cnt
+     000D 02rr                      1-  216     	CLRR	(_M1_Cnt + 1)
+                                    1-  217     	.line	125, "Motor.c"; 	M1_Cycle = 1;
+     000E 2101                      1-  218     	MOVIA	0x01
+     000F 00rr                      1-  219     	MOVAR	_M1_Cycle
+     0010 02rr                      1-  220     	CLRR	(_M1_Cycle + 1)
+     0011                           1-  221     _02042_DS_:
+                                    1-  222     	.line	128, "Motor.c"; 	M1_PWM_Write_FLAG = 0;
+     0011 1Drr                      1-  223     	BCR	_my_flag1,3
+                                    1-  224     	.line	129, "Motor.c"; 	M1_Work_FLAG = 0;
+     0012 1Drr                      1-  225     	BCR	_my_flag1,2
+                                    1-  226     ;;swapping arguments (AOP_TYPEs 1/3)
+                                    1-  227     ;;unsigned compare: left >= lit(0xB=11), size=1
+                                    1-  228     	.line	131, "Motor.c"; 	switch (M1_Freq_Change)
+     0013 210B                      1-  229     	MOVIA	0x0b
+     0014 04rr                      1-  230     	SUBAR	_M1_Freq_Change,W
+     0015 0C03                      1-  231     	BTRSC	STATUS,0
+                                    1-  232     	MGOTO	_02043_DS_
      0016 3rrr                      3-   62 m1      LGOTO rom_address
-     0017 21rr                      1-  232     	MOVIA	((_02162_DS_ >> 8) & 0xff)
-     0018 008A                      1-  233     	MOVAR	PCHBUF
-     0019 01rr                      1-  234     	MOVR	_M1_Freq_Change,W
-     001A 25rr                      1-  235     	ADDIA	_02162_DS_
-     001B 0C03                      1-  236     	BTRSC	STATUS,0
-     001C 058A                      1-  237     	INCR	PCHBUF,F
-     001D 0082                      1-  238     	MOVAR	PCL
-     001E                           1-  239     _02162_DS_:
-                                    1-  240     	MGOTO	_02043_DS_
+     0017 21rr                      1-  233     	MOVIA	((_02162_DS_ >> 8) & 0xff)
+     0018 008A                      1-  234     	MOVAR	PCHBUF
+     0019 01rr                      1-  235     	MOVR	_M1_Freq_Change,W
+     001A 25rr                      1-  236     	ADDIA	_02162_DS_
+     001B 0C03                      1-  237     	BTRSC	STATUS,0
+     001C 058A                      1-  238     	INCR	PCHBUF,F
+     001D 0082                      1-  239     	MOVAR	PCL
+     001E                           1-  240     _02162_DS_:
+                                    1-  241     	MGOTO	_02043_DS_
      001E 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  241     	MGOTO	_02044_DS_
+                                    1-  242     	MGOTO	_02044_DS_
      001F 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  242     	MGOTO	_02045_DS_
+                                    1-  243     	MGOTO	_02045_DS_
      0020 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  243     	MGOTO	_02046_DS_
+                                    1-  244     	MGOTO	_02046_DS_
      0021 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  244     	MGOTO	_02047_DS_
+                                    1-  245     	MGOTO	_02047_DS_
      0022 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  245     	MGOTO	_02048_DS_
+                                    1-  246     	MGOTO	_02048_DS_
      0023 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  246     	MGOTO	_02054_DS_
+                                    1-  247     	MGOTO	_02054_DS_
      0024 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  247     	MGOTO	_02063_DS_
+                                    1-  248     	MGOTO	_02063_DS_
      0025 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  248     	MGOTO	_02072_DS_
+                                    1-  249     	MGOTO	_02072_DS_
      0026 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  249     	MGOTO	_02073_DS_
+                                    1-  250     	MGOTO	_02073_DS_
      0027 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  250     	MGOTO	_02074_DS_
+                                    1-  251     	MGOTO	_02074_DS_
      0028 3rrr                      3-   62 m1      LGOTO rom_address
-     0029                           1-  251     _02043_DS_:
-                                    1-  252     	.line	135, "Motor.c"; 	M1_Freq_Change = 1;
-     0029 2101                      1-  253     	MOVIA	0x01
-     002A 00rr                      1-  254     	MOVAR	_M1_Freq_Change
-                                    1-  255     	.line	136, "Motor.c"; 	break;
-                                    1-  256     	MGOTO	_02083_DS_
+     0029                           1-  252     _02043_DS_:
+                                    1-  253     	.line	135, "Motor.c"; 	M1_Freq_Change = 1;
+     0029 2101                      1-  254     	MOVIA	0x01
+     002A 00rr                      1-  255     	MOVAR	_M1_Freq_Change
+                                    1-  256     	.line	136, "Motor.c"; 	break;
+                                    1-  257     	MGOTO	_02083_DS_
      002B 3rrr                      3-   62 m1      LGOTO rom_address
-     002C                           1-  257     _02044_DS_:
-                                    1-  258     	.line	140, "Motor.c"; 	M1_Cycle_Set = 94;
-     002C 215E                      1-  259     	MOVIA	0x5e
-     002D 00rr                      1-  260     	MOVAR	_M1_Cycle_Set
-     002E 02rr                      1-  261     	CLRR	(_M1_Cycle_Set + 1)
-                                    1-  262     	.line	141, "Motor.c"; 	M1_Duty_Set = 42;
-     002F 212A                      1-  263     	MOVIA	0x2a
-     0030 00rr                      1-  264     	MOVAR	_M1_Duty_Set
-     0031 02rr                      1-  265     	CLRR	(_M1_Duty_Set + 1)
-                                    1-  266     	.line	142, "Motor.c"; 	break;
-                                    1-  267     	MGOTO	_02083_DS_
+     002C                           1-  258     _02044_DS_:
+                                    1-  259     	.line	140, "Motor.c"; 	M1_Cycle_Set = 94;
+     002C 215E                      1-  260     	MOVIA	0x5e
+     002D 00rr                      1-  261     	MOVAR	_M1_Cycle_Set
+     002E 02rr                      1-  262     	CLRR	(_M1_Cycle_Set + 1)
+                                    1-  263     	.line	141, "Motor.c"; 	M1_Duty_Set = 42;
+     002F 212A                      1-  264     	MOVIA	0x2a
+     0030 00rr                      1-  265     	MOVAR	_M1_Duty_Set
+     0031 02rr                      1-  266     	CLRR	(_M1_Duty_Set + 1)
+                                    1-  267     	.line	142, "Motor.c"; 	break;
+                                    1-  268     	MGOTO	_02083_DS_
      0032 3rrr                      3-   62 m1      LGOTO rom_address
-     0033                           1-  268     _02045_DS_:
-                                    1-  269     	.line	146, "Motor.c"; 	M1_Cycle_Set = 94;
-     0033 215E                      1-  270     	MOVIA	0x5e
-     0034 00rr                      1-  271     	MOVAR	_M1_Cycle_Set
-     0035 02rr                      1-  272     	CLRR	(_M1_Cycle_Set + 1)
-                                    1-  273     	.line	147, "Motor.c"; 	M1_Duty_Set = 64;
-     0036 2140                      1-  274     	MOVIA	0x40
-     0037 00rr                      1-  275     	MOVAR	_M1_Duty_Set
-     0038 02rr                      1-  276     	CLRR	(_M1_Duty_Set + 1)
-                                    1-  277     	.line	148, "Motor.c"; 	break;
-                                    1-  278     	MGOTO	_02083_DS_
+     0033                           1-  269     _02045_DS_:
+                                    1-  270     	.line	146, "Motor.c"; 	M1_Cycle_Set = 94;
+     0033 215E                      1-  271     	MOVIA	0x5e
+     0034 00rr                      1-  272     	MOVAR	_M1_Cycle_Set
+     0035 02rr                      1-  273     	CLRR	(_M1_Cycle_Set + 1)
+                                    1-  274     	.line	147, "Motor.c"; 	M1_Duty_Set = 64;
+     0036 2140                      1-  275     	MOVIA	0x40
+     0037 00rr                      1-  276     	MOVAR	_M1_Duty_Set
+     0038 02rr                      1-  277     	CLRR	(_M1_Duty_Set + 1)
+                                    1-  278     	.line	148, "Motor.c"; 	break;
+                                    1-  279     	MGOTO	_02083_DS_
      0039 3rrr                      3-   62 m1      LGOTO rom_address
-     003A                           1-  279     _02046_DS_:
-                                    1-  280     	.line	152, "Motor.c"; 	M1_Cycle_Set = 100;
-     003A 2164                      1-  281     	MOVIA	0x64
-     003B 00rr                      1-  282     	MOVAR	_M1_Cycle_Set
-     003C 02rr                      1-  283     	CLRR	(_M1_Cycle_Set + 1)
-                                    1-  284     	.line	153, "Motor.c"; 	M1_Duty_Set = 100;
-     003D 2164                      1-  285     	MOVIA	0x64
-     003E 00rr                      1-  286     	MOVAR	_M1_Duty_Set
-     003F 02rr                      1-  287     	CLRR	(_M1_Duty_Set + 1)
-                                    1-  288     	.line	154, "Motor.c"; 	break;
-                                    1-  289     	MGOTO	_02083_DS_
+     003A                           1-  280     _02046_DS_:
+                                    1-  281     	.line	152, "Motor.c"; 	M1_Cycle_Set = 100;
+     003A 2164                      1-  282     	MOVIA	0x64
+     003B 00rr                      1-  283     	MOVAR	_M1_Cycle_Set
+     003C 02rr                      1-  284     	CLRR	(_M1_Cycle_Set + 1)
+                                    1-  285     	.line	153, "Motor.c"; 	M1_Duty_Set = 100;
+     003D 2164                      1-  286     	MOVIA	0x64
+     003E 00rr                      1-  287     	MOVAR	_M1_Duty_Set
+     003F 02rr                      1-  288     	CLRR	(_M1_Duty_Set + 1)
+                                    1-  289     	.line	154, "Motor.c"; 	break;
+                                    1-  290     	MGOTO	_02083_DS_
      0040 3rrr                      3-   62 m1      LGOTO rom_address
-     0041                           1-  290     _02047_DS_:
-                                    1-  291     	.line	158, "Motor.c"; 	M1_Cycle_Set = 3478;
-     0041 2196                      1-  292     	MOVIA	0x96
-     0042 00rr                      1-  293     	MOVAR	_M1_Cycle_Set
-     0043 210D                      1-  294     	MOVIA	0x0d
-     0044 00rr                      1-  295     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  296     	.line	159, "Motor.c"; 	M1_Duty_Set = 2817;
-     0045 2101                      1-  297     	MOVIA	0x01
-     0046 00rr                      1-  298     	MOVAR	_M1_Duty_Set
-     0047 210B                      1-  299     	MOVIA	0x0b
-     0048 00rr                      1-  300     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  301     	.line	160, "Motor.c"; 	break;
-                                    1-  302     	MGOTO	_02083_DS_
+     0041                           1-  291     _02047_DS_:
+                                    1-  292     	.line	158, "Motor.c"; 	M1_Cycle_Set = 3478;
+     0041 2196                      1-  293     	MOVIA	0x96
+     0042 00rr                      1-  294     	MOVAR	_M1_Cycle_Set
+     0043 210D                      1-  295     	MOVIA	0x0d
+     0044 00rr                      1-  296     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  297     	.line	159, "Motor.c"; 	M1_Duty_Set = 2817;
+     0045 2101                      1-  298     	MOVIA	0x01
+     0046 00rr                      1-  299     	MOVAR	_M1_Duty_Set
+     0047 210B                      1-  300     	MOVIA	0x0b
+     0048 00rr                      1-  301     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  302     	.line	160, "Motor.c"; 	break;
+                                    1-  303     	MGOTO	_02083_DS_
      0049 3rrr                      3-   62 m1      LGOTO rom_address
-     004A                           1-  303     _02048_DS_:
-                                    1-  304     	.line	164, "Motor.c"; 	if (!Motor_Freq_Cnt0)
-     004A 01rr                      1-  305     	MOVR	_Motor_Freq_Cnt0,W
-     004B 0903                      1-  306     	BTRSS	STATUS,2
-                                    1-  307     	MGOTO	_02052_DS_
+     004A                           1-  304     _02048_DS_:
+                                    1-  305     	.line	164, "Motor.c"; 	if (!Motor_Freq_Cnt0)
+     004A 01rr                      1-  306     	MOVR	_Motor_Freq_Cnt0,W
+     004B 0903                      1-  307     	BTRSS	STATUS,2
+                                    1-  308     	MGOTO	_02052_DS_
      004C 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  308     	.line	166, "Motor.c"; 	M1_Cycle_Set = 1974;
-     004D 21B6                      1-  309     	MOVIA	0xb6
-     004E 00rr                      1-  310     	MOVAR	_M1_Cycle_Set
-     004F 2107                      1-  311     	MOVIA	0x07
-     0050 00rr                      1-  312     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  313     	.line	167, "Motor.c"; 	M1_Duty_Set = 1026;
-     0051 2102                      1-  314     	MOVIA	0x02
-     0052 00rr                      1-  315     	MOVAR	_M1_Duty_Set
-     0053 2104                      1-  316     	MOVIA	0x04
-     0054 00rr                      1-  317     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  318     	.line	168, "Motor.c"; 	Motor_PWM_Loop2(16);
-     0055 2110                      1-  319     	MOVIA	0x10
-     0056 00rr                      1-  320     	MOVAR	STK00
-     0057 2100                      1-  321     	MOVIA	0x00
-                                    1-  322     	MCALL	_Motor_PWM_Loop2
+                                    1-  309     	.line	166, "Motor.c"; 	M1_Cycle_Set = 1974;
+     004D 21B6                      1-  310     	MOVIA	0xb6
+     004E 00rr                      1-  311     	MOVAR	_M1_Cycle_Set
+     004F 2107                      1-  312     	MOVIA	0x07
+     0050 00rr                      1-  313     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  314     	.line	167, "Motor.c"; 	M1_Duty_Set = 1026;
+     0051 2102                      1-  315     	MOVIA	0x02
+     0052 00rr                      1-  316     	MOVAR	_M1_Duty_Set
+     0053 2104                      1-  317     	MOVIA	0x04
+     0054 00rr                      1-  318     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  319     	.line	168, "Motor.c"; 	Motor_PWM_Loop2(16);
+     0055 2110                      1-  320     	MOVIA	0x10
+     0056 00rr                      1-  321     	MOVAR	STK00
+     0057 2100                      1-  322     	MOVIA	0x00
+                                    1-  323     	MCALL	_Motor_PWM_Loop2
      0058 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  323     	MGOTO	_02083_DS_
+                                    1-  324     	MGOTO	_02083_DS_
      0059 3rrr                      3-   62 m1      LGOTO rom_address
-     005A                           1-  324     _02052_DS_:
-                                    1-  325     	.line	170, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
-     005A 01rr                      1-  326     	MOVR	_Motor_Freq_Cnt0,W
-     005B 2401                      1-  327     	XORIA	0x01
-     005C 0903                      1-  328     	BTRSS	STATUS,2
-                                    1-  329     	MGOTO	_02083_DS_
+     005A                           1-  325     _02052_DS_:
+                                    1-  326     	.line	170, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
+     005A 01rr                      1-  327     	MOVR	_Motor_Freq_Cnt0,W
+     005B 2401                      1-  328     	XORIA	0x01
+     005C 0903                      1-  329     	BTRSS	STATUS,2
+                                    1-  330     	MGOTO	_02083_DS_
      005D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  330     	.line	172, "Motor.c"; 	M1_Cycle_Set = 94;
-     005E 215E                      1-  331     	MOVIA	0x5e
-     005F 00rr                      1-  332     	MOVAR	_M1_Cycle_Set
-     0060 02rr                      1-  333     	CLRR	(_M1_Cycle_Set + 1)
-                                    1-  334     	.line	173, "Motor.c"; 	M1_Duty_Set = 51;
-     0061 2133                      1-  335     	MOVIA	0x33
-     0062 00rr                      1-  336     	MOVAR	_M1_Duty_Set
-     0063 02rr                      1-  337     	CLRR	(_M1_Duty_Set + 1)
-                                    1-  338     	.line	174, "Motor.c"; 	Motor_PWM_Loop3(1600);
-     0064 2140                      1-  339     	MOVIA	0x40
-     0065 00rr                      1-  340     	MOVAR	STK00
-     0066 2106                      1-  341     	MOVIA	0x06
-                                    1-  342     	MCALL	_Motor_PWM_Loop3
+                                    1-  331     	.line	172, "Motor.c"; 	M1_Cycle_Set = 94;
+     005E 215E                      1-  332     	MOVIA	0x5e
+     005F 00rr                      1-  333     	MOVAR	_M1_Cycle_Set
+     0060 02rr                      1-  334     	CLRR	(_M1_Cycle_Set + 1)
+                                    1-  335     	.line	173, "Motor.c"; 	M1_Duty_Set = 51;
+     0061 2133                      1-  336     	MOVIA	0x33
+     0062 00rr                      1-  337     	MOVAR	_M1_Duty_Set
+     0063 02rr                      1-  338     	CLRR	(_M1_Duty_Set + 1)
+                                    1-  339     	.line	174, "Motor.c"; 	Motor_PWM_Loop3(1600);
+     0064 2140                      1-  340     	MOVIA	0x40
+     0065 00rr                      1-  341     	MOVAR	STK00
+     0066 2106                      1-  342     	MOVIA	0x06
+                                    1-  343     	MCALL	_Motor_PWM_Loop3
      0067 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  343     	.line	176, "Motor.c"; 	break;
-                                    1-  344     	MGOTO	_02083_DS_
+                                    1-  344     	.line	176, "Motor.c"; 	break;
+                                    1-  345     	MGOTO	_02083_DS_
      0068 3rrr                      3-   62 m1      LGOTO rom_address
-     0069                           1-  345     _02054_DS_:
-                                    1-  346     	.line	180, "Motor.c"; 	if (!Motor_Freq_Cnt0)
-     0069 01rr                      1-  347     	MOVR	_Motor_Freq_Cnt0,W
-     006A 0903                      1-  348     	BTRSS	STATUS,2
-                                    1-  349     	MGOTO	_02061_DS_
+     0069                           1-  346     _02054_DS_:
+                                    1-  347     	.line	180, "Motor.c"; 	if (!Motor_Freq_Cnt0)
+     0069 01rr                      1-  348     	MOVR	_Motor_Freq_Cnt0,W
+     006A 0903                      1-  349     	BTRSS	STATUS,2
+                                    1-  350     	MGOTO	_02061_DS_
      006B 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  350     	.line	182, "Motor.c"; 	M1_Cycle_Set = 1599;
-     006C 213F                      1-  351     	MOVIA	0x3f
-     006D 00rr                      1-  352     	MOVAR	_M1_Cycle_Set
-     006E 2106                      1-  353     	MOVIA	0x06
-     006F 00rr                      1-  354     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  355     	.line	183, "Motor.c"; 	M1_Duty_Set = 847;
-     0070 214F                      1-  356     	MOVIA	0x4f
-     0071 00rr                      1-  357     	MOVAR	_M1_Duty_Set
-     0072 2103                      1-  358     	MOVIA	0x03
-     0073 00rr                      1-  359     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  360     	.line	184, "Motor.c"; 	Motor_PWM_Loop1(20);
-     0074 2114                      1-  361     	MOVIA	0x14
-     0075 00rr                      1-  362     	MOVAR	STK00
-     0076 2100                      1-  363     	MOVIA	0x00
-                                    1-  364     	MCALL	_Motor_PWM_Loop1
+                                    1-  351     	.line	182, "Motor.c"; 	M1_Cycle_Set = 1599;
+     006C 213F                      1-  352     	MOVIA	0x3f
+     006D 00rr                      1-  353     	MOVAR	_M1_Cycle_Set
+     006E 2106                      1-  354     	MOVIA	0x06
+     006F 00rr                      1-  355     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  356     	.line	183, "Motor.c"; 	M1_Duty_Set = 847;
+     0070 214F                      1-  357     	MOVIA	0x4f
+     0071 00rr                      1-  358     	MOVAR	_M1_Duty_Set
+     0072 2103                      1-  359     	MOVIA	0x03
+     0073 00rr                      1-  360     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  361     	.line	184, "Motor.c"; 	Motor_PWM_Loop1(20);
+     0074 2114                      1-  362     	MOVIA	0x14
+     0075 00rr                      1-  363     	MOVAR	STK00
+     0076 2100                      1-  364     	MOVIA	0x00
+                                    1-  365     	MCALL	_Motor_PWM_Loop1
      0077 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  365     	MGOTO	_02083_DS_
+                                    1-  366     	MGOTO	_02083_DS_
      0078 3rrr                      3-   62 m1      LGOTO rom_address
-     0079                           1-  366     _02061_DS_:
-                                    1-  367     	.line	186, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
-     0079 01rr                      1-  368     	MOVR	_Motor_Freq_Cnt0,W
-     007A 2401                      1-  369     	XORIA	0x01
-     007B 0903                      1-  370     	BTRSS	STATUS,2
-                                    1-  371     	MGOTO	_02058_DS_
+     0079                           1-  367     _02061_DS_:
+                                    1-  368     	.line	186, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
+     0079 01rr                      1-  369     	MOVR	_Motor_Freq_Cnt0,W
+     007A 2401                      1-  370     	XORIA	0x01
+     007B 0903                      1-  371     	BTRSS	STATUS,2
+                                    1-  372     	MGOTO	_02058_DS_
      007C 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  372     	.line	188, "Motor.c"; 	M1_Cycle_Set = 9588;
-     007D 2174                      1-  373     	MOVIA	0x74
-     007E 00rr                      1-  374     	MOVAR	_M1_Cycle_Set
-     007F 2125                      1-  375     	MOVIA	0x25
-     0080 00rr                      1-  376     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  377     	.line	189, "Motor.c"; 	M1_Duty_Set = 4794;
-     0081 21BA                      1-  378     	MOVIA	0xba
-     0082 00rr                      1-  379     	MOVAR	_M1_Duty_Set
-     0083 2112                      1-  380     	MOVIA	0x12
-     0084 00rr                      1-  381     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  382     	.line	190, "Motor.c"; 	Motor_PWM_Loop2(6);
-     0085 2106                      1-  383     	MOVIA	0x06
-     0086 00rr                      1-  384     	MOVAR	STK00
-     0087 2100                      1-  385     	MOVIA	0x00
-                                    1-  386     	MCALL	_Motor_PWM_Loop2
+                                    1-  373     	.line	188, "Motor.c"; 	M1_Cycle_Set = 9588;
+     007D 2174                      1-  374     	MOVIA	0x74
+     007E 00rr                      1-  375     	MOVAR	_M1_Cycle_Set
+     007F 2125                      1-  376     	MOVIA	0x25
+     0080 00rr                      1-  377     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  378     	.line	189, "Motor.c"; 	M1_Duty_Set = 4794;
+     0081 21BA                      1-  379     	MOVIA	0xba
+     0082 00rr                      1-  380     	MOVAR	_M1_Duty_Set
+     0083 2112                      1-  381     	MOVIA	0x12
+     0084 00rr                      1-  382     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  383     	.line	190, "Motor.c"; 	Motor_PWM_Loop2(6);
+     0085 2106                      1-  384     	MOVIA	0x06
+     0086 00rr                      1-  385     	MOVAR	STK00
+     0087 2100                      1-  386     	MOVIA	0x00
+                                    1-  387     	MCALL	_Motor_PWM_Loop2
      0088 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  387     	MGOTO	_02083_DS_
+                                    1-  388     	MGOTO	_02083_DS_
      0089 3rrr                      3-   62 m1      LGOTO rom_address
-     008A                           1-  388     _02058_DS_:
-                                    1-  389     	.line	192, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
-     008A 01rr                      1-  390     	MOVR	_Motor_Freq_Cnt0,W
-     008B 2402                      1-  391     	XORIA	0x02
-     008C 0903                      1-  392     	BTRSS	STATUS,2
-                                    1-  393     	MGOTO	_02083_DS_
+     008A                           1-  389     _02058_DS_:
+                                    1-  390     	.line	192, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
+     008A 01rr                      1-  391     	MOVR	_Motor_Freq_Cnt0,W
+     008B 2402                      1-  392     	XORIA	0x02
+     008C 0903                      1-  393     	BTRSS	STATUS,2
+                                    1-  394     	MGOTO	_02083_DS_
      008D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  394     	.line	194, "Motor.c"; 	M1_Cycle_Set = 7616;
-     008E 21C0                      1-  395     	MOVIA	0xc0
-     008F 00rr                      1-  396     	MOVAR	_M1_Cycle_Set
-     0090 211D                      1-  397     	MOVIA	0x1d
-     0091 00rr                      1-  398     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  399     	.line	195, "Motor.c"; 	M1_Duty_Set = 2818;
-     0092 2102                      1-  400     	MOVIA	0x02
-     0093 00rr                      1-  401     	MOVAR	_M1_Duty_Set
-     0094 210B                      1-  402     	MOVIA	0x0b
-     0095 00rr                      1-  403     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  404     	.line	196, "Motor.c"; 	Motor_PWM_Loop3(5);
-     0096 2105                      1-  405     	MOVIA	0x05
-     0097 00rr                      1-  406     	MOVAR	STK00
-     0098 2100                      1-  407     	MOVIA	0x00
-                                    1-  408     	MCALL	_Motor_PWM_Loop3
+                                    1-  395     	.line	194, "Motor.c"; 	M1_Cycle_Set = 7616;
+     008E 21C0                      1-  396     	MOVIA	0xc0
+     008F 00rr                      1-  397     	MOVAR	_M1_Cycle_Set
+     0090 211D                      1-  398     	MOVIA	0x1d
+     0091 00rr                      1-  399     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  400     	.line	195, "Motor.c"; 	M1_Duty_Set = 2818;
+     0092 2102                      1-  401     	MOVIA	0x02
+     0093 00rr                      1-  402     	MOVAR	_M1_Duty_Set
+     0094 210B                      1-  403     	MOVIA	0x0b
+     0095 00rr                      1-  404     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  405     	.line	196, "Motor.c"; 	Motor_PWM_Loop3(5);
+     0096 2105                      1-  406     	MOVIA	0x05
+     0097 00rr                      1-  407     	MOVAR	STK00
+     0098 2100                      1-  408     	MOVIA	0x00
+                                    1-  409     	MCALL	_Motor_PWM_Loop3
      0099 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  409     	.line	198, "Motor.c"; 	break;
-                                    1-  410     	MGOTO	_02083_DS_
+                                    1-  410     	.line	198, "Motor.c"; 	break;
+                                    1-  411     	MGOTO	_02083_DS_
      009A 3rrr                      3-   62 m1      LGOTO rom_address
-     009B                           1-  411     _02063_DS_:
-                                    1-  412     	.line	202, "Motor.c"; 	if (!Motor_Freq_Cnt0)
-     009B 01rr                      1-  413     	MOVR	_Motor_Freq_Cnt0,W
-     009C 0903                      1-  414     	BTRSS	STATUS,2
-                                    1-  415     	MGOTO	_02070_DS_
+     009B                           1-  412     _02063_DS_:
+                                    1-  413     	.line	202, "Motor.c"; 	if (!Motor_Freq_Cnt0)
+     009B 01rr                      1-  414     	MOVR	_Motor_Freq_Cnt0,W
+     009C 0903                      1-  415     	BTRSS	STATUS,2
+                                    1-  416     	MGOTO	_02070_DS_
      009D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  416     	.line	204, "Motor.c"; 	M1_Cycle_Set = 1128;
-     009E 2168                      1-  417     	MOVIA	0x68
-     009F 00rr                      1-  418     	MOVAR	_M1_Cycle_Set
-     00A0 2104                      1-  419     	MOVIA	0x04
-     00A1 00rr                      1-  420     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  421     	.line	205, "Motor.c"; 	M1_Duty_Set = 564;
-     00A2 2134                      1-  422     	MOVIA	0x34
-     00A3 00rr                      1-  423     	MOVAR	_M1_Duty_Set
-     00A4 2102                      1-  424     	MOVIA	0x02
-     00A5 00rr                      1-  425     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  426     	.line	206, "Motor.c"; 	Motor_PWM_Loop1(5);
-     00A6 2105                      1-  427     	MOVIA	0x05
-     00A7 00rr                      1-  428     	MOVAR	STK00
-     00A8 2100                      1-  429     	MOVIA	0x00
-                                    1-  430     	MCALL	_Motor_PWM_Loop1
+                                    1-  417     	.line	204, "Motor.c"; 	M1_Cycle_Set = 1128;
+     009E 2168                      1-  418     	MOVIA	0x68
+     009F 00rr                      1-  419     	MOVAR	_M1_Cycle_Set
+     00A0 2104                      1-  420     	MOVIA	0x04
+     00A1 00rr                      1-  421     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  422     	.line	205, "Motor.c"; 	M1_Duty_Set = 564;
+     00A2 2134                      1-  423     	MOVIA	0x34
+     00A3 00rr                      1-  424     	MOVAR	_M1_Duty_Set
+     00A4 2102                      1-  425     	MOVIA	0x02
+     00A5 00rr                      1-  426     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  427     	.line	206, "Motor.c"; 	Motor_PWM_Loop1(5);
+     00A6 2105                      1-  428     	MOVIA	0x05
+     00A7 00rr                      1-  429     	MOVAR	STK00
+     00A8 2100                      1-  430     	MOVIA	0x00
+                                    1-  431     	MCALL	_Motor_PWM_Loop1
      00A9 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  431     	MGOTO	_02083_DS_
+                                    1-  432     	MGOTO	_02083_DS_
      00AA 3rrr                      3-   62 m1      LGOTO rom_address
-     00AB                           1-  432     _02070_DS_:
-                                    1-  433     	.line	208, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
-     00AB 01rr                      1-  434     	MOVR	_Motor_Freq_Cnt0,W
-     00AC 2401                      1-  435     	XORIA	0x01
-     00AD 0903                      1-  436     	BTRSS	STATUS,2
-                                    1-  437     	MGOTO	_02067_DS_
+     00AB                           1-  433     _02070_DS_:
+                                    1-  434     	.line	208, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
+     00AB 01rr                      1-  435     	MOVR	_Motor_Freq_Cnt0,W
+     00AC 2401                      1-  436     	XORIA	0x01
+     00AD 0903                      1-  437     	BTRSS	STATUS,2
+                                    1-  438     	MGOTO	_02067_DS_
      00AE 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  438     	.line	210, "Motor.c"; 	M1_Cycle_Set = 3198;
-     00AF 217E                      1-  439     	MOVIA	0x7e
-     00B0 00rr                      1-  440     	MOVAR	_M1_Cycle_Set
-     00B1 210C                      1-  441     	MOVIA	0x0c
-     00B2 00rr                      1-  442     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  443     	.line	211, "Motor.c"; 	M1_Duty_Set = 1119;
-     00B3 215F                      1-  444     	MOVIA	0x5f
-     00B4 00rr                      1-  445     	MOVAR	_M1_Duty_Set
-     00B5 2104                      1-  446     	MOVIA	0x04
-     00B6 00rr                      1-  447     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  448     	.line	212, "Motor.c"; 	Motor_PWM_Loop2(10);
-     00B7 210A                      1-  449     	MOVIA	0x0a
-     00B8 00rr                      1-  450     	MOVAR	STK00
-     00B9 2100                      1-  451     	MOVIA	0x00
-                                    1-  452     	MCALL	_Motor_PWM_Loop2
+                                    1-  439     	.line	210, "Motor.c"; 	M1_Cycle_Set = 3198;
+     00AF 217E                      1-  440     	MOVIA	0x7e
+     00B0 00rr                      1-  441     	MOVAR	_M1_Cycle_Set
+     00B1 210C                      1-  442     	MOVIA	0x0c
+     00B2 00rr                      1-  443     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  444     	.line	211, "Motor.c"; 	M1_Duty_Set = 1119;
+     00B3 215F                      1-  445     	MOVIA	0x5f
+     00B4 00rr                      1-  446     	MOVAR	_M1_Duty_Set
+     00B5 2104                      1-  447     	MOVIA	0x04
+     00B6 00rr                      1-  448     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  449     	.line	212, "Motor.c"; 	Motor_PWM_Loop2(10);
+     00B7 210A                      1-  450     	MOVIA	0x0a
+     00B8 00rr                      1-  451     	MOVAR	STK00
+     00B9 2100                      1-  452     	MOVIA	0x00
+                                    1-  453     	MCALL	_Motor_PWM_Loop2
      00BA 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  453     	MGOTO	_02083_DS_
+                                    1-  454     	MGOTO	_02083_DS_
      00BB 3rrr                      3-   62 m1      LGOTO rom_address
-     00BC                           1-  454     _02067_DS_:
-                                    1-  455     	.line	214, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
-     00BC 01rr                      1-  456     	MOVR	_Motor_Freq_Cnt0,W
-     00BD 2402                      1-  457     	XORIA	0x02
-     00BE 0903                      1-  458     	BTRSS	STATUS,2
-                                    1-  459     	MGOTO	_02083_DS_
+     00BC                           1-  455     _02067_DS_:
+                                    1-  456     	.line	214, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
+     00BC 01rr                      1-  457     	MOVR	_Motor_Freq_Cnt0,W
+     00BD 2402                      1-  458     	XORIA	0x02
+     00BE 0903                      1-  459     	BTRSS	STATUS,2
+                                    1-  460     	MGOTO	_02083_DS_
      00BF 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  460     	.line	216, "Motor.c"; 	M1_Cycle_Set = 6293;
-     00C0 2195                      1-  461     	MOVIA	0x95
-     00C1 00rr                      1-  462     	MOVAR	_M1_Cycle_Set
-     00C2 2118                      1-  463     	MOVIA	0x18
-     00C3 00rr                      1-  464     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  465     	.line	217, "Motor.c"; 	M1_Duty_Set = 5160;
-     00C4 2128                      1-  466     	MOVIA	0x28
-     00C5 00rr                      1-  467     	MOVAR	_M1_Duty_Set
-     00C6 2114                      1-  468     	MOVIA	0x14
-     00C7 00rr                      1-  469     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  470     	.line	218, "Motor.c"; 	Motor_PWM_Loop3(10);
-     00C8 210A                      1-  471     	MOVIA	0x0a
-     00C9 00rr                      1-  472     	MOVAR	STK00
-     00CA 2100                      1-  473     	MOVIA	0x00
-                                    1-  474     	MCALL	_Motor_PWM_Loop3
+                                    1-  461     	.line	216, "Motor.c"; 	M1_Cycle_Set = 6293;
+     00C0 2195                      1-  462     	MOVIA	0x95
+     00C1 00rr                      1-  463     	MOVAR	_M1_Cycle_Set
+     00C2 2118                      1-  464     	MOVIA	0x18
+     00C3 00rr                      1-  465     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  466     	.line	217, "Motor.c"; 	M1_Duty_Set = 5160;
+     00C4 2128                      1-  467     	MOVIA	0x28
+     00C5 00rr                      1-  468     	MOVAR	_M1_Duty_Set
+     00C6 2114                      1-  469     	MOVIA	0x14
+     00C7 00rr                      1-  470     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  471     	.line	218, "Motor.c"; 	Motor_PWM_Loop3(10);
+     00C8 210A                      1-  472     	MOVIA	0x0a
+     00C9 00rr                      1-  473     	MOVAR	STK00
+     00CA 2100                      1-  474     	MOVIA	0x00
+                                    1-  475     	MCALL	_Motor_PWM_Loop3
      00CB 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  475     	.line	220, "Motor.c"; 	break;
-                                    1-  476     	MGOTO	_02083_DS_
+                                    1-  476     	.line	220, "Motor.c"; 	break;
+                                    1-  477     	MGOTO	_02083_DS_
      00CC 3rrr                      3-   62 m1      LGOTO rom_address
-     00CD                           1-  477     _02072_DS_:
-                                    1-  478     	.line	224, "Motor.c"; 	M1_Cycle_Set = 8368;
-     00CD 21B0                      1-  479     	MOVIA	0xb0
-     00CE 00rr                      1-  480     	MOVAR	_M1_Cycle_Set
-     00CF 2120                      1-  481     	MOVIA	0x20
-     00D0 00rr                      1-  482     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  483     	.line	225, "Motor.c"; 	M1_Duty_Set = 5607;
-     00D1 21E7                      1-  484     	MOVIA	0xe7
-     00D2 00rr                      1-  485     	MOVAR	_M1_Duty_Set
-     00D3 2115                      1-  486     	MOVIA	0x15
-     00D4 00rr                      1-  487     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  488     	.line	226, "Motor.c"; 	break;
-                                    1-  489     	MGOTO	_02083_DS_
+     00CD                           1-  478     _02072_DS_:
+                                    1-  479     	.line	224, "Motor.c"; 	M1_Cycle_Set = 8368;
+     00CD 21B0                      1-  480     	MOVIA	0xb0
+     00CE 00rr                      1-  481     	MOVAR	_M1_Cycle_Set
+     00CF 2120                      1-  482     	MOVIA	0x20
+     00D0 00rr                      1-  483     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  484     	.line	225, "Motor.c"; 	M1_Duty_Set = 5607;
+     00D1 21E7                      1-  485     	MOVIA	0xe7
+     00D2 00rr                      1-  486     	MOVAR	_M1_Duty_Set
+     00D3 2115                      1-  487     	MOVIA	0x15
+     00D4 00rr                      1-  488     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  489     	.line	226, "Motor.c"; 	break;
+                                    1-  490     	MGOTO	_02083_DS_
      00D5 3rrr                      3-   62 m1      LGOTO rom_address
-     00D6                           1-  490     _02073_DS_:
-                                    1-  491     	.line	230, "Motor.c"; 	M1_Cycle_Set = 2913;
-     00D6 2161                      1-  492     	MOVIA	0x61
-     00D7 00rr                      1-  493     	MOVAR	_M1_Cycle_Set
-     00D8 210B                      1-  494     	MOVIA	0x0b
-     00D9 00rr                      1-  495     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  496     	.line	231, "Motor.c"; 	M1_Duty_Set = 1398;
-     00DA 2176                      1-  497     	MOVIA	0x76
-     00DB 00rr                      1-  498     	MOVAR	_M1_Duty_Set
-     00DC 2105                      1-  499     	MOVIA	0x05
-     00DD 00rr                      1-  500     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  501     	.line	232, "Motor.c"; 	break;
-                                    1-  502     	MGOTO	_02083_DS_
+     00D6                           1-  491     _02073_DS_:
+                                    1-  492     	.line	230, "Motor.c"; 	M1_Cycle_Set = 2913;
+     00D6 2161                      1-  493     	MOVIA	0x61
+     00D7 00rr                      1-  494     	MOVAR	_M1_Cycle_Set
+     00D8 210B                      1-  495     	MOVIA	0x0b
+     00D9 00rr                      1-  496     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  497     	.line	231, "Motor.c"; 	M1_Duty_Set = 1398;
+     00DA 2176                      1-  498     	MOVIA	0x76
+     00DB 00rr                      1-  499     	MOVAR	_M1_Duty_Set
+     00DC 2105                      1-  500     	MOVIA	0x05
+     00DD 00rr                      1-  501     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  502     	.line	232, "Motor.c"; 	break;
+                                    1-  503     	MGOTO	_02083_DS_
      00DE 3rrr                      3-   62 m1      LGOTO rom_address
-     00DF                           1-  503     _02074_DS_:
-                                    1-  504     	.line	236, "Motor.c"; 	if (!Motor_Freq_Cnt0)
-     00DF 01rr                      1-  505     	MOVR	_Motor_Freq_Cnt0,W
-     00E0 0903                      1-  506     	BTRSS	STATUS,2
-                                    1-  507     	MGOTO	_02081_DS_
+     00DF                           1-  504     _02074_DS_:
+                                    1-  505     	.line	236, "Motor.c"; 	if (!Motor_Freq_Cnt0)
+     00DF 01rr                      1-  506     	MOVR	_Motor_Freq_Cnt0,W
+     00E0 0903                      1-  507     	BTRSS	STATUS,2
+                                    1-  508     	MGOTO	_02081_DS_
      00E1 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  508     	.line	238, "Motor.c"; 	M1_Cycle_Set = 1973;
-     00E2 21B5                      1-  509     	MOVIA	0xb5
-     00E3 00rr                      1-  510     	MOVAR	_M1_Cycle_Set
-     00E4 2107                      1-  511     	MOVIA	0x07
-     00E5 00rr                      1-  512     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  513     	.line	239, "Motor.c"; 	M1_Duty_Set = 943;
-     00E6 21AF                      1-  514     	MOVIA	0xaf
-     00E7 00rr                      1-  515     	MOVAR	_M1_Duty_Set
-     00E8 2103                      1-  516     	MOVIA	0x03
-     00E9 00rr                      1-  517     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  518     	.line	240, "Motor.c"; 	Motor_PWM_Loop1(10);
-     00EA 210A                      1-  519     	MOVIA	0x0a
-     00EB 00rr                      1-  520     	MOVAR	STK00
-     00EC 2100                      1-  521     	MOVIA	0x00
-                                    1-  522     	MCALL	_Motor_PWM_Loop1
+                                    1-  509     	.line	238, "Motor.c"; 	M1_Cycle_Set = 1973;
+     00E2 21B5                      1-  510     	MOVIA	0xb5
+     00E3 00rr                      1-  511     	MOVAR	_M1_Cycle_Set
+     00E4 2107                      1-  512     	MOVIA	0x07
+     00E5 00rr                      1-  513     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  514     	.line	239, "Motor.c"; 	M1_Duty_Set = 943;
+     00E6 21AF                      1-  515     	MOVIA	0xaf
+     00E7 00rr                      1-  516     	MOVAR	_M1_Duty_Set
+     00E8 2103                      1-  517     	MOVIA	0x03
+     00E9 00rr                      1-  518     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  519     	.line	240, "Motor.c"; 	Motor_PWM_Loop1(10);
+     00EA 210A                      1-  520     	MOVIA	0x0a
+     00EB 00rr                      1-  521     	MOVAR	STK00
+     00EC 2100                      1-  522     	MOVIA	0x00
+                                    1-  523     	MCALL	_Motor_PWM_Loop1
      00ED 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  523     	MGOTO	_02083_DS_
+                                    1-  524     	MGOTO	_02083_DS_
      00EE 3rrr                      3-   62 m1      LGOTO rom_address
-     00EF                           1-  524     _02081_DS_:
-                                    1-  525     	.line	242, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
-     00EF 01rr                      1-  526     	MOVR	_Motor_Freq_Cnt0,W
-     00F0 2401                      1-  527     	XORIA	0x01
-     00F1 0903                      1-  528     	BTRSS	STATUS,2
-                                    1-  529     	MGOTO	_02078_DS_
+     00EF                           1-  525     _02081_DS_:
+                                    1-  526     	.line	242, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 1)
+     00EF 01rr                      1-  527     	MOVR	_Motor_Freq_Cnt0,W
+     00F0 2401                      1-  528     	XORIA	0x01
+     00F1 0903                      1-  529     	BTRSS	STATUS,2
+                                    1-  530     	MGOTO	_02078_DS_
      00F2 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  530     	.line	244, "Motor.c"; 	M1_Cycle_Set = 9311;
-     00F3 215F                      1-  531     	MOVIA	0x5f
-     00F4 00rr                      1-  532     	MOVAR	_M1_Cycle_Set
-     00F5 2124                      1-  533     	MOVIA	0x24
-     00F6 00rr                      1-  534     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  535     	.line	245, "Motor.c"; 	M1_Duty_Set = 4656;
-     00F7 2130                      1-  536     	MOVIA	0x30
-     00F8 00rr                      1-  537     	MOVAR	_M1_Duty_Set
-     00F9 2112                      1-  538     	MOVIA	0x12
-     00FA 00rr                      1-  539     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  540     	.line	246, "Motor.c"; 	Motor_PWM_Loop2(5);
-     00FB 2105                      1-  541     	MOVIA	0x05
-     00FC 00rr                      1-  542     	MOVAR	STK00
-     00FD 2100                      1-  543     	MOVIA	0x00
-                                    1-  544     	MCALL	_Motor_PWM_Loop2
+                                    1-  531     	.line	244, "Motor.c"; 	M1_Cycle_Set = 9311;
+     00F3 215F                      1-  532     	MOVIA	0x5f
+     00F4 00rr                      1-  533     	MOVAR	_M1_Cycle_Set
+     00F5 2124                      1-  534     	MOVIA	0x24
+     00F6 00rr                      1-  535     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  536     	.line	245, "Motor.c"; 	M1_Duty_Set = 4656;
+     00F7 2130                      1-  537     	MOVIA	0x30
+     00F8 00rr                      1-  538     	MOVAR	_M1_Duty_Set
+     00F9 2112                      1-  539     	MOVIA	0x12
+     00FA 00rr                      1-  540     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  541     	.line	246, "Motor.c"; 	Motor_PWM_Loop2(5);
+     00FB 2105                      1-  542     	MOVIA	0x05
+     00FC 00rr                      1-  543     	MOVAR	STK00
+     00FD 2100                      1-  544     	MOVIA	0x00
+                                    1-  545     	MCALL	_Motor_PWM_Loop2
      00FE 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  545     	MGOTO	_02083_DS_
+                                    1-  546     	MGOTO	_02083_DS_
      00FF 3rrr                      3-   62 m1      LGOTO rom_address
-     0100                           1-  546     _02078_DS_:
-                                    1-  547     	.line	248, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
-     0100 01rr                      1-  548     	MOVR	_Motor_Freq_Cnt0,W
-     0101 2402                      1-  549     	XORIA	0x02
-     0102 0903                      1-  550     	BTRSS	STATUS,2
-                                    1-  551     	MGOTO	_02083_DS_
+     0100                           1-  547     _02078_DS_:
+                                    1-  548     	.line	248, "Motor.c"; 	else if (Motor_Freq_Cnt0 == 2)
+     0100 01rr                      1-  549     	MOVR	_Motor_Freq_Cnt0,W
+     0101 2402                      1-  550     	XORIA	0x02
+     0102 0903                      1-  551     	BTRSS	STATUS,2
+                                    1-  552     	MGOTO	_02083_DS_
      0103 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  552     	.line	250, "Motor.c"; 	M1_Cycle_Set = 5640;
-     0104 2108                      1-  553     	MOVIA	0x08
-     0105 00rr                      1-  554     	MOVAR	_M1_Cycle_Set
-     0106 2116                      1-  555     	MOVIA	0x16
-     0107 00rr                      1-  556     	MOVAR	(_M1_Cycle_Set + 1)
-                                    1-  557     	.line	251, "Motor.c"; 	M1_Duty_Set = 2820;
-     0108 2104                      1-  558     	MOVIA	0x04
-     0109 00rr                      1-  559     	MOVAR	_M1_Duty_Set
-     010A 210B                      1-  560     	MOVIA	0x0b
-     010B 00rr                      1-  561     	MOVAR	(_M1_Duty_Set + 1)
-                                    1-  562     	.line	252, "Motor.c"; 	Motor_PWM_Loop3(10);
-     010C 210A                      1-  563     	MOVIA	0x0a
-     010D 00rr                      1-  564     	MOVAR	STK00
-     010E 2100                      1-  565     	MOVIA	0x00
-                                    1-  566     	MCALL	_Motor_PWM_Loop3
+                                    1-  553     	.line	250, "Motor.c"; 	M1_Cycle_Set = 5640;
+     0104 2108                      1-  554     	MOVIA	0x08
+     0105 00rr                      1-  555     	MOVAR	_M1_Cycle_Set
+     0106 2116                      1-  556     	MOVIA	0x16
+     0107 00rr                      1-  557     	MOVAR	(_M1_Cycle_Set + 1)
+                                    1-  558     	.line	251, "Motor.c"; 	M1_Duty_Set = 2820;
+     0108 2104                      1-  559     	MOVIA	0x04
+     0109 00rr                      1-  560     	MOVAR	_M1_Duty_Set
+     010A 210B                      1-  561     	MOVIA	0x0b
+     010B 00rr                      1-  562     	MOVAR	(_M1_Duty_Set + 1)
+                                    1-  563     	.line	252, "Motor.c"; 	Motor_PWM_Loop3(10);
+     010C 210A                      1-  564     	MOVIA	0x0a
+     010D 00rr                      1-  565     	MOVAR	STK00
+     010E 2100                      1-  566     	MOVIA	0x00
+                                    1-  567     	MCALL	_Motor_PWM_Loop3
      010F 2rrr                      3-   65 m1      LCALL rom_address
-                                    1-  567     ;;unsigned compare: left < lit(0x1=1), size=1
-     0110                           1-  568     _02083_DS_:
-                                    1-  569     	.line	258, "Motor.c"; 	if (M1_Freq_Change >= 1 && M1_Freq_Change <= 10)
-     0110 2101                      1-  570     	MOVIA	0x01
-     0111 04rr                      1-  571     	SUBAR	_M1_Freq_Change,W
-     0112 0803                      1-  572     	BTRSS	STATUS,0
-                                    1-  573     	MGOTO	_02088_DS_
+                                    1-  568     ;;unsigned compare: left < lit(0x1=1), size=1
+     0110                           1-  569     _02083_DS_:
+                                    1-  570     	.line	258, "Motor.c"; 	if (M1_Freq_Change >= 1 && M1_Freq_Change <= 10)
+     0110 2101                      1-  571     	MOVIA	0x01
+     0111 04rr                      1-  572     	SUBAR	_M1_Freq_Change,W
+     0112 0803                      1-  573     	BTRSS	STATUS,0
+                                    1-  574     	MGOTO	_02088_DS_
      0113 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  574     ;;swapping arguments (AOP_TYPEs 1/3)
-                                    1-  575     ;;unsigned compare: left >= lit(0xB=11), size=1
-     0114 210B                      1-  576     	MOVIA	0x0b
-     0115 04rr                      1-  577     	SUBAR	_M1_Freq_Change,W
-     0116 0803                      1-  578     	BTRSS	STATUS,0
-                                    1-  579     	.line	260, "Motor.c"; 	M1_Work_FLAG =1;
-     0117 19rr                      1-  580     	BSR	_my_flag1,2
-     0118                           1-  581     _02088_DS_:
-                                    1-  582     	.line	264, "Motor.c"; 	if (Power_OnOff_FLAG)
-     0118 08rr                      1-  583     	BTRSS	_my_flag0,0
-                                    1-  584     	MGOTO	_02091_DS_
+                                    1-  575     ;;swapping arguments (AOP_TYPEs 1/3)
+                                    1-  576     ;;unsigned compare: left >= lit(0xB=11), size=1
+     0114 210B                      1-  577     	MOVIA	0x0b
+     0115 04rr                      1-  578     	SUBAR	_M1_Freq_Change,W
+     0116 0803                      1-  579     	BTRSS	STATUS,0
+                                    1-  580     	.line	260, "Motor.c"; 	M1_Work_FLAG =1;
+     0117 19rr                      1-  581     	BSR	_my_flag1,2
+     0118                           1-  582     _02088_DS_:
+                                    1-  583     	.line	264, "Motor.c"; 	if (Power_OnOff_FLAG)
+     0118 08rr                      1-  584     	BTRSS	_my_flag0,0
+                                    1-  585     	MGOTO	_02091_DS_
      0119 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  585     	.line	266, "Motor.c"; 	Sleep_Cnt = 0;
-     011A 02rr                      1-  586     	CLRR	_Sleep_Cnt
-     011B 02rr                      1-  587     	CLRR	(_Sleep_Cnt + 1)
-     011C                           1-  588     _02091_DS_:
-                                    1-  589     	.line	268, "Motor.c"; 	}
-                                    1-  590     	RETURN	
+                                    1-  586     	.line	266, "Motor.c"; 	Sleep_Cnt = 0;
+     011A 02rr                      1-  587     	CLRR	_Sleep_Cnt
+     011B 02rr                      1-  588     	CLRR	(_Sleep_Cnt + 1)
+     011C                           1-  589     _02091_DS_:
+                                    1-  590     	.line	268, "Motor.c"; 	}
+                                    1-  591     	RETURN	
      011C 0010                      3-   39 m1      ret
-                                    1-  591     ; exit point of _M1_Work
-                                    1-  593     ;***
-                                    1-  594     ;  pBlock Stats: dbName = C
-                                    1-  595     ;***
-                                    1-  596     ;has an exit
-                                    1-  597     ;3 compiler assigned registers:
-                                    1-  598     ;   r0x1012
-                                    1-  599     ;   STK00
-                                    1-  600     ;   r0x1013
-                                    1-  601     ;; Starting pCode block
-                                    1-  602     .segment "code"; module=Motor, function=_Motor_PWM_Loop3
-                                    1-  604     ;local variable name mapping:
-     0000                           1-  606     _Motor_PWM_Loop3:
-                                    1-  607     ; 2 exit points
-                                    1-  608     	.line	99, "Motor.c"; 	void Motor_PWM_Loop3(short x)
-     0000 00rr                      1-  609     	MOVAR	r0x1012
-     0001 01rr                      1-  610     	MOVR	STK00,W
-     0002 00rr                      1-  611     	MOVAR	r0x1013
-                                    1-  612     	.line	101, "Motor.c"; 	Motor_Freq_Cnt1++;
-     0003 05rr                      1-  613     	INCR	_Motor_Freq_Cnt1,F
-     0004 0D03                      1-  614     	BTRSC	STATUS,2
-     0005 05rr                      1-  615     	INCR	(_Motor_Freq_Cnt1 + 1),F
-                                    1-  616     	.line	104, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
-     0006 01rr                      1-  617     	MOVR	r0x1013,W
-     0007 12rr                      1-  618     	XORAR	_Motor_Freq_Cnt1,W
-     0008 0903                      1-  619     	BTRSS	STATUS,2
-                                    1-  620     	MGOTO	_02036_DS_
+                                    1-  592     ; exit point of _M1_Work
+                                    1-  594     ;***
+                                    1-  595     ;  pBlock Stats: dbName = C
+                                    1-  596     ;***
+                                    1-  597     ;has an exit
+                                    1-  598     ;3 compiler assigned registers:
+                                    1-  599     ;   r0x1012
+                                    1-  600     ;   STK00
+                                    1-  601     ;   r0x1013
+                                    1-  602     ;; Starting pCode block
+                                    1-  603     .segment "code"; module=Motor, function=_Motor_PWM_Loop3
+                                    1-  605     ;local variable name mapping:
+     0000                           1-  607     _Motor_PWM_Loop3:
+                                    1-  608     ; 2 exit points
+                                    1-  609     	.line	99, "Motor.c"; 	void Motor_PWM_Loop3(short x)
+     0000 00rr                      1-  610     	MOVAR	r0x1012
+     0001 01rr                      1-  611     	MOVR	STK00,W
+     0002 00rr                      1-  612     	MOVAR	r0x1013
+                                    1-  613     	.line	101, "Motor.c"; 	Motor_Freq_Cnt1++;
+     0003 05rr                      1-  614     	INCR	_Motor_Freq_Cnt1,F
+     0004 0D03                      1-  615     	BTRSC	STATUS,2
+     0005 05rr                      1-  616     	INCR	(_Motor_Freq_Cnt1 + 1),F
+                                    1-  617     	.line	104, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
+     0006 01rr                      1-  618     	MOVR	r0x1013,W
+     0007 12rr                      1-  619     	XORAR	_Motor_Freq_Cnt1,W
+     0008 0903                      1-  620     	BTRSS	STATUS,2
+                                    1-  621     	MGOTO	_02036_DS_
      0009 3rrr                      3-   62 m1      LGOTO rom_address
-     000A 01rr                      1-  621     	MOVR	r0x1012,W
-     000B 12rr                      1-  622     	XORAR	(_Motor_Freq_Cnt1 + 1),W
-     000C 0903                      1-  623     	BTRSS	STATUS,2
-                                    1-  624     	MGOTO	_02036_DS_
+     000A 01rr                      1-  622     	MOVR	r0x1012,W
+     000B 12rr                      1-  623     	XORAR	(_Motor_Freq_Cnt1 + 1),W
+     000C 0903                      1-  624     	BTRSS	STATUS,2
+                                    1-  625     	MGOTO	_02036_DS_
      000D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  625     	.line	107, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
-     000E 02rr                      1-  626     	CLRR	_Motor_Freq_Cnt1
-     000F 02rr                      1-  627     	CLRR	(_Motor_Freq_Cnt1 + 1)
-                                    1-  628     	.line	110, "Motor.c"; 	Motor_Freq_Cnt0 = 0;
-     0010 02rr                      1-  629     	CLRR	_Motor_Freq_Cnt0
-     0011                           1-  630     _02036_DS_:
-                                    1-  631     	.line	112, "Motor.c"; 	}
-                                    1-  632     	RETURN	
+                                    1-  626     	.line	107, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
+     000E 02rr                      1-  627     	CLRR	_Motor_Freq_Cnt1
+     000F 02rr                      1-  628     	CLRR	(_Motor_Freq_Cnt1 + 1)
+                                    1-  629     	.line	110, "Motor.c"; 	Motor_Freq_Cnt0 = 0;
+     0010 02rr                      1-  630     	CLRR	_Motor_Freq_Cnt0
+     0011                           1-  631     _02036_DS_:
+                                    1-  632     	.line	112, "Motor.c"; 	}
+                                    1-  633     	RETURN	
      0011 0010                      3-   39 m1      ret
-                                    1-  633     ; exit point of _Motor_PWM_Loop3
-                                    1-  635     ;***
-                                    1-  636     ;  pBlock Stats: dbName = C
-                                    1-  637     ;***
-                                    1-  638     ;has an exit
-                                    1-  639     ;3 compiler assigned registers:
-                                    1-  640     ;   r0x1012
-                                    1-  641     ;   STK00
-                                    1-  642     ;   r0x1013
-                                    1-  643     ;; Starting pCode block
-                                    1-  644     .segment "code"; module=Motor, function=_Motor_PWM_Loop2
-                                    1-  646     ;local variable name mapping:
-     0000                           1-  648     _Motor_PWM_Loop2:
-                                    1-  649     ; 2 exit points
-                                    1-  650     	.line	83, "Motor.c"; 	void Motor_PWM_Loop2(short x)
-     0000 00rr                      1-  651     	MOVAR	r0x1012
-     0001 01rr                      1-  652     	MOVR	STK00,W
-     0002 00rr                      1-  653     	MOVAR	r0x1013
-                                    1-  654     	.line	86, "Motor.c"; 	Motor_Freq_Cnt1++;
-     0003 05rr                      1-  655     	INCR	_Motor_Freq_Cnt1,F
-     0004 0D03                      1-  656     	BTRSC	STATUS,2
-     0005 05rr                      1-  657     	INCR	(_Motor_Freq_Cnt1 + 1),F
-                                    1-  658     	.line	89, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
-     0006 01rr                      1-  659     	MOVR	r0x1013,W
-     0007 12rr                      1-  660     	XORAR	_Motor_Freq_Cnt1,W
-     0008 0903                      1-  661     	BTRSS	STATUS,2
-                                    1-  662     	MGOTO	_02029_DS_
+                                    1-  634     ; exit point of _Motor_PWM_Loop3
+                                    1-  636     ;***
+                                    1-  637     ;  pBlock Stats: dbName = C
+                                    1-  638     ;***
+                                    1-  639     ;has an exit
+                                    1-  640     ;3 compiler assigned registers:
+                                    1-  641     ;   r0x1012
+                                    1-  642     ;   STK00
+                                    1-  643     ;   r0x1013
+                                    1-  644     ;; Starting pCode block
+                                    1-  645     .segment "code"; module=Motor, function=_Motor_PWM_Loop2
+                                    1-  647     ;local variable name mapping:
+     0000                           1-  649     _Motor_PWM_Loop2:
+                                    1-  650     ; 2 exit points
+                                    1-  651     	.line	83, "Motor.c"; 	void Motor_PWM_Loop2(short x)
+     0000 00rr                      1-  652     	MOVAR	r0x1012
+     0001 01rr                      1-  653     	MOVR	STK00,W
+     0002 00rr                      1-  654     	MOVAR	r0x1013
+                                    1-  655     	.line	86, "Motor.c"; 	Motor_Freq_Cnt1++;
+     0003 05rr                      1-  656     	INCR	_Motor_Freq_Cnt1,F
+     0004 0D03                      1-  657     	BTRSC	STATUS,2
+     0005 05rr                      1-  658     	INCR	(_Motor_Freq_Cnt1 + 1),F
+                                    1-  659     	.line	89, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
+     0006 01rr                      1-  660     	MOVR	r0x1013,W
+     0007 12rr                      1-  661     	XORAR	_Motor_Freq_Cnt1,W
+     0008 0903                      1-  662     	BTRSS	STATUS,2
+                                    1-  663     	MGOTO	_02029_DS_
      0009 3rrr                      3-   62 m1      LGOTO rom_address
-     000A 01rr                      1-  663     	MOVR	r0x1012,W
-     000B 12rr                      1-  664     	XORAR	(_Motor_Freq_Cnt1 + 1),W
-     000C 0903                      1-  665     	BTRSS	STATUS,2
-                                    1-  666     	MGOTO	_02029_DS_
+     000A 01rr                      1-  664     	MOVR	r0x1012,W
+     000B 12rr                      1-  665     	XORAR	(_Motor_Freq_Cnt1 + 1),W
+     000C 0903                      1-  666     	BTRSS	STATUS,2
+                                    1-  667     	MGOTO	_02029_DS_
      000D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  667     	.line	92, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
-     000E 02rr                      1-  668     	CLRR	_Motor_Freq_Cnt1
-     000F 02rr                      1-  669     	CLRR	(_Motor_Freq_Cnt1 + 1)
-                                    1-  670     	.line	95, "Motor.c"; 	Motor_Freq_Cnt0 ++;
-     0010 05rr                      1-  671     	INCR	_Motor_Freq_Cnt0,F
-     0011                           1-  672     _02029_DS_:
-                                    1-  673     	.line	97, "Motor.c"; 	}
-                                    1-  674     	RETURN	
+                                    1-  668     	.line	92, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
+     000E 02rr                      1-  669     	CLRR	_Motor_Freq_Cnt1
+     000F 02rr                      1-  670     	CLRR	(_Motor_Freq_Cnt1 + 1)
+                                    1-  671     	.line	95, "Motor.c"; 	Motor_Freq_Cnt0 ++;
+     0010 05rr                      1-  672     	INCR	_Motor_Freq_Cnt0,F
+     0011                           1-  673     _02029_DS_:
+                                    1-  674     	.line	97, "Motor.c"; 	}
+                                    1-  675     	RETURN	
      0011 0010                      3-   39 m1      ret
-                                    1-  675     ; exit point of _Motor_PWM_Loop2
-                                    1-  677     ;***
-                                    1-  678     ;  pBlock Stats: dbName = C
-                                    1-  679     ;***
-                                    1-  680     ;has an exit
-                                    1-  681     ;3 compiler assigned registers:
-                                    1-  682     ;   r0x1012
-                                    1-  683     ;   STK00
-                                    1-  684     ;   r0x1013
-                                    1-  685     ;; Starting pCode block
-                                    1-  686     .segment "code"; module=Motor, function=_Motor_PWM_Loop1
-                                    1-  688     ;local variable name mapping:
-     0000                           1-  690     _Motor_PWM_Loop1:
-                                    1-  691     ; 2 exit points
-                                    1-  692     	.line	59, "Motor.c"; 	void Motor_PWM_Loop1(short x)
-     0000 00rr                      1-  693     	MOVAR	r0x1012
-     0001 01rr                      1-  694     	MOVR	STK00,W
-     0002 00rr                      1-  695     	MOVAR	r0x1013
-                                    1-  696     	.line	62, "Motor.c"; 	Motor_Freq_Cnt1++;
-     0003 05rr                      1-  697     	INCR	_Motor_Freq_Cnt1,F
-     0004 0D03                      1-  698     	BTRSC	STATUS,2
-     0005 05rr                      1-  699     	INCR	(_Motor_Freq_Cnt1 + 1),F
-                                    1-  700     	.line	65, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
-     0006 01rr                      1-  701     	MOVR	r0x1013,W
-     0007 12rr                      1-  702     	XORAR	_Motor_Freq_Cnt1,W
-     0008 0903                      1-  703     	BTRSS	STATUS,2
-                                    1-  704     	MGOTO	_02022_DS_
+                                    1-  676     ; exit point of _Motor_PWM_Loop2
+                                    1-  678     ;***
+                                    1-  679     ;  pBlock Stats: dbName = C
+                                    1-  680     ;***
+                                    1-  681     ;has an exit
+                                    1-  682     ;3 compiler assigned registers:
+                                    1-  683     ;   r0x1012
+                                    1-  684     ;   STK00
+                                    1-  685     ;   r0x1013
+                                    1-  686     ;; Starting pCode block
+                                    1-  687     .segment "code"; module=Motor, function=_Motor_PWM_Loop1
+                                    1-  689     ;local variable name mapping:
+     0000                           1-  691     _Motor_PWM_Loop1:
+                                    1-  692     ; 2 exit points
+                                    1-  693     	.line	59, "Motor.c"; 	void Motor_PWM_Loop1(short x)
+     0000 00rr                      1-  694     	MOVAR	r0x1012
+     0001 01rr                      1-  695     	MOVR	STK00,W
+     0002 00rr                      1-  696     	MOVAR	r0x1013
+                                    1-  697     	.line	62, "Motor.c"; 	Motor_Freq_Cnt1++;
+     0003 05rr                      1-  698     	INCR	_Motor_Freq_Cnt1,F
+     0004 0D03                      1-  699     	BTRSC	STATUS,2
+     0005 05rr                      1-  700     	INCR	(_Motor_Freq_Cnt1 + 1),F
+                                    1-  701     	.line	65, "Motor.c"; 	if (Motor_Freq_Cnt1 == x)
+     0006 01rr                      1-  702     	MOVR	r0x1013,W
+     0007 12rr                      1-  703     	XORAR	_Motor_Freq_Cnt1,W
+     0008 0903                      1-  704     	BTRSS	STATUS,2
+                                    1-  705     	MGOTO	_02022_DS_
      0009 3rrr                      3-   62 m1      LGOTO rom_address
-     000A 01rr                      1-  705     	MOVR	r0x1012,W
-     000B 12rr                      1-  706     	XORAR	(_Motor_Freq_Cnt1 + 1),W
-     000C 0903                      1-  707     	BTRSS	STATUS,2
-                                    1-  708     	MGOTO	_02022_DS_
+     000A 01rr                      1-  706     	MOVR	r0x1012,W
+     000B 12rr                      1-  707     	XORAR	(_Motor_Freq_Cnt1 + 1),W
+     000C 0903                      1-  708     	BTRSS	STATUS,2
+                                    1-  709     	MGOTO	_02022_DS_
      000D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  709     	.line	68, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
-     000E 02rr                      1-  710     	CLRR	_Motor_Freq_Cnt1
-     000F 02rr                      1-  711     	CLRR	(_Motor_Freq_Cnt1 + 1)
-                                    1-  712     	.line	71, "Motor.c"; 	Motor_Freq_Cnt0 ++;
-     0010 05rr                      1-  713     	INCR	_Motor_Freq_Cnt0,F
-     0011                           1-  714     _02022_DS_:
-                                    1-  715     	.line	73, "Motor.c"; 	}
-                                    1-  716     	RETURN	
+                                    1-  710     	.line	68, "Motor.c"; 	Motor_Freq_Cnt1 = 0;
+     000E 02rr                      1-  711     	CLRR	_Motor_Freq_Cnt1
+     000F 02rr                      1-  712     	CLRR	(_Motor_Freq_Cnt1 + 1)
+                                    1-  713     	.line	71, "Motor.c"; 	Motor_Freq_Cnt0 ++;
+     0010 05rr                      1-  714     	INCR	_Motor_Freq_Cnt0,F
+     0011                           1-  715     _02022_DS_:
+                                    1-  716     	.line	73, "Motor.c"; 	}
+                                    1-  717     	RETURN	
      0011 0010                      3-   39 m1      ret
-                                    1-  717     ; exit point of _Motor_PWM_Loop1
-                                    1-  719     ;***
-                                    1-  720     ;  pBlock Stats: dbName = C
-                                    1-  721     ;***
-                                    1-  722     ;; Starting pCode block
-                                    1-  723     .segment "code"; module=Motor, function=_M1_Work_Process
-     0000                           1-  725     _M1_Work_Process:
-                                    1-  726     ; 0 exit points
-                                    1-  727     	.line	12, "Motor.c"; 	if (M1_Work_FLAG)
-     0000 09rr                      1-  728     	BTRSS	_my_flag1,2
-                                    1-  729     	MGOTO	_02015_DS_
+                                    1-  718     ; exit point of _Motor_PWM_Loop1
+                                    1-  720     ;***
+                                    1-  721     ;  pBlock Stats: dbName = C
+                                    1-  722     ;***
+                                    1-  723     ;; Starting pCode block
+                                    1-  724     .segment "code"; module=Motor, function=_M1_Work_Process
+     0000                           1-  726     _M1_Work_Process:
+                                    1-  727     ; 0 exit points
+                                    1-  728     	.line	12, "Motor.c"; 	if (M1_Work_FLAG)
+     0000 09rr                      1-  729     	BTRSS	_my_flag1,2
+                                    1-  730     	MGOTO	_02015_DS_
      0001 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  730     	.line	15, "Motor.c"; 	M1_Cnt++;
-     0002 05rr                      1-  731     	INCR	_M1_Cnt,F
-     0003 0D03                      1-  732     	BTRSC	STATUS,2
-     0004 05rr                      1-  733     	INCR	(_M1_Cnt + 1),F
-                                    1-  734     	.line	17, "Motor.c"; 	if (M1_Cnt == M1_Cycle)
-     0005 01rr                      1-  735     	MOVR	_M1_Cycle,W
-     0006 12rr                      1-  736     	XORAR	_M1_Cnt,W
-     0007 0903                      1-  737     	BTRSS	STATUS,2
-                                    1-  738     	MGOTO	_02011_DS_
+                                    1-  731     	.line	15, "Motor.c"; 	M1_Cnt++;
+     0002 05rr                      1-  732     	INCR	_M1_Cnt,F
+     0003 0D03                      1-  733     	BTRSC	STATUS,2
+     0004 05rr                      1-  734     	INCR	(_M1_Cnt + 1),F
+                                    1-  735     	.line	17, "Motor.c"; 	if (M1_Cnt == M1_Cycle)
+     0005 01rr                      1-  736     	MOVR	_M1_Cycle,W
+     0006 12rr                      1-  737     	XORAR	_M1_Cnt,W
+     0007 0903                      1-  738     	BTRSS	STATUS,2
+                                    1-  739     	MGOTO	_02011_DS_
      0008 3rrr                      3-   62 m1      LGOTO rom_address
-     0009 01rr                      1-  739     	MOVR	(_M1_Cycle + 1),W
-     000A 12rr                      1-  740     	XORAR	(_M1_Cnt + 1),W
-     000B 0903                      1-  741     	BTRSS	STATUS,2
-                                    1-  742     	MGOTO	_02011_DS_
+     0009 01rr                      1-  740     	MOVR	(_M1_Cycle + 1),W
+     000A 12rr                      1-  741     	XORAR	(_M1_Cnt + 1),W
+     000B 0903                      1-  742     	BTRSS	STATUS,2
+                                    1-  743     	MGOTO	_02011_DS_
      000C 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  743     	.line	20, "Motor.c"; 	M1_Cnt = 0;
-     000D 02rr                      1-  744     	CLRR	_M1_Cnt
-     000E 02rr                      1-  745     	CLRR	(_M1_Cnt + 1)
-                                    1-  746     	.line	22, "Motor.c"; 	if (M1_Duty)
-     000F 01rr                      1-  747     	MOVR	(_M1_Duty + 1),W
-     0010 11rr                      1-  748     	IORAR	_M1_Duty,W
-     0011 0D03                      1-  749     	BTRSC	STATUS,2
-                                    1-  750     	MGOTO	_02006_DS_
+                                    1-  744     	.line	20, "Motor.c"; 	M1_Cnt = 0;
+     000D 02rr                      1-  745     	CLRR	_M1_Cnt
+     000E 02rr                      1-  746     	CLRR	(_M1_Cnt + 1)
+                                    1-  747     	.line	22, "Motor.c"; 	if (M1_Duty)
+     000F 01rr                      1-  748     	MOVR	(_M1_Duty + 1),W
+     0010 11rr                      1-  749     	IORAR	_M1_Duty,W
+     0011 0D03                      1-  750     	BTRSC	STATUS,2
+                                    1-  751     	MGOTO	_02006_DS_
      0012 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  751     	.line	25, "Motor.c"; 	M1_ON;
-     0013 19rr                      1-  752     	BSR	_PORTB,2
-                                    1-  753     	MGOTO	_02007_DS_
+                                    1-  752     	.line	25, "Motor.c"; 	M1_ON;
+     0013 19rr                      1-  753     	BSR	_PORTB,2
+                                    1-  754     	MGOTO	_02007_DS_
      0014 3rrr                      3-   62 m1      LGOTO rom_address
-     0015                           1-  754     _02006_DS_:
-                                    1-  755     	.line	30, "Motor.c"; 	M1_OFF;
-     0015 1Drr                      1-  756     	BCR	_PORTB,2
-     0016                           1-  757     _02007_DS_:
-                                    1-  758     	.line	33, "Motor.c"; 	M1_Cycle = M1_Cycle_Set;
-     0016 01rr                      1-  759     	MOVR	_M1_Cycle_Set,W
-     0017 00rr                      1-  760     	MOVAR	_M1_Cycle
-     0018 01rr                      1-  761     	MOVR	(_M1_Cycle_Set + 1),W
-     0019 00rr                      1-  762     	MOVAR	(_M1_Cycle + 1)
-                                    1-  763     	.line	34, "Motor.c"; 	M1_Duty = M1_Duty_Set;
-     001A 01rr                      1-  764     	MOVR	_M1_Duty_Set,W
-     001B 00rr                      1-  765     	MOVAR	_M1_Duty
-     001C 01rr                      1-  766     	MOVR	(_M1_Duty_Set + 1),W
-     001D 00rr                      1-  767     	MOVAR	(_M1_Duty + 1)
-                                    1-  768     	.line	36, "Motor.c"; 	M1_PWM_Write_FLAG = 1;
-     001E 19rr                      1-  769     	BSR	_my_flag1,3
-                                    1-  770     	MGOTO	_02015_DS_
+     0015                           1-  755     _02006_DS_:
+                                    1-  756     	.line	30, "Motor.c"; 	M1_OFF;
+     0015 1Drr                      1-  757     	BCR	_PORTB,2
+     0016                           1-  758     _02007_DS_:
+                                    1-  759     	.line	33, "Motor.c"; 	M1_Cycle = M1_Cycle_Set;
+     0016 01rr                      1-  760     	MOVR	_M1_Cycle_Set,W
+     0017 00rr                      1-  761     	MOVAR	_M1_Cycle
+     0018 01rr                      1-  762     	MOVR	(_M1_Cycle_Set + 1),W
+     0019 00rr                      1-  763     	MOVAR	(_M1_Cycle + 1)
+                                    1-  764     	.line	34, "Motor.c"; 	M1_Duty = M1_Duty_Set;
+     001A 01rr                      1-  765     	MOVR	_M1_Duty_Set,W
+     001B 00rr                      1-  766     	MOVAR	_M1_Duty
+     001C 01rr                      1-  767     	MOVR	(_M1_Duty_Set + 1),W
+     001D 00rr                      1-  768     	MOVAR	(_M1_Duty + 1)
+                                    1-  769     	.line	36, "Motor.c"; 	M1_PWM_Write_FLAG = 1;
+     001E 19rr                      1-  770     	BSR	_my_flag1,3
+                                    1-  771     	MGOTO	_02015_DS_
      001F 3rrr                      3-   62 m1      LGOTO rom_address
-     0020                           1-  771     _02011_DS_:
-                                    1-  772     	.line	39, "Motor.c"; 	else if (M1_Cnt == M1_Duty)
-     0020 01rr                      1-  773     	MOVR	_M1_Duty,W
-     0021 12rr                      1-  774     	XORAR	_M1_Cnt,W
-     0022 0903                      1-  775     	BTRSS	STATUS,2
-                                    1-  776     	MGOTO	_02015_DS_
+     0020                           1-  772     _02011_DS_:
+                                    1-  773     	.line	39, "Motor.c"; 	else if (M1_Cnt == M1_Duty)
+     0020 01rr                      1-  774     	MOVR	_M1_Duty,W
+     0021 12rr                      1-  775     	XORAR	_M1_Cnt,W
+     0022 0903                      1-  776     	BTRSS	STATUS,2
+                                    1-  777     	MGOTO	_02015_DS_
      0023 3rrr                      3-   62 m1      LGOTO rom_address
-     0024 01rr                      1-  777     	MOVR	(_M1_Duty + 1),W
-     0025 12rr                      1-  778     	XORAR	(_M1_Cnt + 1),W
-     0026 0D03                      1-  779     	BTRSC	STATUS,2
-                                    1-  780     	.line	42, "Motor.c"; 	M1_OFF;
-     0027 1Drr                      1-  781     	BCR	_PORTB,2
-     0028                           1-  782     _02015_DS_:
-                                    1-  783     	.line	45, "Motor.c"; 	}
-                                    1-  784     	RETURN	
+     0024 01rr                      1-  778     	MOVR	(_M1_Duty + 1),W
+     0025 12rr                      1-  779     	XORAR	(_M1_Cnt + 1),W
+     0026 0D03                      1-  780     	BTRSC	STATUS,2
+                                    1-  781     	.line	42, "Motor.c"; 	M1_OFF;
+     0027 1Drr                      1-  782     	BCR	_PORTB,2
+     0028                           1-  783     _02015_DS_:
+                                    1-  784     	.line	45, "Motor.c"; 	}
+                                    1-  785     	RETURN	
      0028 0010                      3-   39 m1      ret
-                                    1-  787     ;	code size estimation:
-                                    1-  788     ;	  380+    0 =   380 instructions (  760 byte)
-                                    1-  790     	end
+                                    1-  788     ;	code size estimation:
+                                    1-  789     ;	  380+    0 =   380 instructions (  760 byte)
+                                    1-  791     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006

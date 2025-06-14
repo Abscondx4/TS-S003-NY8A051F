@@ -59,136 +59,136 @@ NYASM 2.50
                                     1-   11     ;--------------------------------------------------------
                                     1-   12     ; external declarations
                                     1-   13     ;--------------------------------------------------------
-                                    1-   14     	extern	_Power_Off
-                                    1-   15     	extern	_Switch_Power_Mode
-                                    1-   16     	extern	_Init
-                                    1-   17     	extern	_clear_ram
-                                    1-   18     	extern	_multi_16b
-                                    1-   19     	extern	_multi_8b
-                                    1-   20     	extern	_T0MD
-                                    1-   21     	extern	_PCON1
-                                    1-   22     	extern	_BODCON
-                                    1-   23     	extern	_PS0CV
-                                    1-   24     	extern	_IOSTB
-                                    1-   25     	extern	_OSCCR
-                                    1-   26     	extern	_TBHD
-                                    1-   27     	extern	_TBHP
-                                    1-   28     	extern	_IRCR
-                                    1-   29     	extern	_BZ1CR
-                                    1-   30     	extern	_PS1CV
-                                    1-   31     	extern	_PWM1DUTY
-                                    1-   32     	extern	_T1CR2
-                                    1-   33     	extern	_T1CR1
-                                    1-   34     	extern	_TMR1
-                                    1-   35     	extern	_PCHBUF
-                                    1-   36     	extern	_STATUS
-                                    1-   37     	extern	_PCL
-                                    1-   38     	extern	_TMR0
-                                    1-   39     	extern	_Timer_1min
-                                    1-   40     	extern	_Timer_1s
-                                    1-   41     	extern	_Timer_100ms
-                                    1-   42     	extern	_Timer_10ms
-                                    1-   43     	extern	_Timer_1ms
-                                    1-   44     	extern	_Unit_Time
-                                    1-   45     	extern	_LED_FLAG
-                                    1-   46     	extern	_Time_Temp
-                                    1-   47     	extern	_Sleep_Cnt
-                                    1-   48     	extern	_Key_Short_LED_Cnt
-                                    1-   49     	extern	_Key_Long_Cnt
-                                    1-   50     	extern	_Key_Press_Cnt
-                                    1-   51     	extern	_Motor_Counter_FLAG
-                                    1-   52     	extern	_Motor_Peri_1000
-                                    1-   53     	extern	_Motor_Peri_100
-                                    1-   54     	extern	_Motor_Peri_10
-                                    1-   55     	extern	_Motor_Peri_1
-                                    1-   56     	extern	_M1_Cnt
-                                    1-   57     	extern	_M1_Freq_Change_Set
-                                    1-   58     	extern	_M1_Freq_Change
-                                    1-   59     	extern	_Motor_Freq_Cnt2
-                                    1-   60     	extern	_Motor_Freq_Cnt1
-                                    1-   61     	extern	_Motor_Freq_Cnt0
-                                    1-   62     	extern	_Motor_Freq_Change
-                                    1-   63     	extern	_M1_Duty_1_Set
-                                    1-   64     	extern	_M1_Duty_Set
-                                    1-   65     	extern	_M1_Duty
-                                    1-   66     	extern	_M1_Cycle_1_Set
-                                    1-   67     	extern	_M1_Cycle_Set
-                                    1-   68     	extern	_M1_Cycle
-                                    1-   69     	extern	_Charge_Cnt
-                                    1-   70     	extern	_LED_Charge_Time
-                                    1-   71     	extern	_Full_Cnt
-                                    1-   72     	extern	_my_flag4
-                                    1-   73     	extern	_my_flag3
-                                    1-   74     	extern	_my_flag2
-                                    1-   75     	extern	_My_Flag
-                                    1-   76     	extern	_INTFbits
-                                    1-   77     	extern	_INTEbits
-                                    1-   78     	extern	_BPHCONbits
-                                    1-   79     	extern	_BPLCONbits
-                                    1-   80     	extern	_BWUCONbits
-                                    1-   81     	extern	_PCONbits
-                                    1-   82     	extern	_PORTBbits
-                                    1-   84     	extern PSAVE
-                                    1-   85     	extern SSAVE
-                                    1-   86     	extern WSAVE
-                                    1-   87     	extern STK12
-                                    1-   88     	extern ___STK12
-                                    1-   89     	extern STK11
-                                    1-   90     	extern ___STK11
-                                    1-   91     	extern STK10
-                                    1-   92     	extern ___STK10
-                                    1-   93     	extern STK09
-                                    1-   94     	extern ___STK09
-                                    1-   95     	extern STK08
-                                    1-   96     	extern ___STK08
-                                    1-   97     	extern STK07
-                                    1-   98     	extern ___STK07
-                                    1-   99     	extern STK06
-                                    1-  100     	extern ___STK06
-                                    1-  101     	extern STK05
-                                    1-  102     	extern ___STK05
-                                    1-  103     	extern STK04
-                                    1-  104     	extern ___STK04
-                                    1-  105     	extern STK03
-                                    1-  106     	extern ___STK03
-                                    1-  107     	extern STK02
-                                    1-  108     	extern ___STK02
-                                    1-  109     	extern STK01
-                                    1-  110     	extern ___STK01
-                                    1-  111     	extern STK00
-                                    1-  112     	extern ___STK00
-                                    1-  113     ;--------------------------------------------------------
-                                    1-  114     ; global declarations
+                                    1-   14     	extern	_Low_Voltage_Detection
+                                    1-   15     	extern	_Power_Off
+                                    1-   16     	extern	_Switch_Power_Mode
+                                    1-   17     	extern	_Init
+                                    1-   18     	extern	_clear_ram
+                                    1-   19     	extern	_multi_16b
+                                    1-   20     	extern	_multi_8b
+                                    1-   21     	extern	_T0MD
+                                    1-   22     	extern	_PCON1
+                                    1-   23     	extern	_BODCON
+                                    1-   24     	extern	_PS0CV
+                                    1-   25     	extern	_IOSTB
+                                    1-   26     	extern	_OSCCR
+                                    1-   27     	extern	_TBHD
+                                    1-   28     	extern	_TBHP
+                                    1-   29     	extern	_IRCR
+                                    1-   30     	extern	_BZ1CR
+                                    1-   31     	extern	_PS1CV
+                                    1-   32     	extern	_PWM1DUTY
+                                    1-   33     	extern	_T1CR2
+                                    1-   34     	extern	_T1CR1
+                                    1-   35     	extern	_TMR1
+                                    1-   36     	extern	_PCHBUF
+                                    1-   37     	extern	_STATUS
+                                    1-   38     	extern	_PCL
+                                    1-   39     	extern	_TMR0
+                                    1-   40     	extern	_Timer_1min
+                                    1-   41     	extern	_Timer_1s
+                                    1-   42     	extern	_Timer_100ms
+                                    1-   43     	extern	_Timer_10ms
+                                    1-   44     	extern	_Timer_1ms
+                                    1-   45     	extern	_Unit_Time
+                                    1-   46     	extern	_LED_FLAG
+                                    1-   47     	extern	_Time_Temp
+                                    1-   48     	extern	_Sleep_Cnt
+                                    1-   49     	extern	_Key_Short_LED_Cnt
+                                    1-   50     	extern	_Key_Long_Cnt
+                                    1-   51     	extern	_Key_Press_Cnt
+                                    1-   52     	extern	_Motor_Counter_FLAG
+                                    1-   53     	extern	_Motor_Peri_1000
+                                    1-   54     	extern	_Motor_Peri_100
+                                    1-   55     	extern	_Motor_Peri_10
+                                    1-   56     	extern	_Motor_Peri_1
+                                    1-   57     	extern	_M1_Cnt
+                                    1-   58     	extern	_M1_Freq_Change_Set
+                                    1-   59     	extern	_M1_Freq_Change
+                                    1-   60     	extern	_Motor_Freq_Cnt2
+                                    1-   61     	extern	_Motor_Freq_Cnt1
+                                    1-   62     	extern	_Motor_Freq_Cnt0
+                                    1-   63     	extern	_Motor_Freq_Change
+                                    1-   64     	extern	_M1_Duty_1_Set
+                                    1-   65     	extern	_M1_Duty_Set
+                                    1-   66     	extern	_M1_Duty
+                                    1-   67     	extern	_M1_Cycle_1_Set
+                                    1-   68     	extern	_M1_Cycle_Set
+                                    1-   69     	extern	_M1_Cycle
+                                    1-   70     	extern	_Charge_Cnt
+                                    1-   71     	extern	_LED_Off_Cnt
+                                    1-   72     	extern	_LED_Charge_Time
+                                    1-   73     	extern	_Full_Cnt
+                                    1-   74     	extern	_my_flag4
+                                    1-   75     	extern	_my_flag3
+                                    1-   76     	extern	_my_flag2
+                                    1-   77     	extern	_My_Flag
+                                    1-   78     	extern	_INTFbits
+                                    1-   79     	extern	_INTEbits
+                                    1-   80     	extern	_BPHCONbits
+                                    1-   81     	extern	_BPLCONbits
+                                    1-   82     	extern	_BWUCONbits
+                                    1-   83     	extern	_PCONbits
+                                    1-   84     	extern	_PORTBbits
+                                    1-   86     	extern PSAVE
+                                    1-   87     	extern SSAVE
+                                    1-   88     	extern WSAVE
+                                    1-   89     	extern STK12
+                                    1-   90     	extern ___STK12
+                                    1-   91     	extern STK11
+                                    1-   92     	extern ___STK11
+                                    1-   93     	extern STK10
+                                    1-   94     	extern ___STK10
+                                    1-   95     	extern STK09
+                                    1-   96     	extern ___STK09
+                                    1-   97     	extern STK08
+                                    1-   98     	extern ___STK08
+                                    1-   99     	extern STK07
+                                    1-  100     	extern ___STK07
+                                    1-  101     	extern STK06
+                                    1-  102     	extern ___STK06
+                                    1-  103     	extern STK05
+                                    1-  104     	extern ___STK05
+                                    1-  105     	extern STK04
+                                    1-  106     	extern ___STK04
+                                    1-  107     	extern STK03
+                                    1-  108     	extern ___STK03
+                                    1-  109     	extern STK02
+                                    1-  110     	extern ___STK02
+                                    1-  111     	extern STK01
+                                    1-  112     	extern ___STK01
+                                    1-  113     	extern STK00
+                                    1-  114     	extern ___STK00
                                     1-  115     ;--------------------------------------------------------
-                                    1-  116     	extern	_my_flag0
-                                    1-  117     	extern	_my_flag1
-                                    1-  118     	extern	_INTF
-                                    1-  119     	extern	_INTE
-                                    1-  120     	extern	_BPHCON
-                                    1-  121     	extern	_BPLCON
-                                    1-  122     	extern	_BWUCON
-                                    1-  123     	extern	_PCON
-                                    1-  124     	extern	_PORTB
-                                    1-  125     	extern	_Delay_us
-                                    1-  126     	extern	_Clock
-                                    1-  127     	extern	_Reset_Clock
-                                    1-  129     ;--------------------------------------------------------
-                                    1-  130     ; global definitions
-                                    1-  131     ;--------------------------------------------------------
+                                    1-  116     ; global declarations
+                                    1-  117     ;--------------------------------------------------------
+                                    1-  118     	extern	_my_flag0
+                                    1-  119     	extern	_my_flag1
+                                    1-  120     	extern	_INTF
+                                    1-  121     	extern	_INTE
+                                    1-  122     	extern	_BPHCON
+                                    1-  123     	extern	_BPLCON
+                                    1-  124     	extern	_BWUCON
+                                    1-  125     	extern	_PCON
+                                    1-  126     	extern	_PORTB
+                                    1-  127     	extern	_Delay_us
+                                    1-  128     	extern	_Delay_ms
+                                    1-  129     	extern	_Clock
+                                    1-  130     	extern	_Reset_Clock
                                     1-  132     ;--------------------------------------------------------
-                                    1-  133     ; absolute symbol definitions
+                                    1-  133     ; global definitions
                                     1-  134     ;--------------------------------------------------------
                                     1-  135     ;--------------------------------------------------------
-                                    1-  136     ; compiler-defined variables
+                                    1-  136     ; absolute symbol definitions
                                     1-  137     ;--------------------------------------------------------
-                                    1-  138     .segment "uninit"
-     0000                           1-  139     r0x100E:
-                                    1-  140     	.res	1
+                                    1-  138     ;--------------------------------------------------------
+                                    1-  139     ; compiler-defined variables
+                                    1-  140     ;--------------------------------------------------------
                                     1-  141     .segment "uninit"
-     0000                           1-  142     r0x100D:
+     0000                           1-  142     r0x100F:
                                     1-  143     	.res	1
                                     1-  144     .segment "uninit"
-     0000                           1-  145     r0x100F:
+     0000                           1-  145     r0x100E:
                                     1-  146     	.res	1
                                     1-  147     .segment "uninit"
      0000                           1-  148     r0x1010:
@@ -196,181 +196,260 @@ NYASM 2.50
                                     1-  150     .segment "uninit"
      0000                           1-  151     r0x1011:
                                     1-  152     	.res	1
-                                    1-  153     ;--------------------------------------------------------
-                                    1-  154     ; initialized data
-                                    1-  155     ;--------------------------------------------------------
-                                    1-  156     ;--------------------------------------------------------
-                                    1-  157     ; initialized absolute data
-                                    1-  158     ;--------------------------------------------------------
-                                    1-  159     ;--------------------------------------------------------
-                                    1-  160     ; overlayable items in internal ram 
-                                    1-  161     ;--------------------------------------------------------
-                                    1-  162     ;	udata_ovr
-                                    1-  163     ;--------------------------------------------------------
-                                    1-  164     ; code
-                                    1-  165     ;--------------------------------------------------------
-                                    1-  166     ; code_Delay	code
-                                    1-  167     ;***
-                                    1-  168     ;  pBlock Stats: dbName = C
-                                    1-  169     ;***
-                                    1-  170     ;has an exit
-                                    1-  171     ;; Starting pCode block
-                                    1-  172     .segment "code"; module=Delay, function=_Reset_Clock
-     0000                           1-  174     _Reset_Clock:
-                                    1-  175     ; 2 exit points
-                                    1-  176     	.line	70, "Delay.c"; 	Timer_1ms = 0;
-     0000 02rr                      1-  177     	CLRR	_Timer_1ms
-                                    1-  178     	.line	71, "Delay.c"; 	Timer_10ms = 0;
-     0001 02rr                      1-  179     	CLRR	_Timer_10ms
-                                    1-  180     	.line	72, "Delay.c"; 	Timer_100ms = 0;
-     0002 02rr                      1-  181     	CLRR	_Timer_100ms
-                                    1-  182     	.line	73, "Delay.c"; 	Timer_1s = 0;
-     0003 02rr                      1-  183     	CLRR	_Timer_1s
-                                    1-  184     	.line	74, "Delay.c"; 	Timer_1min = 0;
-     0004 02rr                      1-  185     	CLRR	_Timer_1min
-                                    1-  186     	.line	75, "Delay.c"; 	}
-                                    1-  187     	RETURN	
+                                    1-  153     .segment "uninit"
+     0000                           1-  154     r0x1012:
+                                    1-  155     	.res	1
+                                    1-  156     .segment "uninit"
+     0000                           1-  157     r0x1014:
+                                    1-  158     	.res	1
+                                    1-  159     .segment "uninit"
+     0000                           1-  160     r0x1013:
+                                    1-  161     	.res	1
+                                    1-  162     .segment "uninit"
+     0000                           1-  163     r0x1015:
+                                    1-  164     	.res	1
+                                    1-  165     .segment "uninit"
+     0000                           1-  166     r0x1016:
+                                    1-  167     	.res	1
+                                    1-  168     .segment "uninit"
+     0000                           1-  169     r0x1017:
+                                    1-  170     	.res	1
+                                    1-  171     ;--------------------------------------------------------
+                                    1-  172     ; initialized data
+                                    1-  173     ;--------------------------------------------------------
+                                    1-  174     ;--------------------------------------------------------
+                                    1-  175     ; initialized absolute data
+                                    1-  176     ;--------------------------------------------------------
+                                    1-  177     ;--------------------------------------------------------
+                                    1-  178     ; overlayable items in internal ram 
+                                    1-  179     ;--------------------------------------------------------
+                                    1-  180     ;	udata_ovr
+                                    1-  181     ;--------------------------------------------------------
+                                    1-  182     ; code
+                                    1-  183     ;--------------------------------------------------------
+                                    1-  184     ; code_Delay	code
+                                    1-  185     ;***
+                                    1-  186     ;  pBlock Stats: dbName = C
+                                    1-  187     ;***
+                                    1-  188     ;has an exit
+                                    1-  189     ;; Starting pCode block
+                                    1-  190     .segment "code"; module=Delay, function=_Reset_Clock
+     0000                           1-  192     _Reset_Clock:
+                                    1-  193     ; 2 exit points
+                                    1-  194     	.line	79, "Delay.c"; 	Timer_1ms = 0;
+     0000 02rr                      1-  195     	CLRR	_Timer_1ms
+                                    1-  196     	.line	80, "Delay.c"; 	Timer_10ms = 0;
+     0001 02rr                      1-  197     	CLRR	_Timer_10ms
+                                    1-  198     	.line	81, "Delay.c"; 	Timer_100ms = 0;
+     0002 02rr                      1-  199     	CLRR	_Timer_100ms
+                                    1-  200     	.line	82, "Delay.c"; 	Timer_1s = 0;
+     0003 02rr                      1-  201     	CLRR	_Timer_1s
+                                    1-  202     	.line	83, "Delay.c"; 	Timer_1min = 0;
+     0004 02rr                      1-  203     	CLRR	_Timer_1min
+                                    1-  204     	.line	84, "Delay.c"; 	}
+                                    1-  205     	RETURN	
      0005 0010                      3-   39 m1      ret
-                                    1-  188     ; exit point of _Reset_Clock
-                                    1-  190     ;***
-                                    1-  191     ;  pBlock Stats: dbName = C
-                                    1-  192     ;***
-                                    1-  193     ;has an exit
-                                    1-  194     ;; Starting pCode block
-                                    1-  195     .segment "code"; module=Delay, function=_Clock
-     0000                           1-  197     _Clock:
-                                    1-  198     ; 2 exit points
-                                    1-  199     ;;unsigned compare: left < lit(0xA=10), size=1
-                                    1-  200     	.line	27, "Delay.c"; 	if (Unit_Time >= TIME_1MS)
-     0000 210A                      1-  201     	MOVIA	0x0a
-     0001 04rr                      1-  202     	SUBAR	_Unit_Time,W
-     0002 0803                      1-  203     	BTRSS	STATUS,0
-                                    1-  204     	MGOTO	_02037_DS_
+                                    1-  206     ; exit point of _Reset_Clock
+                                    1-  208     ;***
+                                    1-  209     ;  pBlock Stats: dbName = C
+                                    1-  210     ;***
+                                    1-  211     ;has an exit
+                                    1-  212     ;; Starting pCode block
+                                    1-  213     .segment "code"; module=Delay, function=_Clock
+     0000                           1-  215     _Clock:
+                                    1-  216     ; 2 exit points
+                                    1-  217     ;;unsigned compare: left < lit(0xA=10), size=1
+                                    1-  218     	.line	35, "Delay.c"; 	if (Unit_Time >= TIME_1MS)
+     0000 210A                      1-  219     	MOVIA	0x0a
+     0001 04rr                      1-  220     	SUBAR	_Unit_Time,W
+     0002 0803                      1-  221     	BTRSS	STATUS,0
+                                    1-  222     	MGOTO	_02057_DS_
      0003 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  205     	.line	29, "Delay.c"; 	Unit_Time = 0;
-     0004 02rr                      1-  206     	CLRR	_Unit_Time
-                                    1-  207     	.line	30, "Delay.c"; 	Timer_1ms++;
-     0005 05rr                      1-  208     	INCR	_Timer_1ms,F
-                                    1-  209     	.line	31, "Delay.c"; 	Charge_Cnt++;
-     0006 05rr                      1-  210     	INCR	_Charge_Cnt,F
-                                    1-  211     	.line	32, "Delay.c"; 	Key_Press_Cnt++;    //按键按下计时
-     0007 05rr                      1-  212     	INCR	_Key_Press_Cnt,F
-                                    1-  213     ;;unsigned compare: left < lit(0xA=10), size=1
-                                    1-  214     	.line	33, "Delay.c"; 	if (Timer_1ms  >= TIME_10MS)
-     0008 210A                      1-  215     	MOVIA	0x0a
-     0009 04rr                      1-  216     	SUBAR	_Timer_1ms,W
-     000A 0803                      1-  217     	BTRSS	STATUS,0
-                                    1-  218     	MGOTO	_02037_DS_
-     000B 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  219     	.line	35, "Delay.c"; 	Sleep_Cnt++;
-     000C 05rr                      1-  220     	INCR	_Sleep_Cnt,F
-     000D 0D03                      1-  221     	BTRSC	STATUS,2
-     000E 05rr                      1-  222     	INCR	(_Sleep_Cnt + 1),F
-                                    1-  223     	.line	36, "Delay.c"; 	if (Key_LED_Flash_FLAG)
-     000F 0Err                      1-  224     	BTRSC	_my_flag0,4
-                                    1-  225     	.line	38, "Delay.c"; 	Key_Short_LED_Cnt++;
-     0010 05rr                      1-  226     	INCR	_Key_Short_LED_Cnt,F
-                                    1-  227     	.line	40, "Delay.c"; 	Timer_1ms = 0;
-     0011 02rr                      1-  228     	CLRR	_Timer_1ms
-                                    1-  229     	.line	41, "Delay.c"; 	Timer_10ms++;
-     0012 05rr                      1-  230     	INCR	_Timer_10ms,F
+                                    1-  223     	.line	37, "Delay.c"; 	Unit_Time = 0;
+     0004 02rr                      1-  224     	CLRR	_Unit_Time
+                                    1-  225     	.line	38, "Delay.c"; 	Timer_1ms++;
+     0005 05rr                      1-  226     	INCR	_Timer_1ms,F
+                                    1-  227     	.line	39, "Delay.c"; 	Charge_Cnt++;
+     0006 05rr                      1-  228     	INCR	_Charge_Cnt,F
+                                    1-  229     	.line	40, "Delay.c"; 	Key_Press_Cnt++;    //按键按下计时
+     0007 05rr                      1-  230     	INCR	_Key_Press_Cnt,F
                                     1-  231     ;;unsigned compare: left < lit(0xA=10), size=1
-                                    1-  232     	.line	42, "Delay.c"; 	if (Timer_10ms  >= TIME_100MS)
-     0013 210A                      1-  233     	MOVIA	0x0a
-     0014 04rr                      1-  234     	SUBAR	_Timer_10ms,W
-     0015 0803                      1-  235     	BTRSS	STATUS,0
-                                    1-  236     	MGOTO	_02037_DS_
+                                    1-  232     	.line	41, "Delay.c"; 	if (Timer_1ms  >= TIME_10MS)
+     0008 210A                      1-  233     	MOVIA	0x0a
+     0009 04rr                      1-  234     	SUBAR	_Timer_1ms,W
+     000A 0803                      1-  235     	BTRSS	STATUS,0
+                                    1-  236     	MGOTO	_02057_DS_
+     000B 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  237     	.line	43, "Delay.c"; 	Sleep_Cnt++;
+     000C 05rr                      1-  238     	INCR	_Sleep_Cnt,F
+     000D 0D03                      1-  239     	BTRSC	STATUS,2
+     000E 05rr                      1-  240     	INCR	(_Sleep_Cnt + 1),F
+                                    1-  241     	.line	44, "Delay.c"; 	if (Key_LED_Flash_FLAG)
+     000F 0Err                      1-  242     	BTRSC	_my_flag0,4
+                                    1-  243     	.line	46, "Delay.c"; 	Key_Short_LED_Cnt++;
+     0010 05rr                      1-  244     	INCR	_Key_Short_LED_Cnt,F
+                                    1-  245     	.line	48, "Delay.c"; 	Timer_1ms = 0;
+     0011 02rr                      1-  246     	CLRR	_Timer_1ms
+                                    1-  247     	.line	49, "Delay.c"; 	Timer_10ms++;
+     0012 05rr                      1-  248     	INCR	_Timer_10ms,F
+                                    1-  249     ;;unsigned compare: left < lit(0xA=10), size=1
+                                    1-  250     	.line	50, "Delay.c"; 	if (Timer_10ms  >= TIME_100MS)
+     0013 210A                      1-  251     	MOVIA	0x0a
+     0014 04rr                      1-  252     	SUBAR	_Timer_10ms,W
+     0015 0803                      1-  253     	BTRSS	STATUS,0
+                                    1-  254     	MGOTO	_02057_DS_
      0016 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  237     	.line	44, "Delay.c"; 	LED_Charge_Time++;
-     0017 05rr                      1-  238     	INCR	_LED_Charge_Time,F
-                                    1-  239     	.line	45, "Delay.c"; 	Timer_10ms = 0;
-     0018 02rr                      1-  240     	CLRR	_Timer_10ms
-                                    1-  241     	.line	46, "Delay.c"; 	Timer_100ms++;
-     0019 05rr                      1-  242     	INCR	_Timer_100ms,F
-                                    1-  243     ;;unsigned compare: left < lit(0xA=10), size=1
-                                    1-  244     	.line	47, "Delay.c"; 	if (Timer_100ms  >= TIME_1S)
-     001A 210A                      1-  245     	MOVIA	0x0a
-     001B 04rr                      1-  246     	SUBAR	_Timer_100ms,W
-     001C 0803                      1-  247     	BTRSS	STATUS,0
-                                    1-  248     	MGOTO	_02037_DS_
-     001D 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  249     	.line	49, "Delay.c"; 	Timer_100ms = 0;
-     001E 02rr                      1-  250     	CLRR	_Timer_100ms
-                                    1-  251     	.line	51, "Delay.c"; 	Timer_1s++;
-     001F 05rr                      1-  252     	INCR	_Timer_1s,F
-                                    1-  253     	.line	52, "Delay.c"; 	Full_Cnt++;
-     0020 05rr                      1-  254     	INCR	_Full_Cnt,F
-                                    1-  255     ;;unsigned compare: left < lit(0x3C=60), size=1
-                                    1-  256     	.line	53, "Delay.c"; 	if (Timer_1s  >= TIME_1MIN)
-     0021 213C                      1-  257     	MOVIA	0x3c
-     0022 04rr                      1-  258     	SUBAR	_Timer_1s,W
-     0023 0803                      1-  259     	BTRSS	STATUS,0
-                                    1-  260     	MGOTO	_02037_DS_
-     0024 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  261     	.line	55, "Delay.c"; 	Timer_1s = 0;
-     0025 02rr                      1-  262     	CLRR	_Timer_1s
-                                    1-  263     	.line	56, "Delay.c"; 	Timer_1min++;
-     0026 05rr                      1-  264     	INCR	_Timer_1min,F
-     0027                           1-  265     _02037_DS_:
-                                    1-  266     	.line	66, "Delay.c"; 	}
-                                    1-  267     	RETURN	
-     0027 0010                      3-   39 m1      ret
-                                    1-  268     ; exit point of _Clock
-                                    1-  270     ;***
-                                    1-  271     ;  pBlock Stats: dbName = C
-                                    1-  272     ;***
-                                    1-  273     ;has an exit
-                                    1-  274     ;6 compiler assigned registers:
-                                    1-  275     ;   r0x100D
-                                    1-  276     ;   STK00
-                                    1-  277     ;   r0x100E
-                                    1-  278     ;   r0x100F
-                                    1-  279     ;   r0x1010
-                                    1-  280     ;   r0x1011
-                                    1-  281     ;; Starting pCode block
-                                    1-  282     .segment "code"; module=Delay, function=_Delay_us
-                                    1-  284     ;local variable name mapping:
-     0000                           1-  287     _Delay_us:
-                                    1-  288     ; 2 exit points
-                                    1-  289     	.line	17, "Delay.c"; 	void Delay_us(short us)
-     0000 00rr                      1-  290     	MOVAR	r0x100D
-     0001 01rr                      1-  291     	MOVR	STK00,W
-     0002 00rr                      1-  292     	MOVAR	r0x100E
-                                    1-  293     	.line	19, "Delay.c"; 	for (short i = 0; i < us; i++)
-     0003 02rr                      1-  294     	CLRR	r0x100F
-     0004 02rr                      1-  295     	CLRR	r0x1010
-     0005                           1-  296     _02007_DS_:
-     0005 01rr                      1-  297     	MOVR	r0x1010,W
-     0006 2580                      1-  298     	ADDIA	0x80
-     0007 00rr                      1-  299     	MOVAR	r0x1011
-     0008 01rr                      1-  300     	MOVR	r0x100D,W
-     0009 2580                      1-  301     	ADDIA	0x80
-     000A 04rr                      1-  302     	SUBAR	r0x1011,W
-     000B 0903                      1-  303     	BTRSS	STATUS,2
-                                    1-  304     	MGOTO	_02020_DS_
+                                    1-  255     	.line	52, "Delay.c"; 	LED_Charge_Time++;
+     0017 05rr                      1-  256     	INCR	_LED_Charge_Time,F
+                                    1-  257     	.line	53, "Delay.c"; 	LED_Off_Cnt++;
+     0018 05rr                      1-  258     	INCR	_LED_Off_Cnt,F
+                                    1-  259     	.line	54, "Delay.c"; 	Timer_10ms = 0;
+     0019 02rr                      1-  260     	CLRR	_Timer_10ms
+                                    1-  261     	.line	55, "Delay.c"; 	Timer_100ms++;
+     001A 05rr                      1-  262     	INCR	_Timer_100ms,F
+                                    1-  263     ;;unsigned compare: left < lit(0xA=10), size=1
+                                    1-  264     	.line	56, "Delay.c"; 	if (Timer_100ms  >= TIME_1S)
+     001B 210A                      1-  265     	MOVIA	0x0a
+     001C 04rr                      1-  266     	SUBAR	_Timer_100ms,W
+     001D 0803                      1-  267     	BTRSS	STATUS,0
+                                    1-  268     	MGOTO	_02057_DS_
+     001E 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  269     	.line	58, "Delay.c"; 	Timer_100ms = 0;
+     001F 02rr                      1-  270     	CLRR	_Timer_100ms
+                                    1-  271     	.line	60, "Delay.c"; 	Timer_1s++;
+     0020 05rr                      1-  272     	INCR	_Timer_1s,F
+                                    1-  273     	.line	61, "Delay.c"; 	Full_Cnt++;
+     0021 05rr                      1-  274     	INCR	_Full_Cnt,F
+                                    1-  275     ;;unsigned compare: left < lit(0x3C=60), size=1
+                                    1-  276     	.line	62, "Delay.c"; 	if (Timer_1s  >= TIME_1MIN)
+     0022 213C                      1-  277     	MOVIA	0x3c
+     0023 04rr                      1-  278     	SUBAR	_Timer_1s,W
+     0024 0803                      1-  279     	BTRSS	STATUS,0
+                                    1-  280     	MGOTO	_02057_DS_
+     0025 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  281     	.line	64, "Delay.c"; 	Timer_1s = 0;
+     0026 02rr                      1-  282     	CLRR	_Timer_1s
+                                    1-  283     	.line	65, "Delay.c"; 	Timer_1min++;
+     0027 05rr                      1-  284     	INCR	_Timer_1min,F
+     0028                           1-  285     _02057_DS_:
+                                    1-  286     	.line	75, "Delay.c"; 	}
+                                    1-  287     	RETURN	
+     0028 0010                      3-   39 m1      ret
+                                    1-  288     ; exit point of _Clock
+                                    1-  290     ;***
+                                    1-  291     ;  pBlock Stats: dbName = C
+                                    1-  292     ;***
+                                    1-  293     ;has an exit
+                                    1-  294     ;functions called:
+                                    1-  295     ;   _Delay_us
+                                    1-  296     ;   _Delay_us
+                                    1-  297     ;6 compiler assigned registers:
+                                    1-  298     ;   r0x1013
+                                    1-  299     ;   STK00
+                                    1-  300     ;   r0x1014
+                                    1-  301     ;   r0x1015
+                                    1-  302     ;   r0x1016
+                                    1-  303     ;   r0x1017
+                                    1-  304     ;; Starting pCode block
+                                    1-  305     .segment "code"; module=Delay, function=_Delay_ms
+                                    1-  307     ;local variable name mapping:
+     0000                           1-  310     _Delay_ms:
+                                    1-  311     ; 2 exit points
+                                    1-  312     	.line	25, "Delay.c"; 	void Delay_ms(short ms)
+     0000 00rr                      1-  313     	MOVAR	r0x1013
+     0001 01rr                      1-  314     	MOVR	STK00,W
+     0002 00rr                      1-  315     	MOVAR	r0x1014
+                                    1-  316     	.line	27, "Delay.c"; 	for (short i = 0; i < ms; i++)
+     0003 02rr                      1-  317     	CLRR	r0x1015
+     0004 02rr                      1-  318     	CLRR	r0x1016
+     0005                           1-  319     _02027_DS_:
+     0005 01rr                      1-  320     	MOVR	r0x1016,W
+     0006 2580                      1-  321     	ADDIA	0x80
+     0007 00rr                      1-  322     	MOVAR	r0x1017
+     0008 01rr                      1-  323     	MOVR	r0x1013,W
+     0009 2580                      1-  324     	ADDIA	0x80
+     000A 04rr                      1-  325     	SUBAR	r0x1017,W
+     000B 0903                      1-  326     	BTRSS	STATUS,2
+                                    1-  327     	MGOTO	_02040_DS_
      000C 3rrr                      3-   62 m1      LGOTO rom_address
-     000D 01rr                      1-  305     	MOVR	r0x100E,W
-     000E 04rr                      1-  306     	SUBAR	r0x100F,W
-     000F                           1-  307     _02020_DS_:
-     000F 0C03                      1-  308     	BTRSC	STATUS,0
-                                    1-  309     	MGOTO	_02009_DS_
+     000D 01rr                      1-  328     	MOVR	r0x1014,W
+     000E 04rr                      1-  329     	SUBAR	r0x1015,W
+     000F                           1-  330     _02040_DS_:
+     000F 0C03                      1-  331     	BTRSC	STATUS,0
+                                    1-  332     	MGOTO	_02029_DS_
      0010 3rrr                      3-   62 m1      LGOTO rom_address
-                                    1-  310     	.line	21, "Delay.c"; 	CLRWDT();
-     0011 0002                      1-  311     	clrwdt
-                                    1-  312     	.line	19, "Delay.c"; 	for (short i = 0; i < us; i++)
-     0012 05rr                      1-  313     	INCR	r0x100F,F
-     0013 0D03                      1-  314     	BTRSC	STATUS,2
-     0014 05rr                      1-  315     	INCR	r0x1010,F
-                                    1-  316     	MGOTO	_02007_DS_
+                                    1-  333     	.line	29, "Delay.c"; 	Delay_us(1000);
+     0011 21E8                      1-  334     	MOVIA	0xe8
+     0012 00rr                      1-  335     	MOVAR	STK00
+     0013 2103                      1-  336     	MOVIA	0x03
+                                    1-  337     	MCALL	_Delay_us
+     0014 2rrr                      3-   65 m1      LCALL rom_address
+                                    1-  338     	.line	27, "Delay.c"; 	for (short i = 0; i < ms; i++)
+     0015 05rr                      1-  339     	INCR	r0x1015,F
+     0016 0D03                      1-  340     	BTRSC	STATUS,2
+     0017 05rr                      1-  341     	INCR	r0x1016,F
+                                    1-  342     	MGOTO	_02027_DS_
+     0018 3rrr                      3-   62 m1      LGOTO rom_address
+     0019                           1-  343     _02029_DS_:
+                                    1-  344     	.line	31, "Delay.c"; 	}
+                                    1-  345     	RETURN	
+     0019 0010                      3-   39 m1      ret
+                                    1-  346     ; exit point of _Delay_ms
+                                    1-  348     ;***
+                                    1-  349     ;  pBlock Stats: dbName = C
+                                    1-  350     ;***
+                                    1-  351     ;has an exit
+                                    1-  352     ;6 compiler assigned registers:
+                                    1-  353     ;   r0x100E
+                                    1-  354     ;   STK00
+                                    1-  355     ;   r0x100F
+                                    1-  356     ;   r0x1010
+                                    1-  357     ;   r0x1011
+                                    1-  358     ;   r0x1012
+                                    1-  359     ;; Starting pCode block
+                                    1-  360     .segment "code"; module=Delay, function=_Delay_us
+                                    1-  362     ;local variable name mapping:
+     0000                           1-  365     _Delay_us:
+                                    1-  366     ; 2 exit points
+                                    1-  367     	.line	17, "Delay.c"; 	void Delay_us(short us)
+     0000 00rr                      1-  368     	MOVAR	r0x100E
+     0001 01rr                      1-  369     	MOVR	STK00,W
+     0002 00rr                      1-  370     	MOVAR	r0x100F
+                                    1-  371     	.line	19, "Delay.c"; 	for (short i = 0; i < us; i++)
+     0003 02rr                      1-  372     	CLRR	r0x1010
+     0004 02rr                      1-  373     	CLRR	r0x1011
+     0005                           1-  374     _02007_DS_:
+     0005 01rr                      1-  375     	MOVR	r0x1011,W
+     0006 2580                      1-  376     	ADDIA	0x80
+     0007 00rr                      1-  377     	MOVAR	r0x1012
+     0008 01rr                      1-  378     	MOVR	r0x100E,W
+     0009 2580                      1-  379     	ADDIA	0x80
+     000A 04rr                      1-  380     	SUBAR	r0x1012,W
+     000B 0903                      1-  381     	BTRSS	STATUS,2
+                                    1-  382     	MGOTO	_02020_DS_
+     000C 3rrr                      3-   62 m1      LGOTO rom_address
+     000D 01rr                      1-  383     	MOVR	r0x100F,W
+     000E 04rr                      1-  384     	SUBAR	r0x1010,W
+     000F                           1-  385     _02020_DS_:
+     000F 0C03                      1-  386     	BTRSC	STATUS,0
+                                    1-  387     	MGOTO	_02009_DS_
+     0010 3rrr                      3-   62 m1      LGOTO rom_address
+                                    1-  388     	.line	21, "Delay.c"; 	CLRWDT();
+     0011 0002                      1-  389     	clrwdt
+                                    1-  390     	.line	19, "Delay.c"; 	for (short i = 0; i < us; i++)
+     0012 05rr                      1-  391     	INCR	r0x1010,F
+     0013 0D03                      1-  392     	BTRSC	STATUS,2
+     0014 05rr                      1-  393     	INCR	r0x1011,F
+                                    1-  394     	MGOTO	_02007_DS_
      0015 3rrr                      3-   62 m1      LGOTO rom_address
-     0016                           1-  317     _02009_DS_:
-                                    1-  318     	.line	23, "Delay.c"; 	}
-                                    1-  319     	RETURN	
+     0016                           1-  395     _02009_DS_:
+                                    1-  396     	.line	23, "Delay.c"; 	}
+                                    1-  397     	RETURN	
      0016 0010                      3-   39 m1      ret
-                                    1-  320     ; exit point of _Delay_us
-                                    1-  323     ;	code size estimation:
-                                    1-  324     ;	   68+    0 =    68 instructions (  136 byte)
-                                    1-  326     	end
+                                    1-  398     ; exit point of _Delay_us
+                                    1-  401     ;	code size estimation:
+                                    1-  402     ;	   95+    0 =    95 instructions (  190 byte)
+                                    1-  404     	end
 
 SYMBOL TABLE            TYPE     VALUE
 __pin_count__           Constant 00000006
